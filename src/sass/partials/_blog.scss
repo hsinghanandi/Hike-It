@@ -1,0 +1,45 @@
+// .blogCard {
+//   border: 1px solid black;
+//   border-radius: 1rem;
+// }
+
+// #mainBlogImage {
+//   height: 300px;
+//   width: 970px;
+//   object-fit: cover;
+//   border-radius: 2rem;
+// }
+
+// #blogImage {
+//   height: 300px;
+//   width: 300px;
+//   object-fit: cover;
+//   border-radius: 1.5rem;
+// }
+
+// .blogCards {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-gap: 2rem;
+// }
+
+.blogPage {
+  padding: 3rem;
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.blogCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+
+}
+
+.blogCard {
+  border-radius: 1rem;
+}

@@ -1,0 +1,22 @@
+#discoverImage {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.discoverMain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.sortButton,
+.filterButton {
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  border: none;
+  background-color: green;
+  color: white;
+  margin: 2rem 1rem;
+}

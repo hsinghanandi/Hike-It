@@ -1,0 +1,21 @@
+.AboutUsGalleryDesigners,
+.AboutUsGalleryDevelopers {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    text-align: center;
+
+    img {
+        border-radius: 50%;
+        max-height: 300;
+        max-width: 300;
+    }
+}
+
+.AboutUsContact {
+    display: flex;
+}
+
+.AboutUsContactForm {
+    margin: 10% 1rem;
+}

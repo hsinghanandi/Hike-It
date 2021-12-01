@@ -1,0 +1,19 @@
+.compareHikeBtn {
+    text-align: right;
+}
+
+.singlePageButtons {
+    display: flex;
+    flex-wrap: row nowrap;
+    justify-content: center;
+}
+
+.ContactButton {
+    background-color: $orange_color;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-left: auto;
+}

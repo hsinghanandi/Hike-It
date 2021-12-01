@@ -1,0 +1,19 @@
+.sliderImages .images {
+  display: flex;
+  flex-direction: row;
+}
+.sliderImage {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.sliderImages {
+  display: flex;
+  justify-content: center;
+}
+
+.sliderButtons {
+  display: flex;
+  justify-content: center;
+}

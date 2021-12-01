@@ -1,0 +1,98 @@
+// .filters {
+//   display: flex;
+//   justify-content: space-between;
+// }
+.SearchResultsPage {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: $font-size-3;
+    margin-bottom: 1rem;
+    color: $text_dark_color;
+  }
+  p {
+    font-size: $font-size-2;
+    margin-bottom: 1rem;
+    color: $text_dark_color;
+  }
+  h3 {
+    font-size: $font-size-1;
+    margin-bottom: 1rem;
+    color: $text_dark_color;
+    font-family: $font-family-base;
+    font-weight: 400;
+  }
+  h4 {
+    font-size: $font-size-1;
+    color: $text_dark_color;
+    font-family: $font-family-base;
+    font-weight: 400;
+  }
+  a {
+    color: $text_dark_color;
+    font-weight: 800;
+  }
+}
+
+.resultCard {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  background: $text_light_color;
+  border-radius: 20px;
+  // box-shadow: $box-shadow-base;
+}
+
+.resultCardContent {
+  display: grid;
+  grid-template-columns: 1.5fr 0.3fr;
+  grid-template-rows: 1fr;
+  gap: 0.5rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "img text "
+    "img text ";
+}
+
+.resultCardImg {
+  grid-area: img;
+}
+
+.resultCardText {
+  grid-area: text;
+  text-align: center;
+}
+
+// .resultCardCheckbox {
+//   grid-area: check;
+//   margin-top: 50%;
+// }
+
+.resultCardContent {
+  margin: 1rem 0;
+}
+
+//
+
+.resultSection {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.resultMap {
+  height: 100%;
+  min-width: 500px;
+  flex: 1;
+}
+
+.resultsContainer {
+  display: flex;
+  // justify-content: space-around;
+  margin: auto;
+  width: 100%;
+}

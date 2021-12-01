@@ -1,0 +1,12 @@
+.savedHikesCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+#savedHikeImage {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 2rem;
+}

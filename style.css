@@ -1,0 +1,425 @@
+/* 2. Typography  ======================================= */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 3. Navigation  ================================== */
+.navBar ul {
+  display: flex;
+  list-style-type: none;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+/* 5. Media  ============================= */
+.compareHikeBtn {
+  text-align: right;
+}
+
+.singlePageButtons {
+  display: flex;
+  flex-wrap: row nowrap;
+  justify-content: center;
+}
+
+.ContactButton {
+  background-color: orange;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 1rem;
+  margin-left: auto;
+}
+
+/* 6. Elements  =============================== */
+.reviewCards {
+  display: flex;
+  flex-direction: row;
+}
+
+.reviewCards .reviewCard {
+  border: 1px solid black;
+  border-radius: 2rem;
+  margin: 0 1rem;
+  padding: 2rem;
+}
+
+.AboutUsGalleryDesigners,
+.AboutUsGalleryDevelopers {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.AboutUsGalleryDesigners img,
+.AboutUsGalleryDevelopers img {
+  border-radius: 50%;
+  max-height: 300;
+  max-width: 300;
+}
+
+.AboutUsContact {
+  display: flex;
+}
+
+.AboutUsContactForm {
+  margin: 10% 1rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resultCardContent {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 0.3fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "img text check" "img text check";
+}
+
+.resultCardImg {
+  grid-area: img;
+}
+
+.resultCardText {
+  grid-area: text;
+  text-align: center;
+}
+
+.resultCardCheckbox {
+  grid-area: check;
+  margin-top: 100%;
+}
+
+.resultCardContent {
+  margin: 1rem 0;
+}
+
+.resultSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultMap {
+  margin: auto;
+}
+
+.heroImage {
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1620354233683-929b3539d977?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2482&q=80.jpg);
+  position: absolute;
+  top: 10%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 80vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: 20vw;
+  color: white;
+}
+
+.searchBar {
+  width: 40rem;
+  background: #f2f1f9;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 20px;
+  height: 1rem;
+}
+
+.heroButton,
+.searchBtn {
+  position: relative;
+  border: none;
+  background: #f06634;
+  border-radius: 30px;
+  padding: 1rem;
+}
+
+.heroContent {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.HomePopularHikes {
+  margin-top: 90vh;
+  position: relative;
+}
+
+.HomePopularContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.HomePopularImage {
+  width: 100%;
+}
+
+.HomeHikeCard h2,
+.HomeHikeCard h3 {
+  text-align: center;
+  color: white;
+  background-color: rgba(120, 120, 120, 0.7);
+  display: flex;
+}
+
+.HomeFeatureContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  padding: 1.3rem 0;
+}
+
+.HomeFeatureCard {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 1rem;
+}
+
+.HomeFeatureCard .HomeFeatureImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.HomeFeatureCard .HomeFeatureInfo {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.BlogSection {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 2rem;
+}
+
+.HeaderBlog {
+  display: flex;
+  justify-content: space-between;
+}
+
+.HeaderBlog a {
+  margin: auto 0;
+}
+
+.BlogCardContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.HomeBlogCard {
+  position: relative;
+  z-index: -1;
+  text-align: center;
+  gap: 1rem;
+}
+
+.HomeBlogCard .HomeBlogInfo h2 {
+  top: 50%;
+  left: 30%;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  color: white;
+  display: flex;
+}
+
+.HomeBlogCard .HomeBlogInfo p {
+  bottom: 0;
+  text-align: center;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  margin: 0;
+  padding: 1rem;
+}
+
+.HomeBlogInfo {
+  width: 100%;
+}
+
+.HomeAbout {
+  padding: 2rem 0;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  display: flex;
+  gap: 1rem;
+}
+
+.HomeAbout h2 {
+  text-align: center;
+}
+
+.HomeContact {
+  text-align: center;
+  margin: 0 3rem;
+  margin-bottom: 4rem;
+}
+
+.HomeContact p {
+  margin-bottom: 3rem;
+}
+
+.comparisonTable table {
+  border-collapse: collapse;
+  border: 1px solid green;
+  padding: 1rem;
+}
+
+.comparisonTable table td {
+  border: 1px solid green;
+  padding: 0.5rem;
+}
+
+.compareButton {
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  border: none;
+  background-color: green;
+  color: white;
+}
+
+.compareHeading {
+  display: flex;
+}
+
+.blogCard {
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+#mainBlogImage {
+  height: 300px;
+  width: 970px;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+#blogImage {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.blogCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+#discoverImage {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.discoverMain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.sortButton,
+.filterButton {
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  border: none;
+  background-color: green;
+  color: white;
+  margin: 2rem 1rem;
+}
+
+.savedHikesCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+#savedHikeImage {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.newsCards {
+  display: flex;
+  flex-direction: row;
+}
+
+.newsCards .card {
+  border: 1px solid black;
+  border-radius: 2rem;
+  margin: 0 1rem;
+  padding: 2rem;
+}
+
+.sliderImages .images {
+  display: flex;
+  flex-direction: row;
+}
+
+.sliderImage {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.sliderImages {
+  display: flex;
+  justify-content: center;
+}
+
+.sliderButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.detailsSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.detailsSection .detailsFeatures {
+  padding: 2rem;
+}
+
+.detailsSection .detailsFeatures ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1rem;
+}
+
+.detailsSection .detailsFeatures ul li {
+  padding: 1rem;
+}
+
+.detailsSection .detailsDesc {
+  padding: 2rem;
+}
+
+.detailsTitle {
+  text-align: center;
+}
+
+.App {
+  margin: 1rem 20%;
+}
