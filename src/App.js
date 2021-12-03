@@ -1,30 +1,30 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { Redirect } from 'react-router';
-import axios from 'axios';
-import ComparePage from './components/COMPARE-PAGE/ComparePage';
-import DetailsPage from './components/DETAILS-PAGE/DetailsPage';
-import BlogPage from './components/BLOG-PAGE/BlogPage';
-import DiscoverPage from './components/DISCOVER-PAGE/DiscoverPage';
-import SavedHikesPage from './components/SAVED-HIKES-PAGE/SavedHikes';
-import NavBarComponent from './components/NAVBAR-COMPONENT/NavBarComponent';
-import HomePage from './components/HOME-PAGE/HomePage';
-import AboutUsPage from './components/ABOUTUS-PAGE/AboutUsPage';
-import SignUpPage from './components/SIGNUP-PAGE/SignUpPage';
-import LoginPage from './components/SIGNUP-PAGE/LoginPage';
-import SearchResultsPage from './components/SEARCHRESULT-PAGE/SearchResultsPage';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Redirect } from "react-router";
+import axios from "axios";
+import ComparePage from "./components/COMPARE-PAGE/ComparePage";
+import DetailsPage from "./components/DETAILS-PAGE/DetailsPage";
+import BlogPage from "./components/BLOG-PAGE/BlogPage";
+import DiscoverPage from "./components/DISCOVER-PAGE/DiscoverPage";
+import SavedHikesPage from "./components/SAVED-HIKES-PAGE/SavedHikes";
+import NavBarComponent from "./components/NAVBAR-COMPONENT/NavBarComponent";
+import HomePage from "./components/HOME-PAGE/HomePage";
+import AboutUsPage from "./components/ABOUTUS-PAGE/AboutUsPage";
+import SignUpPage from "./components/SIGNUP-PAGE/SignUpPage";
+import LoginPage from "./components/SIGNUP-PAGE/LoginPage";
+import SearchResultsPage from "./components/SEARCHRESULT-PAGE/SearchResultsPage";
 
 function App() {
     const [searchSubmitted, setSearchSubmitted] = useState(false);
     const [compareQueue, setCompareQueue] = useState([]);
-    const [isLoggedIn, setIsLoggedIn] = useState('');
-    const SERVER_LOCATION = 'https://hike-it-be.herokuapp.com';
+    const [isLoggedIn, setIsLoggedIn] = useState("");
+    const SERVER_LOCATION = "https://hike-it-be.herokuapp.com";
 
     // google api key
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
     const newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
-    console.log('newsApiKey', newsApiKey);
-    console.log('googleMapsApiKey', googleMapsApiKey);
+    console.log("newsApiKey", newsApiKey);
+    console.log("googleMapsApiKey", googleMapsApiKey);
 
     // Searchbar
     const [search, setSearch] = useState();
@@ -55,8 +55,8 @@ function App() {
             )
             .then((result) => {
                 setSearchResults(result.data.results);
-                console.log('setSearchResults', result.data.results);
-                console.log('searchResults ', searchResults);
+                console.log("setSearchResults", result.data.results);
+                console.log("searchResults ", searchResults);
             })
             .catch((error) => {
                 console.log(error.message);
@@ -85,7 +85,7 @@ function App() {
             )
             .then((result) => {
                 setArticles(result.data);
-                console.log('setBlogPosts', result.data);
+                console.log("setBlogPosts", result.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -94,13 +94,13 @@ function App() {
 
     return (
         <Router>
-            <div className='App'>
+            <div className="App">
                 <NavBarComponent isLoggedIn={isLoggedIn} />
-                <div className='content'>
+                <div className="content">
                     <Switch>
-                        <Route exact path='/'>
+                        <Route exact path="/">
                             {searchSubmitted ? (
-                                <Redirect to='/SearchResultsPage' />
+                                <Redirect to="/SearchResultsPage" />
                             ) : (
                                 <HomePage
                                     setSearch={setSearch}
@@ -114,7 +114,7 @@ function App() {
                             )}
                         </Route>
 
-                        <Route exact path='/DetailsPage'>
+                        <Route exact path="/DetailsPage">
                             <DetailsPage
                                 SERVER_LOCATION={SERVER_LOCATION}
                                 placeID={placeID}
@@ -123,28 +123,28 @@ function App() {
                             />
                         </Route>
 
-                        <Route exact path='/ComparePage'>
+                        <Route exact path="/ComparePage">
                             <ComparePage
                                 compareQueue={compareQueue}
                                 setCompareQueue={setCompareQueue}
                             />
                         </Route>
-                        <Route exact path='/BlogPage'>
+                        <Route exact path="/BlogPage">
                             <BlogPage />
                         </Route>
-                        <Route exact path='/DiscoverPage'>
+                        <Route exact path="/DiscoverPage">
                             <DiscoverPage />
                         </Route>
-                        <Route exact path='/SavedHikesPage'>
+                        <Route exact path="/SavedHikesPage">
                             <SavedHikesPage SERVER_LOCATION={SERVER_LOCATION} />
                         </Route>
-                        <Route exact path='/AboutUsPage'>
+                        <Route exact path="/AboutUsPage">
                             <AboutUsPage />
                         </Route>
-                        <Route exact path='/SignUpPage'>
+                        <Route exact path="/SignUpPage">
                             <SignUpPage SERVER_LOCATION={SERVER_LOCATION} />
                         </Route>
-                        <Route exact path='/SearchResultsPage'>
+                        <Route exact path="/SearchResultsPage">
                             <SearchResultsPage
                                 setPlaceID={setPlaceID}
                                 googleMapsApiKey={googleMapsApiKey}
@@ -153,9 +153,11 @@ function App() {
                                 setSearchSubmitted={setSearchSubmitted}
                                 searchResults={searchResults}
                                 setSearchResults={setSearchResults}
+                                compareQueue={compareQueue}
+                                setCompareQueue={setCompareQueue}
                             />
                         </Route>
-                        <Route exact path='/LoginPage'>
+                        <Route exact path="/LoginPage">
                             <LoginPage
                                 SERVER_LOCATION={SERVER_LOCATION}
                                 isLoggedIn={isLoggedIn}

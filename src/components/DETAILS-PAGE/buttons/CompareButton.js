@@ -1,27 +1,31 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 const CompareButton = (props) => {
     const handleAddCompare = () => {
-        let currentQueue = props.compareQueue;
-        let newQueue = currentQueue;
-        // //Check That 4 max
-        // //Check that is not repeated
-        console.log(currentQueue);
+        let newQueue = [];
 
         newQueue.push(props.place);
 
         props.setCompareQueue(newQueue);
 
-        console.log(currentQueue);
-        console.log(newQueue);
+        //If it gets added -
+        // let currentQueue = props.compareQueue;
+        // let newQueue = currentQueue;
+        // props.setCompareQueue(newQueue);
+        // newQueue.push(props.place);
+        // props.setCompareQueue(newQueue);
     };
 
     return (
         <div className="compareHikeBtn">
-            <button
-                className="compareButton"
+            <Link
                 onClick={() => handleAddCompare()}
+                to={"./ComparePage"}
+                className="compareButton"
             >
                 Add to Hike Compare!
-            </button>
+            </Link>
         </div>
     );
 };
