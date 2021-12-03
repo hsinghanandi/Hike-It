@@ -1,21 +1,33 @@
-import React from 'react';
-import CompareHike from './CompareHike';
-import CompareLabels from './CompareLabels';
+import React, { useEffect, useState } from "react";
+import CompareHike from "./CompareHike";
+import CompareLabels from "./CompareLabels";
 
 const CompareTable = (props) => {
     return (
-        <div className='CompareTable'>
+        <div className="CompareTable">
             <CompareLabels />
 
-            {props.compareQueue ? (
-                props.compareQueue.map((hike, index) => (
-                    <CompareHike
-                        key={index}
-                        setCompareQueue={props.setCompareQueue}
-                        compareQueue={props.compareQueue}
-                        currentHike={hike}
-                    />
-                ))
+            {props.compareNow ? (
+                props.compareNow.map((hike, index) =>
+                    typeof hike == "object" ? (
+                        <CompareHike
+                            key={index}
+                            setCompareQueue={props.setCompareQueue}
+                            compareQueue={props.compareQueue}
+                            currentHike={hike}
+                            compareNow={props.compareNow}
+                            setCompareNow={props.setCompareNow}
+                        />
+                    ) : (
+                        <div className="CompareHike-options">
+                            <input
+                                type="text"
+                                name="replace"
+                                placeholder="replaceHike"
+                            />
+                        </div>
+                    )
+                )
             ) : (
                 <div></div>
             )}

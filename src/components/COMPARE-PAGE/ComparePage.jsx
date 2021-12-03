@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CompareTable from "./CompareTable";
 import CompareToggle from "./CompareToggle";
+import Graph from "./Graph";
 
 const ComparePage = (props) => {
     const [graphToggle, setGraphToggle] = useState();
+    const [compareNow, setCompareNow] = useState([]);
+
+    useEffect(() => {
+        let tableArr = props.compareQueue.slice(0, 4);
+
+        setCompareNow(tableArr);
+        console.log(tableArr);
+    }, [props.compareQueue]);
 
     return (
         <div>
@@ -17,9 +26,10 @@ const ComparePage = (props) => {
                     <CompareTable
                         compareQueue={props.compareQueue}
                         setCompareQueue={props.setCompareQueue}
+                        compareNow={compareNow}
                     />
                 ) : (
-                    <p>Graph</p>
+                    <Graph compareNow={compareNow} />
                 )}
             </div>
         </div>

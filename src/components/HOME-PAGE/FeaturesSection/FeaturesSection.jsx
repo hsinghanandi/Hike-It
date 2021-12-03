@@ -1,30 +1,32 @@
 import React from "react";
 import FeatureCard from "./FeatureCard";
+import featured1 from "../../../assets/feature1.png";
+import featured2 from "../../../assets/feature2.png";
+import featured3 from "../../../assets/feature3.png";
 
 const FeatureSection = (props) => {
     return (
         <div className="HomeFeatures">
-            <h2>Our Features</h2>
             <div className="HomeFeatureContainer">
                 <FeatureCard
-                    HomeFeatureImage={"https://picsum.photos/300/?random=1"}
-                    HomeFeatureTitle={"Feature Title"}
+                    HomeFeatureImage={featured1}
+                    HomeFeatureTitle={"Find Hikes"}
                     HomeFeatureDescription={
-                        "Lorem ipsum dolor sit amet, an illum ceteros urbanitas vel, ex doming atomorum per. "
+                        "Plan your next hike with the right tools"
                     }
                 />
                 <FeatureCard
-                    HomeFeatureImage={"https://picsum.photos/300/?random=2"}
-                    HomeFeatureTitle={"Feature Title"}
+                    HomeFeatureImage={featured2}
+                    HomeFeatureTitle={"Compare Hikes"}
                     HomeFeatureDescription={
-                        "Lorem ipsum dolor sit amet, an illum ceteros urbanitas vel, ex doming atomorum per. "
+                        "Compare between up to 4 hikes and choose how you want to see the information"
                     }
                 />
                 <FeatureCard
-                    HomeFeatureImage={"https://picsum.photos/300/?random=3"}
-                    HomeFeatureTitle={"Feature Title"}
+                    HomeFeatureImage={featured3}
+                    HomeFeatureTitle={"Stay Updated"}
                     HomeFeatureDescription={
-                        "Lorem ipsum dolor sit amet, an illum ceteros urbanitas vel, ex doming atomorum per. "
+                        "Get the latest news related to hiking and your favorite trails"
                     }
                 />
             </div>
