@@ -1,10 +1,13 @@
 import React from "react";
+import contactLogo from "../../assets/contactLogo.png";
 
 const AboutUsContact = (props) => {
     return (
         <div className="AboutUsContact">
             <div className="AboutContactForm">
                 <h2>Contact Us</h2>
+                <div className="ContactScetion">
+                    <img src={contactLogo} alt="Contact" />
                 <form action="#">
                     <input className="AboutContactName" placeholder={"Name"} />
                     <input
@@ -17,9 +20,11 @@ const AboutUsContact = (props) => {
                         rows="4"
                         cols="50"
                     ></textarea>
+                        <button className="ContactButton">Send</button>
                 </form>
+                </div>
             </div>
-            <img src="https://picsum.photos/300/?random=2" alt="Contact" />
+            
         </div>
     );
 };
