@@ -49,7 +49,7 @@ const AboutGallery = (props) => {
                     role="Full-Stack Developer"
                 />
                 <AboutGalleryCard
-                    linkedin=""
+                    linkedin="https://www.linkedin.com/in/rachel-ta-1a6873129/"
                     imageSrc={rachelPic}
                     name="Ta, Rachel"
                     role="Full-Stack Developer"
