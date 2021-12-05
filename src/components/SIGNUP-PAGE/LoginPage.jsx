@@ -129,7 +129,7 @@ const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
                         <div id='changePassword-results'></div>
                     </form>
                 </div>
-                <div>
+                <div className="formContainer logout">
                     <h2>Logout</h2>
                     <button onClick={(event) => handleLogout(event)}>Logout</button>
                     <div id='logout-results'></div>

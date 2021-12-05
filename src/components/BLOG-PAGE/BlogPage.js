@@ -60,11 +60,12 @@ const BlogPage = ()=>{
 
                 <div className="blogCards">
 
-                    {npsData.data !== undefined ? npsData.data.slice(0, 6).map((nps, index) =>
-                        <div className="blogCard" key={index}>
+                    {npsData.data !== undefined ? npsData.data.slice(0, 6 ).map((nps, index) =>
+                        <div className="blogCardChild" key={index}>
                             <img src={nps.listingImage.url} alt={nps.listingImage.altText} width="400" />
+                            <h3 className="blogTitle">{nps.title}</h3>
                             <div className="blogContent">
-                                <h3> <a href={nps.url}>{nps.title}</a></h3>
+                                <h3><a href={nps.url}>{nps.title}</a></h3>
                                 <p>{nps.listingDescription}</p>
                             </div>
                         </div>
