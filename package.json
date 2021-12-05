@@ -3,9 +3,6 @@
     "version": "0.1.0",
     "private": true,
     "proxy": "https://maps.googleapis.com/maps/api",
-    "engines": {
-        "node": "14.17.0"
-    },
     "dependencies": {
         "@react-google-maps/api": "^2.5.0",
         "@testing-library/jest-dom": "^5.14.1",
