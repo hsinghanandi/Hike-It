@@ -4,8 +4,7 @@
     "private": true,
     "proxy": "https://maps.googleapis.com/maps/api",
     "engines": {
-        "npm": ">=6.0.0",
-        "node": ">=0.12.0"
+        "node": "16.x"
     },
     "dependencies": {
         "@react-google-maps/api": "^2.5.0",
