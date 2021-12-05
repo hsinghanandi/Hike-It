@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .AboutUsContact {
   display: flex;
-  height: 70vh;
+  height: 100vh;
 }
 
 .AboutUsContactForm {
@@ -607,7 +607,7 @@ h1, h2, h3, h4, h5, h6 {
 .blogPage {
   padding: 3rem;
   padding-top: 10rem;
-  height: 100vh;
+  min-height: 150vh;
 }
 
 .blogPage h1 {
@@ -795,6 +795,11 @@ h1, h2, h3, h4, h5, h6 {
 .reviewCard {
   display: flex;
   flex-direction: column;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
 }
 
 * {
