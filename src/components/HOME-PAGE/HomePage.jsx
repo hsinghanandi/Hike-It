@@ -15,7 +15,7 @@ export default function HomePage(props) {
             <HeroSection setSearch={props.setSearch} search={props.search} handleChangeSearch={props.handleChangeSearch} submitSearch={props.submitSearch} searchResults={props.searchResults} setSearchResults={props.setSearchResults} />
             <FeatureSection />
             <PopularHikes />            
-            <BlogSection articles={props.articles} />
+            <BlogSection articles={props.articles} npsData={props.npsData} />
             <AboutSection />
             <ContactSection />
         </div>
