@@ -1,4 +1,37 @@
 .LoginPage {
   height: 100vh;
-  padding-top: 10rem;
+  // padding-top: 10rem;
+  display: flex;
+
+  .formContainer, .LoginForm, .loginFormChild, .ChangePasswordForm, .changePasswordFormChild {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .formContainer {
+    width: 100%;
+  }
+
+  .LoginForms {
+    display: flex;
+    flex-direction: column;
+    input {
+      margin: 1rem 0;
+      height: 2rem;
+      width: 300px;
+      border-radius: 20px;
+      border: 1px solid $dark_color;
+    }
+    input::placeholder {
+      color: $text_dark_color;
+      padding-left: 0.5rem;
+    }
+  }
+
+  // .LoginForm {
+  //   margin-top: 10rem;
+  // }
 }
+
