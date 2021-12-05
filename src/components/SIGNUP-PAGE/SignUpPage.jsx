@@ -33,9 +33,9 @@ const SignUpPage = (props) => {
     };
 
     return (
-        <div className='AboutUsContact'>
+        <div className='signUpPage'>
             <div className='SignUpForm'>
-                <h2>Contact Us</h2>
+                <h2>Sign Up</h2>
                 <form
                     id='signup-form'
                     onSubmit={(event) => handleSignUpForm(event)}

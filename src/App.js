@@ -13,6 +13,7 @@ import AboutUsPage from "./components/ABOUTUS-PAGE/AboutUsPage";
 import SignUpPage from "./components/SIGNUP-PAGE/SignUpPage";
 import LoginPage from "./components/SIGNUP-PAGE/LoginPage";
 import SearchResultsPage from "./components/SEARCHRESULT-PAGE/SearchResultsPage";
+import Footer from "./components/FOOTER/Footer";
 
 function App() {
     const [searchSubmitted, setSearchSubmitted] = useState(false);
@@ -185,6 +186,7 @@ function App() {
                         </Route>
                     </Switch>
                 </div>
+                <Footer />
             </div>
         </Router>
     );
