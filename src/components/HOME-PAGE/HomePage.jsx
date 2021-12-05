@@ -5,7 +5,7 @@ import PopularHikes from "./PopularHikesSection/PopularHikes";
 import FeatureSection from "./FeaturesSection/FeaturesSection";
 import BlogSection from "./BlogSection/BlogSection";
 import AboutSection from "./AboutHomeSection/AboutSection";
-import ContactSection from "./ContactSection/ContactSection";
+// import ContactSection from "./ContactSection/ContactSection";
 
 export default function HomePage(props) {
     
@@ -17,7 +17,7 @@ export default function HomePage(props) {
             <PopularHikes />            
             <BlogSection articles={props.articles} npsData={props.npsData} />
             <AboutSection />
-            <ContactSection />
+            {/* <ContactSection /> */}
         </div>
     );
 }

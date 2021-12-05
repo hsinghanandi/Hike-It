@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import loginPic from '../../assets/loginPic.png';
 
 const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
     const history = useHistory();
@@ -81,55 +82,58 @@ const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
 
     return (
         <div className='LoginPage'>
-            <div className='LoginForm'>
-                <h2>LOGIN</h2>
-                <form
-                    id='login-form'
-                    onSubmit={(event) => handleLoginForm(event)}
-                >
-                    <input
-                        className='AboutContactE-mail'
-                        placeholder='E-mail'
-                        name='email'
-                        id='email'
-                        type='email'
-                        required
-                    />
-                    <input
-                        className='AboutContactE-mail'
-                        placeholder='Enter a Password'
-                        name='password'
-                        id='password'
-                        type='password'
-                        required
-                    />
-                    <button>Login</button>
-                    <div id='login-results'></div>
-                </form>
-            </div>
+            <img src={loginPic} alt="login pic of outdoors from shutterstock" />
+            <div className='formContainer'>
+                <div className='LoginForms'>            
+                    <h2>Login</h2>
+                    <form
+                        className='loginFormChild'
+                        onSubmit={(event) => handleLoginForm(event)}
+                    >
+                        <input
+                            className='AboutContactE-mail'
+                            placeholder='Email'
+                            name='email'
+                            id='email'
+                            type='email'
+                            required
+                        />
+                        <input
+                            className='AboutContactE-mail'
+                            placeholder='Password'
+                            name='password'
+                            id='password'
+                            type='password'
+                            required
+                        />
+                        <button>Login</button>
+                        <div id='login-results'></div>
+                    </form>
+                </div>
 
-            <div className='ChangePasswordForm'>
-                <h2>Change Password</h2>
-                <form
-                    id='changePassword-form'
-                    onSubmit={(event) => handleChangePasswordForm(event)}
-                >
-                    <input
-                        className='AboutContactE-mail'
-                        placeholder='Enter a Password'
-                        name='password'
-                        id='change-password'
-                        type='password'
-                        required
-                    />
-                    <button>Change Password</button>
-                    <div id='changePassword-results'></div>
-                </form>
-            </div>
-            <div>
-                <h2>Logout</h2>
-                <button onClick={(event) => handleLogout(event)}>Logout</button>
-                <div id='logout-results'></div>
+                <div className='ChangePasswordForm'>
+                    <h2>Change Password</h2>
+                    <form
+                        className='changePasswordFormChild'
+                        onSubmit={(event) => handleChangePasswordForm(event)}
+                    >
+                        <input
+                            className='AboutContactE-mail'
+                            placeholder='Enter a Password'
+                            name='password'
+                            id='change-password'
+                            type='password'
+                            required
+                        />
+                        <button>Change Password</button>
+                        <div id='changePassword-results'></div>
+                    </form>
+                </div>
+                <div className="formContainer logout">
+                    <h2>Logout</h2>
+                    <button onClick={(event) => handleLogout(event)}>Logout</button>
+                    <div id='logout-results'></div>
+                </div>
             </div>
         </div>
     );
