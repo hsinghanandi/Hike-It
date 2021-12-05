@@ -1,40 +1,43 @@
 .AboutGallery {
-    margin: 1rem 2rem;
+  margin: 1rem 2rem;
 }
 
 .AboutUsGalleryDesigners,
 .AboutUsGalleryDevelopers {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    text-align: center;
-    margin: 3rem 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  text-align: center;
+  margin: 3rem 0;
 
-    .teamName {
-        color: $orange_color;
-        font-family: $font-family-base;
-        font-size: 1.2rem;
-    }
+  .teamName {
+    color: $orange_color;
+    font-family: $font-family-base;
+    font-size: 1.2rem;
+  }
 
-    .teamRole {
-        margin: 0.5rem 0;
-        font-style: italic;
-        color: $text_dark_color;
-    }
+  .teamRole {
+    margin: 0.5rem 0;
+    font-style: italic;
+    color: $text_dark_color;
+  }
 
-    .teamImg {
-        border-radius: 50%;
-        max-height: 160px;
-        max-width: 160px;
-    }
+  .teamImg {
+    border-radius: 50%;
+    max-height: 160px;
+    max-width: 160px;
+  }
 }
 
 .AboutUsContact {
-    display: flex;
+  display: flex;
+  height: 100vh;
+  padding-top: 10rem;
+  
 }
 
 .AboutUsContactForm {
-    margin: 10% 1rem;
+  margin: 10% 1rem;
 }
 
 .Intro {
