@@ -31,9 +31,8 @@
 
 .AboutUsContact {
   display: flex;
-  height: 100vh;
-  padding-top: 10rem;
-  
+  height: 70vh;
+  //   padding-top: 10rem;
 }
 
 .AboutUsContactForm {
@@ -41,87 +40,83 @@
 }
 
 .Intro {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 3rem auto;
-    padding: 0;
-    h1 {
-        color: $dark_color;
-    }
-    .IntroPara {
-        color: $text_dark_color;
-        margin: 3rem;
-    }
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  padding-top: 8rem;
+  h1 {
+    color: $dark_color;
+  }
+  .IntroPara {
+    color: $text_dark_color;
+    margin: 3rem;
+  }
 }
 
 .AboutContactForm {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 3rem auto;
-    padding: 0;
-    h1 {
-        color: $dark_color;
-    }
-    h2 {
-        color: $dark_color;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    .IntroPara {
-        color: $text_dark_color;
-        margin: 3rem;
-    }
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 0;
+  h1 {
+    color: $dark_color;
+  }
+  h2 {
+    color: $dark_color;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .IntroPara {
+    color: $text_dark_color;
+    margin: 3rem;
+  }
 }
 
 .ContactSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+
+  img {
+    max-height: 150px;
+    max-width: 150px;
+  }
+
+  .contactForm {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    align-items: center;
-    gap: 5rem;
-
-
-    img {
-        max-height: 150px;
-        max-width: 150px;
-
+    flex-direction: column;
+    input {
+      margin: 1rem 0;
+      height: 2rem;
+      width: 300px;
+      border-radius: 20px;
+      border: 1px solid $dark_color;
     }
 
-    .contactForm {
-        display: flex;
-        flex-direction: column; 
-        input {
-            margin: 1rem 0;
-            height: 2rem;
-            width: 300px;
-            border-radius: 20px;
-            border: 1px solid $dark_color;
-        }
-
-        input::placeholder, textarea::placeholder {
-            color: $text_dark_color;
-            padding-left: 0.5rem;
-        }
-
-        textarea::placeholder {
-            padding-top: 0.5rem;
-        }
-        
-        textarea {
-            resize: none;
-            margin: 1rem 0;
-            border-radius: 20px;
-            height: 200px;
-            border: 1px solid $dark_color;
-        }
-
+    input::placeholder,
+    textarea::placeholder {
+      color: $text_dark_color;
+      padding-left: 0.5rem;
     }
 
-    
+    textarea::placeholder {
+      padding-top: 0.5rem;
+    }
+
+    textarea {
+      resize: none;
+      margin: 1rem 0;
+      border-radius: 20px;
+      height: 200px;
+      border: 1px solid $dark_color;
+    }
+  }
 }
