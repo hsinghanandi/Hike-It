@@ -30,7 +30,7 @@ form {
 
 }
 
-input {
+input:not([type=checkbox]) {
     margin: 1rem 0;
     height: 2rem;
     width: 300px;
