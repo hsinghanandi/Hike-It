@@ -26,10 +26,19 @@ const SearchResultsPage = (props) => {
         <div>
             <h1>Search Results</h1>
             <div className="filters">
-                <p>SortBy</p>
-                <p>FilterBy</p>
+                {/* <p>SortBy</p>
+                <p>FilterBy</p> */}
+                <Link
+                    onClick={() => handleSetComparison()}
+                    to={"./ComparePage"}
+                    className="compareButton"
+                >
+                    Compare Hikes
+                </Link>
             </div>
+
             <div className="resultSection">
+                <div className="searchResults">
                 {props.searchResults !== undefined ? (
                     props.searchResults.map((searchResult, index) => (
                         <ResultCard
@@ -48,14 +57,8 @@ const SearchResultsPage = (props) => {
                 ) : (
                     <div>No results</div>
                 )}
-                <Link
-                    onClick={() => handleSetComparison()}
-                    to={"./ComparePage"}
-                    className="compareButton"
-                >
-                    Compare Hikes
-                </Link>
-                <div className="resultMap">MAP SECTION</div>
+                </div>
+                <div className="resultMap">MAP SECTION</div>               
             </div>
         </div>
     );
