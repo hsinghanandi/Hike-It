@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import loginPic from '../../assets/loginPic.png';
 
 const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
     const history = useHistory();
@@ -81,7 +82,8 @@ const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
 
     return (
         <div className='LoginPage'>
-            <div className='LoginForm'>
+            <img src={loginPic} alt="login pic of outdoors from shutterstock" />
+            <div className='LoginForm'>            
                 <h2>LOGIN</h2>
                 <form
                     id='login-form'
