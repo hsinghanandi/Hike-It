@@ -124,8 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .AboutUsContact {
   display: flex;
-  height: 100vh;
-  padding-top: 10rem;
+  height: 70vh;
 }
 
 .AboutUsContactForm {
@@ -138,8 +137,8 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 3rem auto;
   padding: 0;
+  padding-top: 8rem;
 }
 
 .Intro h1 {
@@ -202,7 +201,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #00291F;
 }
 
-.ContactSection .contactForm input::placeholder, .ContactSection .contactForm textarea::placeholder {
+.ContactSection .contactForm input::placeholder,
+.ContactSection .contactForm textarea::placeholder {
   color: #1A3E35;
   padding-left: 0.5rem;
 }
