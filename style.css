@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 .ContactButton {
   background-color: #FF5A1F;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   border-radius: 20px;
   text-decoration: none;
   margin-top: 1rem;
@@ -138,8 +138,8 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 3rem auto;
   padding: 0;
-  padding-top: 8rem;
 }
 
 .Intro h1 {
@@ -149,6 +149,74 @@ h1, h2, h3, h4, h5, h6 {
 .Intro .IntroPara {
   color: #1A3E35;
   margin: 3rem;
+}
+
+.AboutContactForm {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 0;
+}
+
+.AboutContactForm h1 {
+  color: #00291F;
+}
+
+.AboutContactForm h2 {
+  color: #00291F;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.AboutContactForm .IntroPara {
+  color: #1A3E35;
+  margin: 3rem;
+}
+
+.ContactSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+}
+
+.ContactSection img {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+.ContactSection .contactForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.ContactSection .contactForm input {
+  margin: 1rem 0;
+  height: 2rem;
+  width: 300px;
+  border-radius: 20px;
+  border: 1px solid #00291F;
+}
+
+.ContactSection .contactForm input::placeholder, .ContactSection .contactForm textarea::placeholder {
+  color: #1A3E35;
+  padding-left: 0.5rem;
+}
+
+.ContactSection .contactForm textarea::placeholder {
+  padding-top: 0.5rem;
+}
+
+.ContactSection .contactForm textarea {
+  resize: none;
+  margin: 1rem 0;
+  border-radius: 20px;
+  height: 200px;
+  border: 1px solid #00291F;
 }
 
 .SearchResultsPage {
@@ -760,4 +828,9 @@ body {
 
 .SignUpForm #signup-form {
   display: grid;
+}
+
+.LoginPage {
+  height: 100vh;
+  padding-top: 10rem;
 }
