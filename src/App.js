@@ -23,7 +23,7 @@ function App() {
     const [compareQueue, setCompareQueue] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState('');
     const [userName, setuserName] = useState('');
-    const SERVER_LOCATION = process.env.REACT_APP_SERVER_LOCATION;
+    const SERVER_LOCATION = 'https://hike-it-be.herokuapp.com';
 
     useEffect(() => {
         if (localStorage.token) {
