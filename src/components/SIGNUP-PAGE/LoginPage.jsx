@@ -1,9 +1,15 @@
 import axios from 'axios';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import loginPic from '../../assets/loginPic.png';
 
-const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
+const LoginPage = ({
+    isLoggedIn,
+    setIsLoggedIn,
+    SERVER_LOCATION,
+    setuserName,
+}) => {
     const history = useHistory();
 
     const handleLoginForm = (event) => {
@@ -11,7 +17,7 @@ const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
 
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-
+        // toast.info('Please wait, we are loggin you in!');
         axios
             .post(`${SERVER_LOCATION}/hikeit/api/v1/users/login`, {
                 email: email,
@@ -24,67 +30,67 @@ const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
                 if (result.data.status === 'SUCCESS') {
                     const jwtToken = result.data.userToken.split('.');
 
-                    const userID = JSON.parse(atob(jwtToken[1])).id;
-                    console.log(result.data.userToken);
-
+                    const userDetail = JSON.parse(atob(jwtToken[1]));
+                    setuserName(userDetail.username);
                     localStorage.setItem('token', result.data.userToken);
                     // setLoggedInUser(userID);
                     setIsLoggedIn(true);
-
+                    toast.success('Your are successfully logged in');
                     history.push('/');
-                    alert('Welcome User!');
+                    // alert('Welcome User!');
                 }
             })
             .catch((error) => {
-                console.log(error);
+                let message = error?.response?.data?.message || error.message;
+                toast.error(message);
             });
     };
 
-    const handleChangePasswordForm = (event) => {
-        event.preventDefault();
+    // const handleChangePasswordForm = (event) => {
+    //     event.preventDefault();
 
-        const password = document.getElementById('change-password').value;
+    //     const password = document.getElementById('change-password').value;
 
-        axios
-            .post(`${SERVER_LOCATION}/hikeit/api/v1/users/changePassword`, {
-                newPassword: password,
-                token: localStorage.getItem('token'),
-            })
-            .then((result) => {
-                document.getElementById('changePassword-results').innerHTML =
-                    result.data.message;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    };
+    //     axios
+    //         .post(`${SERVER_LOCATION}/hikeit/api/v1/users/changePassword`, {
+    //             newPassword: password,
+    //             token: localStorage.getItem('token'),
+    //         })
+    //         .then((result) => {
+    //             document.getElementById('changePassword-results').innerHTML =
+    //                 result.data.message;
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // };
 
-    const handleLogout = (event) => {
-        console.log('Logout button clicked!');
-        if (isLoggedIn) {
-            const user = localStorage.getItem('token');
-            console.log(user);
+    // const handleLogout = (event) => {
+    //     console.log('Logout button clicked!');
+    //     if (isLoggedIn) {
+    //         const user = localStorage.getItem('token');
+    //         console.log(user);
 
-            if (user) {
-                localStorage.removeItem('token');
+    //         if (user) {
+    //             localStorage.removeItem('token');
 
-                document.getElementById('logout-results').innerHTML =
-                    ' Logout Successful!';
+    //             document.getElementById('logout-results').innerHTML =
+    //                 ' Logout Successful!';
 
-                setIsLoggedIn(false);
-                history.push('/');
-                alert('Logout Successful');
-            }
-        } else {
-            alert('Please Login first!');
-        }
-    };
+    //             setIsLoggedIn(false);
+    //             history.push('/');
+    //             alert('Logout Successful');
+    //         }
+    //     } else {
+    //         alert('Please Login first!');
+    //     }
+    // };
 
     return (
         <div className='LoginPage'>
-            <img src={loginPic} alt="login pic of outdoors from shutterstock" />
+            <img src={loginPic} alt='login pic of outdoors from shutterstock' />
             <div className='formContainer'>
-                <div className='LoginForms'>            
+                <div className='LoginForms'>
                     <h2>Login</h2>
                     <form
                         className='loginFormChild'
@@ -111,7 +117,7 @@ const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
                     </form>
                 </div>
 
-                <div className='ChangePasswordForm'>
+                {/* <div className='ChangePasswordForm'>
                     <h2>Change Password</h2>
                     <form
                         className='changePasswordFormChild'
@@ -133,7 +139,7 @@ const LoginPage = ({ isLoggedIn, setIsLoggedIn, SERVER_LOCATION }) => {
                     <h2>Logout</h2>
                     <button onClick={(event) => handleLogout(event)}>Logout</button>
                     <div id='logout-results'></div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

@@ -1,11 +1,11 @@
-import react from "react";
+import React from 'react';
 
-const Footer = props => {
-    return ( 
-        <div className="footer">
+const Footer = (props) => {
+    return (
+        <div className='footer'>
             <p>©HikeIt 2021 All rights reserved</p>
         </div>
-     );
-}
- 
+    );
+};
+
 export default Footer;

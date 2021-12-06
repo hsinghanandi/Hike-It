@@ -1,30 +1,26 @@
-import React from 'react';
+import React from "react";
 
 const HeroSection = (props) => {
-    return (
-        <div className='heroImage'>
-            <div className='heroContent'>
-                <h1 className='heroTitle'>Hike It! You'll Like It!</h1>
+  return (
+    <div className="heroImage">
+      <div className="heroContent">
+        {props.isLoggedIn && <h1 className="heroTitle">Hi, {props.userName.toUpperCase()}</h1>}
+        <h1 className="heroTitle">Hike It! You'll Like It!</h1>
 
-                <form onSubmit={(event) => props.submitSearch(event)}>
-                    <input
-                        className='searchBar'
-                        type='text'
-                        name='search'
-                        defaultValue={props.search || ''}
-                        onChange={(event) => props.handleChangeSearch(event)}
-                    />
-
-                    {/* <button className="searchBtn">Search
-                    </button> */}
-                </form>
-                <p>No Idea? Looking for a good place to explore?</p>
-                <button className='heroButton'>Randomize</button>
-                {/*  */}
-                {console.log('searchResults ', props.searchResults)}
-            </div>
-        </div>
-    );
+        <form onSubmit={(event) => props.submitSearch(event)}>
+          <input
+            className="searchBar"
+            type="text"
+            name="search"
+            defaultValue={props.search || ""}
+            onChange={(event) => props.handleChangeSearch(event)}
+          />
+        </form>
+        <p>No Idea? Looking for a good place to explore?</p>
+        <button className="heroButton">Randomize</button>
+      </div>
+    </div>
+  );
 };
 
 export default HeroSection;
