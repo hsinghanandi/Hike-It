@@ -1,6 +1,11 @@
 import React from "react";
+<<<<<<< Updated upstream
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+=======
+import { useEffect } from "react";
+
+>>>>>>> Stashed changes
 import ResultCard from "./ResultCard.jsx";
 
 const SearchResultsPage = (props) => {
@@ -14,6 +19,7 @@ const SearchResultsPage = (props) => {
         if (source !== undefined) {
             return source[0].photo_reference;
         } else {
+            console.log("not defined", source);
             return "-img";
         }
     };
@@ -24,11 +30,8 @@ const SearchResultsPage = (props) => {
 
     return (
         <div>
-            <h1>Search Results</h1>
-            <div className="filters">
-                <p>SortBy</p>
-                <p>FilterBy</p>
-            </div>
+            <h1 className="resultSection-title">Search Results</h1>
+
             <div className="resultSection">
                 {props.searchResults !== undefined ? (
                     props.searchResults.map((searchResult, index) => (
@@ -55,7 +58,7 @@ const SearchResultsPage = (props) => {
                 >
                     Compare Hikes
                 </Link>
-                <div className="resultMap">MAP SECTION</div>
+                <div className="resultMap"></div>
             </div>
         </div>
     );
