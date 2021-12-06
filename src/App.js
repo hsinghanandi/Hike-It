@@ -13,6 +13,7 @@ import AboutUsPage from "./components/ABOUTUS-PAGE/AboutUsPage";
 import SignUpPage from "./components/SIGNUP-PAGE/SignUpPage";
 import LoginPage from "./components/SIGNUP-PAGE/LoginPage";
 import SearchResultsPage from "./components/SEARCHRESULT-PAGE/SearchResultsPage";
+import Footer from "./components/FOOTER/Footer";
 
 function App() {
     const [searchSubmitted, setSearchSubmitted] = useState(false);
@@ -23,8 +24,10 @@ function App() {
     // google api key
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
     const newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
+    const npsApiKey = process.env.REACT_APP_NPS_API_KEY;
     console.log("newsApiKey", newsApiKey);
     console.log("googleMapsApiKey", googleMapsApiKey);
+    console.log("npsApiKey", npsApiKey);
 
     // Searchbar
     const [search, setSearch] = useState();
@@ -92,6 +95,22 @@ function App() {
             });
     }, []);
 
+    // NPS API
+    const [npsData, setNpsData] = useState([]);
+    useEffect(() => {
+        axios
+            .get(
+                `https://developer.nps.gov/api/v1/articles?api_key=${npsApiKey}&q=hike`
+            )
+            .then((result) => {
+                setNpsData(result.data);
+                console.log("setNpsData", result.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
     return (
         <Router>
             <div className="App">
@@ -110,6 +129,7 @@ function App() {
                                     searchResults={searchResults}
                                     setSearchResults={setSearchResults}
                                     articles={articles}
+                                    npsData={npsData}
                                 />
                             )}
                         </Route>
@@ -166,6 +186,7 @@ function App() {
                         </Route>
                     </Switch>
                 </div>
+                <Footer />
             </div>
         </Router>
     );

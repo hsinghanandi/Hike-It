@@ -1,278 +1,280 @@
 // //Hero Section
 
 .heroImage {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("../../assets/heroImg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../assets/heroImg.png");
 
-    height: 530px;
-    color: $text_light_color;
-    h1 {
-        margin-bottom: 20px;
-        font-weight: 200;
-        font-size: $font-size-4;
-    }
+  height: 530px;
+  color: $text_light_color;
+  padding-top: 5rem;
 
-    p {
-        margin: 50px 0 20px 0;
-    }
+  h1 {
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-size: $font-size-4;
+  }
+
+  p {
+    margin: 50px 0 20px 0;
+  }
 }
 
-.searchBar {
-    width: 40rem;
-    background: $text_light_color;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 20px;
-    height: 1.2rem;
+form input.searchBar {
+  width: 40rem;
+  background: $text_light_color;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 20px;
+  height: 1.2rem;
 }
 
 .heroButton,
 .searchBtn {
-    position: relative;
-    border: none;
-    background: $orange_color;
-    border-radius: 30px;
-    padding: 0.7rem 2.2rem;
-    color: $text_light_color;
+  position: relative;
+  border: none;
+  background: $orange_color;
+  border-radius: 30px;
+  padding: 0.7rem 2.2rem;
+  color: $text_light_color;
 }
 
 .heroContent {
-    text-align: center;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: $text_light_color;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $text_light_color;
 }
 
 // Popular Hikes Section
 .HomeHikeCard {
-    border-radius: 20px;
-    margin: 1rem 0;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-        transform: scale(1.05);
-    }
-    border-radius: 20px;
+  border-radius: 20px;
+  margin: 1rem 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+  border-radius: 20px;
+  object-fit: cover;
+  border-radius: 2rem;
+  display: grid;
+  grid-template: "container";
+  place-items: center;
+  place-content: center;
+  overflow: hidden;
+  max-height: clamp(600px, 50vh, 600px);
+
+  * {
+    grid-area: container;
+    max-width: 1000px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius: 2rem;
-    display: grid;
-    grid-template: "container";
-    place-items: center;
-    place-content: center;
-    overflow: hidden;
-    max-height: clamp(600px, 50vh, 600px);
-
-    * {
-        grid-area: container;
-        max-width: 1000px;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-    }
+  }
 }
 
 .HomePopularHikes {
-    padding: 5rem;
-    h2 {
-        font-size: $font-size-3;
-        color: $dark_color;
-        font-weight: 200;
-    }
+  padding: 5rem;
+  h2 {
+    font-size: $font-size-3;
+    color: $dark_color;
+    font-weight: 200;
+  }
 }
 
 .HomePopularContainer {
-    display: flex;
-    gap: 1.2rem;
+  display: flex;
+  gap: 1.2rem;
 }
 
 .HomePopularImage {
-    width: 100%;
+  width: 100%;
 }
 
 .HomeHikeCard h2,
 .HomeHikeCard h3 {
-    text-align: center;
-    color: $text_light_color;
-    font-family: $font-family-base;
-    display: flex;
+  text-align: center;
+  color: $text_light_color;
+  font-family: $font-family-base;
+  display: flex;
 }
 
 .HomeHikeCard h2 {
-    font-weight: 300;
-    font-size: $font-size-2;
+  font-weight: 300;
+  font-size: $font-size-2;
 }
 
 .HomeHikeCard h3 {
-    font-weight: 200;
-    font-size: $font-size-1;
+  font-weight: 200;
+  font-size: $font-size-1;
 }
 
 //Feature Section
 .HomeFeatures {
-    padding: 5rem 5rem 0 5rem;
-    h2 {
-        font-size: $font-size-3;
-        color: $dark_color;
-        font-weight: 200;
-    }
+  padding: 5rem 5rem 0 5rem;
+  h2 {
+    font-size: $font-size-3;
+    color: $dark_color;
+    font-weight: 200;
+  }
 }
 
 .HomeFeatureContainer {
-    // display: grid;
-    // grid-template-columns: repeat(1fr, 1fr);
-    // padding: 1.3rem 0;
-    text-align: left;
-    .HomeFeatureCard:nth-child(2n + 1) {
-        flex-direction: row-reverse;
-    }
+  // display: grid;
+  // grid-template-columns: repeat(1fr, 1fr);
+  // padding: 1.3rem 0;
+  text-align: left;
+  .HomeFeatureCard:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+  }
 }
 
 .HomeFeatureCard {
+  display: flex;
+  margin: 2rem 0;
+  text-align: left;
+
+  .HomeFeatureInfo {
+    // width: 33%;
+    padding: 1rem;
+    h2 {
+      font-size: $font-size-3;
+      color: $text_dark_color;
+      font-weight: 200;
+    }
+    p {
+      font-size: $font-size-base;
+      color: $text_dark_color;
+      font-weight: 200;
+    }
+  }
+
+  .HomeFeatureImage {
+    max-width: 250px;
+    height: auto;
+    margin-right: 0.5rem;
+  }
+
+  .HomeFeatureInfo {
+    text-align: center;
     display: flex;
-    margin: 2rem 0;
-    text-align: left;
-
-    .HomeFeatureInfo {
-        // width: 33%;
-        padding: 1rem;
-        h2 {
-            font-size: $font-size-3;
-            color: $text_dark_color;
-            font-weight: 200;
-        }
-        p {
-            font-size: $font-size-base;
-            color: $text_dark_color;
-            font-weight: 200;
-        }
-    }
-
-    .HomeFeatureImage {
-        max-width: 250px;
-        height: auto;
-        margin-right: 0.5rem;
-    }
-
-    .HomeFeatureInfo {
-        text-align: center;
-        display: flex;
-        flex-flow: column nowrap;
-    }
+    flex-flow: column nowrap;
+  }
 }
 
 //Blog Section
 .BlogSection {
-    padding: 0 5rem 0 5rem;
-    display: flex;
-    flex-flow: column nowrap;
-    margin-bottom: 2rem;
-    h2 {
-        font-size: $font-size-3;
-        color: $dark_color;
-        font-weight: 200;
-    }
+  padding: 0 5rem 0 5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 2rem;
+  h2 {
+    font-size: $font-size-3;
+    color: $dark_color;
+    font-weight: 200;
+  }
 }
 
 .BlogCardContainer {
-    background: $text_light_color;
-    border-radius: 20px;
-    margin: 1rem 0;
-    a {
-        text-decoration: none;
-        color: $text_dark_color;
-    }
+  background: $text_light_color;
+  border-radius: 20px;
+  margin: 1rem 0;
+  a {
+    text-decoration: none;
+    color: $text_dark_color;
+  }
 }
 
 .blogCard {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    img {
-        flex: 1;
-        border-radius: 20px 0 0 20px;
-    }
+  img {
+    flex: 1;
+    border-radius: 20px 0 0 20px;
+  }
 
-    .blogContent {
-        flex: 1;
-        padding: 1rem;
-        h2 {
-            font-size: $font-size-3;
-            color: $text_dark_color;
-            font-weight: 200;
-        }
-        h2:hover {
-            text-decoration: underline;
-        }
-        p {
-            font-size: $font-size-base;
-            color: $text_dark_color;
-            font-weight: 200;
-        }
+  .blogContent {
+    flex: 1;
+    padding: 1rem;
+    h2 {
+      font-size: $font-size-3;
+      color: $text_dark_color;
+      font-weight: 200;
     }
+    h2:hover {
+      text-decoration: underline;
+    }
+    p {
+      font-size: $font-size-base;
+      color: $text_dark_color;
+      font-weight: 200;
+    }
+  }
 }
 
 .morePosts {
-    display: flex;
-    justify-content: center;
-    border: none;
-    background: $dark_color;
-    border-radius: 30px;
-    padding: 0.7rem 2.2rem;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background: $dark_color;
+  border-radius: 30px;
+  padding: 0.7rem 2.2rem;
+  margin: 0 auto;
+  color: $text_light_color;
+  cursor: pointer;
+  a {
     color: $text_light_color;
-    cursor: pointer;
-    a {
-        color: $text_light_color;
-    }
+  }
 }
 
 //About Section
 .HomeAbout {
-    background: $text_light_color;
-    padding: 2rem 0;
-    display: flex;
-    gap: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: $text_light_color;
+  padding: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    h2 {
-        text-align: center;
-        font-size: $font-size-3;
-        color: $dark_color;
-        font-weight: 200;
-    }
+  h2 {
+    text-align: center;
+    font-size: $font-size-3;
+    color: $dark_color;
+    font-weight: 200;
+  }
 
-    .HomeAboutInfo {
-        width: 500px;
-    }
+  .HomeAboutInfo {
+    width: 500px;
+  }
 
-    p {
-        font-size: $font-size-base;
-        color: $text_dark_color;
-        font-weight: 200;
-    }
+  p {
+    font-size: $font-size-base;
+    color: $text_dark_color;
+    font-weight: 200;
+  }
 }
 
 //Contact
 .HomeContact {
-    text-align: center;
-    margin: 3rem 0 0 0;
+  text-align: center;
+  margin: 3rem 0 0 0;
 
-    p {
-        margin-bottom: 3rem;
-        color: $text_dark_color;
-    }
+  p {
+    margin-bottom: 3rem;
+    color: $text_dark_color;
+  }
 
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 
 .blogContent {

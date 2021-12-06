@@ -1,0 +1,27 @@
+.LoginPage, .signUpPage  {
+  height: 100vh;
+  // padding-top: 10rem;
+  display: flex;
+
+  .formContainer, .LoginForms, .loginFormChild, .ChangePasswordForm, .changePasswordFormChild {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .LoginForms {
+      display: flex;
+      flex-direction: column;
+      margin-top: 4rem;
+  }
+
+  .ChangePasswordForm {
+    margin-top: 1rem;
+  }
+
+  .logout {
+    margin-top: 1rem;
+  } 
+}
+

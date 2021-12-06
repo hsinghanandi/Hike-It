@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import loginPic from '../../assets/loginPic.png';
 
 const SignUpPage = (props) => {
     const handleSignUpForm = (event) => {
@@ -33,22 +34,24 @@ const SignUpPage = (props) => {
     };
 
     return (
-        <div className='AboutUsContact'>
-            <div className='SignUpForm'>
-                <h2>Contact Us</h2>
+        <div className='signUpPage'>
+            <img src={loginPic} alt="login pic of outdoors from shutterstock" />
+            <div className='formContainer'>
+                
+                <h2>Sign Up</h2>
                 <form
                     id='signup-form'
                     onSubmit={(event) => handleSignUpForm(event)}
                 >
                     <input
                         className='AboutContactName'
-                        placeholder='Your Name'
+                        placeholder='Name'
                         name='username'
                         id='username'
                     />
                     <input
                         className='AboutContactE-mail'
-                        placeholder='E-mail'
+                        placeholder='Email'
                         name='email'
                         type='email'
                         id='email'
@@ -56,7 +59,7 @@ const SignUpPage = (props) => {
                     />
                     <input
                         className='AboutContactE-mail'
-                        placeholder='Enter a Password'
+                        placeholder='Password'
                         name='password'
                         id='password'
                         type='password'
@@ -75,7 +78,6 @@ const SignUpPage = (props) => {
                     <div id='signup-results'></div>
                 </form>
             </div>
-            <img src='https://picsum.photos/300/?random=2' alt='Contact' />
         </div>
     );
 };

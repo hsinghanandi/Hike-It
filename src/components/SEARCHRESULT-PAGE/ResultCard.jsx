@@ -109,6 +109,7 @@ const ResultCard = (props) => {
                 }}
             />
         </div>
+        
     );
 };
 

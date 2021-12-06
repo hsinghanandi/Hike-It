@@ -11,3 +11,49 @@ a {
 body {
     background: $body_bg_gradient;
 }
+
+.formContainer {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+input:not([type=checkbox]) {
+    margin: 1rem 0;
+    height: 2rem;
+    width: 300px;
+    border-radius: 20px;
+    padding: 0.2rem 1rem;
+    border: 2px solid $dark_color;
+}
+
+input::placeholder, textarea::placeholder {
+    color: $text_dark_color;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid $orange_color; 
+    border: hidden;
+}
+
+textarea {
+    resize: none;
+    width: 300px;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    height: 200px;
+    border: 2px solid $dark_color;
+}

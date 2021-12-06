@@ -35,7 +35,7 @@ function NavBarComponent({ isLoggedIn }) {
                     <Link to='/AboutUsPage'>About Us</Link>
                 </li>
                 <li>
-                    <Link to='/SignUpPage'>SignUp/Profile</Link>
+                    <Link to='/SignUpPage'>Sign Up</Link>
                 </li>
                 <li>
                     <Link to='/LoginPage'>

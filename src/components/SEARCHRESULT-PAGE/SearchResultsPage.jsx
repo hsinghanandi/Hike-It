@@ -1,11 +1,6 @@
 import React from "react";
-<<<<<<< Updated upstream
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-=======
-import { useEffect } from "react";
-
->>>>>>> Stashed changes
 import ResultCard from "./ResultCard.jsx";
 
 const SearchResultsPage = (props) => {
@@ -30,9 +25,21 @@ const SearchResultsPage = (props) => {
 
     return (
         <div>
-            <h1 className="resultSection-title">Search Results</h1>
+            <h1>Search Results</h1>
+            <div className="filters">
+                {/* <p>SortBy</p>
+                <p>FilterBy</p> */}
+                <Link
+                    onClick={() => handleSetComparison()}
+                    to={"./ComparePage"}
+                    className="compareButton"
+                >
+                    Compare Hikes
+                </Link>
+            </div>
 
             <div className="resultSection">
+                <div className="searchResults">
                 {props.searchResults !== undefined ? (
                     props.searchResults.map((searchResult, index) => (
                         <ResultCard

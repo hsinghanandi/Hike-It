@@ -1,0 +1,10 @@
+.footer {
+  background: $footer_bg_gradient;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  color: $text_light_color;
+  position: absolute;
+  //   bottom: 0;
+  width: 100%;
+}
