@@ -1,33 +1,60 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { Redirect } from "react-router";
-import axios from "axios";
-import ComparePage from "./components/COMPARE-PAGE/ComparePage";
-import DetailsPage from "./components/DETAILS-PAGE/DetailsPage";
-import BlogPage from "./components/BLOG-PAGE/BlogPage";
-import DiscoverPage from "./components/DISCOVER-PAGE/DiscoverPage";
-import SavedHikesPage from "./components/SAVED-HIKES-PAGE/SavedHikes";
-import NavBarComponent from "./components/NAVBAR-COMPONENT/NavBarComponent";
-import HomePage from "./components/HOME-PAGE/HomePage";
-import AboutUsPage from "./components/ABOUTUS-PAGE/AboutUsPage";
-import SignUpPage from "./components/SIGNUP-PAGE/SignUpPage";
-import LoginPage from "./components/SIGNUP-PAGE/LoginPage";
-import SearchResultsPage from "./components/SEARCHRESULT-PAGE/SearchResultsPage";
-import Footer from "./components/FOOTER/Footer";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Redirect } from 'react-router';
+import axios from 'axios';
+import ComparePage from './components/COMPARE-PAGE/ComparePage';
+import DetailsPage from './components/DETAILS-PAGE/DetailsPage';
+import BlogPage from './components/BLOG-PAGE/BlogPage';
+import DiscoverPage from './components/DISCOVER-PAGE/DiscoverPage';
+import SavedHikesPage from './components/SAVED-HIKES-PAGE/SavedHikes';
+import NavBarComponent from './components/NAVBAR-COMPONENT/NavBarComponent';
+import HomePage from './components/HOME-PAGE/HomePage';
+import AboutUsPage from './components/ABOUTUS-PAGE/AboutUsPage';
+import SignUpPage from './components/SIGNUP-PAGE/SignUpPage';
+import LoginPage from './components/SIGNUP-PAGE/LoginPage';
+import SearchResultsPage from './components/SEARCHRESULT-PAGE/SearchResultsPage';
+import Footer from './components/FOOTER/Footer';
+import { toast, ToastContainer } from 'react-toastify';
+import moment from 'moment';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
     const [searchSubmitted, setSearchSubmitted] = useState(false);
     const [compareQueue, setCompareQueue] = useState([]);
-    const [isLoggedIn, setIsLoggedIn] = useState("");
-    const SERVER_LOCATION = "https://hike-it-be.herokuapp.com";
+    const [isLoggedIn, setIsLoggedIn] = useState('');
+    const [userName, setuserName] = useState('');
+    const SERVER_LOCATION = process.env.REACT_APP_SERVER_LOCATION;
+
+    useEffect(() => {
+        if (localStorage.token) {
+            const jwtToken = localStorage.token.split('.');
+            const userDetail = JSON.parse(atob(jwtToken[1]));
+            console.log('userDetail', userDetail);
+            if (moment().isBefore(moment.unix(userDetail.exp))) {
+                setuserName(userDetail.username);
+                setIsLoggedIn(true);
+            } else {
+                toast.info('Your session has been expired.');
+                logout();
+            }
+        } else {
+            logout();
+        }
+    }, []);
+
+    const logout = () => {
+        setuserName('');
+        setIsLoggedIn(false);
+        localStorage.clear();
+    };
 
     // google api key
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    const newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
+    // const newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
     const npsApiKey = process.env.REACT_APP_NPS_API_KEY;
-    console.log("newsApiKey", newsApiKey);
-    console.log("googleMapsApiKey", googleMapsApiKey);
-    console.log("npsApiKey", npsApiKey);
+    // console.log('newsApiKey', newsApiKey);
+    // console.log('googleMapsApiKey', googleMapsApiKey);
+    // console.log('npsApiKey', npsApiKey);
 
     // Searchbar
     const [search, setSearch] = useState();
@@ -38,7 +65,7 @@ function App() {
 
     const results = [];
     results.push(searchResults);
-    console.log(results);
+    // console.log(results);
 
     // Search value
     const handleChangeSearch = (event) => {
@@ -58,8 +85,8 @@ function App() {
             )
             .then((result) => {
                 setSearchResults(result.data.results);
-                console.log("setSearchResults", result.data.results);
-                console.log("searchResults ", searchResults);
+                console.log('setSearchResults', result.data.results);
+                console.log('searchResults ', searchResults);
             })
             .catch((error) => {
                 console.log(error.message);
@@ -79,21 +106,21 @@ function App() {
     // .catch(error=>console.log(error));
 
     // Blog section
-    const [articles, setArticles] = useState([]);
+    // const [articles, setArticles] = useState([]);
 
-    useEffect(() => {
-        axios
-            .get(
-                `https://newsapi.org/v2/everything?apiKey=${newsApiKey}&q=+hiking+trails+canada`
-            )
-            .then((result) => {
-                setArticles(result.data);
-                console.log("setBlogPosts", result.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
+    // useEffect(() => {
+    //     axios
+    //         .get(
+    //             `https://newsapi.org/v2/everything?apiKey=${newsApiKey}&q=+hiking+trails+canada`
+    //         )
+    //         .then((result) => {
+    //             setArticles(result.data);
+    //             console.log('setBlogPosts', result.data);
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // }, []);
 
     // NPS API
     const [npsData, setNpsData] = useState([]);
@@ -104,7 +131,7 @@ function App() {
             )
             .then((result) => {
                 setNpsData(result.data);
-                console.log("setNpsData", result.data);
+                // console.log('setNpsData', result.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -112,83 +139,91 @@ function App() {
     }, []);
 
     return (
-        <Router>
-            <div className="App">
-                <NavBarComponent isLoggedIn={isLoggedIn} />
-                <div className="content">
-                    <Switch>
-                        <Route exact path="/">
-                            {searchSubmitted ? (
-                                <Redirect to="/SearchResultsPage" />
-                            ) : (
-                                <HomePage
-                                    setSearch={setSearch}
+        <>
+            <ToastContainer />
+            <Router>
+                <div className='App'>
+                    <NavBarComponent isLoggedIn={isLoggedIn} logout={logout} />
+                    <div className='content'>
+                        <Switch>
+                            <Route exact path='/'>
+                                {searchSubmitted ? (
+                                    <Redirect to='/SearchResultsPage' />
+                                ) : (
+                                    <HomePage
+                                        isLoggedIn={isLoggedIn}
+                                        userName={userName}
+                                        setSearch={setSearch}
+                                        search={search}
+                                        handleChangeSearch={handleChangeSearch}
+                                        submitSearch={submitSearch}
+                                        searchResults={searchResults}
+                                        setSearchResults={setSearchResults}
+                                        // articles={articles}
+                                        npsData={npsData}
+                                    />
+                                )}
+                            </Route>
+
+                            <Route exact path='/DetailsPage'>
+                                <DetailsPage
+                                    SERVER_LOCATION={SERVER_LOCATION}
+                                    placeID={placeID}
+                                    compareQueue={compareQueue}
+                                    setCompareQueue={setCompareQueue}
+                                />
+                            </Route>
+
+                            <Route exact path='/ComparePage'>
+                                <ComparePage
+                                    compareQueue={compareQueue}
+                                    setCompareQueue={setCompareQueue}
+                                />
+                            </Route>
+                            <Route exact path='/BlogPage'>
+                                <BlogPage />
+                            </Route>
+                            <Route exact path='/DiscoverPage'>
+                                <DiscoverPage />
+                            </Route>
+                            <Route exact path='/SavedHikesPage'>
+                                <SavedHikesPage
+                                    SERVER_LOCATION={SERVER_LOCATION}
+                                />
+                            </Route>
+                            <Route exact path='/AboutUsPage'>
+                                <AboutUsPage />
+                            </Route>
+                            <Route exact path='/SignUpPage'>
+                                <SignUpPage SERVER_LOCATION={SERVER_LOCATION} />
+                            </Route>
+                            <Route exact path='/SearchResultsPage'>
+                                <SearchResultsPage
+                                    setPlaceID={setPlaceID}
+                                    googleMapsApiKey={googleMapsApiKey}
                                     search={search}
-                                    handleChangeSearch={handleChangeSearch}
-                                    submitSearch={submitSearch}
+                                    setSearch={setSearch}
+                                    setSearchSubmitted={setSearchSubmitted}
                                     searchResults={searchResults}
                                     setSearchResults={setSearchResults}
-                                    articles={articles}
-                                    npsData={npsData}
+                                    compareQueue={compareQueue}
+                                    setCompareQueue={setCompareQueue}
                                 />
-                            )}
-                        </Route>
-
-                        <Route exact path="/DetailsPage">
-                            <DetailsPage
-                                SERVER_LOCATION={SERVER_LOCATION}
-                                placeID={placeID}
-                                compareQueue={compareQueue}
-                                setCompareQueue={setCompareQueue}
-                            />
-                        </Route>
-
-                        <Route exact path="/ComparePage">
-                            <ComparePage
-                                compareQueue={compareQueue}
-                                setCompareQueue={setCompareQueue}
-                            />
-                        </Route>
-                        <Route exact path="/BlogPage">
-                            <BlogPage />
-                        </Route>
-                        <Route exact path="/DiscoverPage">
-                            <DiscoverPage />
-                        </Route>
-                        <Route exact path="/SavedHikesPage">
-                            <SavedHikesPage SERVER_LOCATION={SERVER_LOCATION} />
-                        </Route>
-                        <Route exact path="/AboutUsPage">
-                            <AboutUsPage />
-                        </Route>
-                        <Route exact path="/SignUpPage">
-                            <SignUpPage SERVER_LOCATION={SERVER_LOCATION} />
-                        </Route>
-                        <Route exact path="/SearchResultsPage">
-                            <SearchResultsPage
-                                setPlaceID={setPlaceID}
-                                googleMapsApiKey={googleMapsApiKey}
-                                search={search}
-                                setSearch={setSearch}
-                                setSearchSubmitted={setSearchSubmitted}
-                                searchResults={searchResults}
-                                setSearchResults={setSearchResults}
-                                compareQueue={compareQueue}
-                                setCompareQueue={setCompareQueue}
-                            />
-                        </Route>
-                        <Route exact path="/LoginPage">
-                            <LoginPage
-                                SERVER_LOCATION={SERVER_LOCATION}
-                                isLoggedIn={isLoggedIn}
-                                setIsLoggedIn={setIsLoggedIn}
-                            />
-                        </Route>
-                    </Switch>
+                            </Route>
+                            <Route exact path='/LoginPage'>
+                                <LoginPage
+                                    SERVER_LOCATION={SERVER_LOCATION}
+                                    isLoggedIn={isLoggedIn}
+                                    setIsLoggedIn={setIsLoggedIn}
+                                    setuserName={setuserName}
+                                />
+                            </Route>
+                        </Switch>
+                    </div>
+                    <Footer />
                 </div>
-                <Footer />
-            </div>
-        </Router>
+            </Router>
+        </>
     );
 }
 

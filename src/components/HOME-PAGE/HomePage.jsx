@@ -1,35 +1,28 @@
-import React from "react";
+import React from 'react';
 
-import HeroSection from "./HeroSection";
-import PopularHikes from "./PopularHikesSection/PopularHikes";
-import FeatureSection from "./FeaturesSection/FeaturesSection";
-import BlogSection from "./BlogSection/BlogSection";
-import AboutSection from "./AboutHomeSection/AboutSection";
-// import ContactSection from "./ContactSection/ContactSection";
+import HeroSection from './HeroSection';
+import PopularHikes from './PopularHikesSection/PopularHikes';
+import FeatureSection from './FeaturesSection/FeaturesSection';
+import BlogSection from './BlogSection/BlogSection';
+import AboutSection from './AboutHomeSection/AboutSection';
 
 export default function HomePage(props) {
-    
-
     return (
-        <div className="homePage">
-            <HeroSection setSearch={props.setSearch} search={props.search} handleChangeSearch={props.handleChangeSearch} submitSearch={props.submitSearch} searchResults={props.searchResults} setSearchResults={props.setSearchResults} />
+        <div className='homePage'>
+            <HeroSection
+                isLoggedIn={props.isLoggedIn}
+                userName={props.userName}
+                setSearch={props.setSearch}
+                search={props.search}
+                handleChangeSearch={props.handleChangeSearch}
+                submitSearch={props.submitSearch}
+                searchResults={props.searchResults}
+                setSearchResults={props.setSearchResults}
+            />
             <FeatureSection />
-            <PopularHikes />            
-            <BlogSection articles={props.articles} npsData={props.npsData} />
+            <PopularHikes />
+            <BlogSection npsData={props.npsData} />
             <AboutSection />
-            {/* <ContactSection /> */}
         </div>
     );
 }
-
-//hero
-
-//popular
-
-//features
-
-//blog
-
-//about
-
-//contact
