@@ -12,6 +12,7 @@ const HeroSection = (props) => {
             className="searchBar"
             type="text"
             name="search"
+            placeholder="Search Trails, Routes, Mountains, Lakes..."
             defaultValue={props.search || ""}
             onChange={(event) => props.handleChangeSearch(event)}
           />

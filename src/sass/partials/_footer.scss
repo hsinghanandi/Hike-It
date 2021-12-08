@@ -1,10 +1,62 @@
-.footer {
-  background: $footer_bg_gradient;
-  padding: 2rem 0;
-  display: flex;
-  justify-content: center;
-  color: $text_light_color;
-  position: absolute;
-  //   bottom: 0;
-  width: 100%;
+.footer-wrap {
+  .footer {
+    background: $footer_bg_gradient;
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    color: $text_light_color;
+    position: absolute;
+    width: 100%;
+
+    .HikeIt-logo {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .footer-logo {
+        width: 10rem;
+        margin-bottom: 5rem;
+      }
+    }
+
+    .quick-links {
+      display: flex;
+      padding-left: 15rem;
+      flex-direction: column;
+      align-items: flex-start;
+      list-style-type: none;
+
+      li {
+        margin-bottom: 0.3rem;
+
+        a {
+          color: $text_light_color;
+
+          &:hover {
+            color: $orange_color;
+          }
+        }
+      }
+    }
+
+    .blog-news {
+      padding-left: 5rem;
+
+      li {
+        list-style-type: none;
+        margin-bottom: 0.3rem;
+
+        a {
+          color: $text_light_color;
+
+          &:hover {
+            color: $orange_color;
+          }
+        }
+      }
+    }
+  }
 }

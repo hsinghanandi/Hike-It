@@ -18,7 +18,7 @@ const AboutSection = (props) => {
             <Link to={"./AboutUsPage"}>
                 More About Us <Arrow />
             </Link>
-            <img src={homeAbout} alt="About HikeIt" />
+            <img className="homeAboutImage" src={homeAbout} alt="About HikeIt" />
         </div>
     );
 };
