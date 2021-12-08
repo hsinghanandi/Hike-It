@@ -9,7 +9,7 @@ const CompareTable = (props) => {
 
             {props.compareNow ? (
                 props.compareNow.map((hike, index) =>
-                    typeof hike == "object" ? (
+                    hike ? (
                         <CompareHike
                             key={index}
                             setCompareQueue={props.setCompareQueue}

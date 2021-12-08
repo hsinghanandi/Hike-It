@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-<<<<<<< Updated upstream
 import axios from "axios";
-=======
->>>>>>> Stashed changes
 
 const ResultCard = (props) => {
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -25,13 +22,8 @@ const ResultCard = (props) => {
                             (photo) => photo.photo_reference
                         ),
                         address: res.data.result.formatted_address,
-<<<<<<< Updated upstream
-                        status: res.data.result.opening_hours.open_now,
-                        weekdayText: res.data.result.opening_hours.weekday_text,
-=======
                         status: "Open",
                         weekdayText: "All Year Round",
->>>>>>> Stashed changes
                         rating: res.data.result.rating,
                         latitude: res.data.result.geometry.location.lat,
                         longitude: res.data.result.geometry.location.lng,

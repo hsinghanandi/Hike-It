@@ -1,11 +1,7 @@
 import React from "react";
-<<<<<<< Updated upstream
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-=======
-import { useEffect } from "react";
 
->>>>>>> Stashed changes
 import ResultCard from "./ResultCard.jsx";
 
 const SearchResultsPage = (props) => {

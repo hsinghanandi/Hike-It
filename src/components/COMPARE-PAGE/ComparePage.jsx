@@ -8,6 +8,7 @@ const ComparePage = (props) => {
     const [compareNow, setCompareNow] = useState([]);
 
     useEffect(() => {
+        //limit to 4
         let tableArr = props.compareQueue.slice(0, 4);
 
         setCompareNow(tableArr);
