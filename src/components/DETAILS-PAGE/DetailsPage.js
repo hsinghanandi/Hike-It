@@ -59,14 +59,18 @@ const DetailsPage = (props) => {
                     ? true
                     : res.data.result.opening_hours.open_now);
 
+                let defaultImage = res.data.result.photos
+                    ? res.data.result.photos.map(
+                          (photo) => photo.photo_reference
+                      )
+                    : null;
+
                 let newPlace = {
                     name: res.data.result.name
                         ? res.data.result.name
                         : "Hike Name",
                     placeID: res.data.result.place_id,
-                    photoRef: res.data.result.photos.map(
-                        (photo) => photo.photo_reference
-                    ),
+                    photoRef: defaultImage,
                     address: res.data.result.formatted_address,
                     status: isOpen,
                     weekdayText: res.data.result.opening_hours.weekday_text
@@ -84,6 +88,7 @@ const DetailsPage = (props) => {
                     phone: res.data.result.formatted_phone_number
                         ? res.data.result.formatted_phone_number
                         : null,
+                    province: "British Columbia",
                 };
 
                 return newPlace;

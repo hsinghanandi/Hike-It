@@ -85,8 +85,6 @@ function App() {
             )
             .then((result) => {
                 setSearchResults(result.data.results);
-                console.log("setSearchResults", result.data.results);
-                console.log("searchResults ", searchResults);
             })
             .catch((error) => {
                 console.log(error.message);
@@ -178,6 +176,7 @@ function App() {
                                 <ComparePage
                                     compareQueue={compareQueue}
                                     setCompareQueue={setCompareQueue}
+                                    submitSearch={submitSearch}
                                 />
                             </Route>
                             <Route exact path="/BlogPage">
