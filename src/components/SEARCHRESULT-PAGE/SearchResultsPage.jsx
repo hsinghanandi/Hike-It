@@ -40,32 +40,33 @@ const SearchResultsPage = (props) => {
 
             <div className="resultSection">
                 <div className="searchResults">
-                {props.searchResults !== undefined ? (
-                    props.searchResults.map((searchResult, index) => (
-                        <ResultCard
-                            setPlaceID={props.setPlaceID}
-                            placeID={searchResult.place_id}
-                            key={index}
-                            name={searchResult.name}
-                            vicinity={searchResult.vicinity}
-                            photoRef={handlePhoto(searchResult.photos)}
-                            rating={searchResult.rating}
-                            googleMapsApiKey={props.googleMapsApiKey}
-                            checkboxQueue={checkboxQueue}
-                            setCheckboxQueue={setCheckboxQueue}
-                        />
-                    ))
-                ) : (
-                    <div>No results</div>
-                )}
-                <Link
-                    onClick={() => handleSetComparison()}
-                    to={"./ComparePage"}
-                    className="compareButton"
-                >
-                    Compare Hikes
-                </Link>
-                <div className="resultMap"></div>
+                    {props.searchResults !== undefined ? (
+                        props.searchResults.map((searchResult, index) => (
+                            <ResultCard
+                                setPlaceID={props.setPlaceID}
+                                placeID={searchResult.place_id}
+                                key={index}
+                                name={searchResult.name}
+                                vicinity={searchResult.vicinity}
+                                photoRef={handlePhoto(searchResult.photos)}
+                                rating={searchResult.rating}
+                                googleMapsApiKey={props.googleMapsApiKey}
+                                checkboxQueue={checkboxQueue}
+                                setCheckboxQueue={setCheckboxQueue}
+                            />
+                        ))
+                    ) : (
+                        <div>No results</div>
+                    )}
+                    <Link
+                        onClick={() => handleSetComparison()}
+                        to={"./ComparePage"}
+                        className="compareButton"
+                    >
+                        Compare Hikes
+                    </Link>
+                    <div className="resultMap"></div>
+                </div>
             </div>
         </div>
     );
