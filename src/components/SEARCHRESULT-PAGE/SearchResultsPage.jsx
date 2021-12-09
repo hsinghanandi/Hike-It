@@ -14,8 +14,7 @@ const SearchResultsPage = (props) => {
         if (source !== undefined) {
             return source[0].photo_reference;
         } else {
-            console.log("not defined", source);
-            return "-img";
+            return "Aap_uEBXkv44f3QYV_Fyncko8keODGAuysXL9KMMsEg44LEdyOylGH3NmK4jBHerSnY2mby0ZceEp3JH5I9QW6W5oxK4DAjUeoAxIABEUDNrn18uzceCC-VrXyvsQpQeuDi_KD8NSXqEvrZAfjtGWocLT05awgAnAFuWvUJFMRpmNfIAlyRg";
         }
     };
 

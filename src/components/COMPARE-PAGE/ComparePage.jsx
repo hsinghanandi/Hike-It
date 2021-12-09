@@ -11,6 +11,12 @@ const ComparePage = (props) => {
         //limit to 4
         let tableArr = props.compareQueue.slice(0, 4);
 
+        for (let index = 0; index < 4; index++) {
+            if (tableArr[index] == undefined) {
+                tableArr.push(null);
+            }
+        }
+
         setCompareNow(tableArr);
         console.log(tableArr);
     }, [props.compareQueue]);
@@ -28,6 +34,8 @@ const ComparePage = (props) => {
                         compareQueue={props.compareQueue}
                         setCompareQueue={props.setCompareQueue}
                         compareNow={compareNow}
+                        setCompareNow={setCompareNow}
+                        submitSearch={props.submitSearch}
                     />
                 ) : (
                     <Graph compareNow={compareNow} />

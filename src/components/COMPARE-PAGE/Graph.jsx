@@ -8,9 +8,11 @@ const Graph = (props) => {
         setChartToggle(event.target.checked);
     };
 
-    let ratings = props.compareNow.map((hike) => (hike = hike.rating));
-    let names = props.compareNow.map((hike) => (hike = hike.name));
-    let elevations = props.compareNow.map((hike) => (hike = hike.elevation));
+    let ratings = props.compareNow.map((hike) => (hike ? hike.rating : 0));
+    let names = props.compareNow.map((hike) => (hike ? hike.name : " "));
+    let elevations = props.compareNow.map((hike) =>
+        hike ? hike.elevation : 0
+    );
 
     return (
         <div>
