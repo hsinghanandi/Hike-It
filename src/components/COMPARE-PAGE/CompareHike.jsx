@@ -6,7 +6,7 @@ const CompareHike = (props) => {
         let index = newQueue.findIndex((x) => x === props.currentHike);
         newQueue[index] = "removed";
         newQueue.push(newQueue.splice(index, 1)[0]);
-        props.setCompareNow(newQueue);
+        
         props.setCompareQueue(newQueue);
     };
 
