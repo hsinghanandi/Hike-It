@@ -14,6 +14,7 @@ const SearchResultsPage = (props) => {
         if (source !== undefined) {
             return source[0].photo_reference;
         } else {
+            console.log("not defined", source);
             return "-img";
         }
     };
@@ -39,26 +40,33 @@ const SearchResultsPage = (props) => {
 
             <div className="resultSection">
                 <div className="searchResults">
-                {props.searchResults !== undefined ? (
-                    props.searchResults.map((searchResult, index) => (
-                        <ResultCard
-                            setPlaceID={props.setPlaceID}
-                            placeID={searchResult.place_id}
-                            key={index}
-                            name={searchResult.name}
-                            vicinity={searchResult.vicinity}
-                            photoRef={handlePhoto(searchResult.photos)}
-                            rating={searchResult.rating}
-                            googleMapsApiKey={props.googleMapsApiKey}
-                            checkboxQueue={checkboxQueue}
-                            setCheckboxQueue={setCheckboxQueue}
-                        />
-                    ))
-                ) : (
-                    <div>No results</div>
-                )}
+                    {props.searchResults !== undefined ? (
+                        props.searchResults.map((searchResult, index) => (
+                            <ResultCard
+                                setPlaceID={props.setPlaceID}
+                                placeID={searchResult.place_id}
+                                key={index}
+                                name={searchResult.name}
+                                vicinity={searchResult.vicinity}
+                                photoRef={handlePhoto(searchResult.photos)}
+                                rating={searchResult.rating}
+                                googleMapsApiKey={props.googleMapsApiKey}
+                                checkboxQueue={checkboxQueue}
+                                setCheckboxQueue={setCheckboxQueue}
+                            />
+                        ))
+                    ) : (
+                        <div>No results</div>
+                    )}
+                    <Link
+                        onClick={() => handleSetComparison()}
+                        to={"./ComparePage"}
+                        className="compareButton"
+                    >
+                        Compare Hikes
+                    </Link>
+                    <div className="resultMap"></div>
                 </div>
-                <div className="resultMap">MAP SECTION</div>               
             </div>
         </div>
     );

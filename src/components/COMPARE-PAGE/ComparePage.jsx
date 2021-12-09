@@ -8,6 +8,7 @@ const ComparePage = (props) => {
     const [compareNow, setCompareNow] = useState([]);
 
     useEffect(() => {
+        //limit to 4
         let tableArr = props.compareQueue.slice(0, 4);
 
         setCompareNow(tableArr);
@@ -32,6 +33,10 @@ const ComparePage = (props) => {
                     <Graph compareNow={compareNow} />
                 )}
             </div>
+            <CompareToggle
+                setGraphToggle={setGraphToggle}
+                graphToggle={graphToggle}
+            />
         </div>
     );
 };

@@ -3,69 +3,69 @@
 //   justify-content: space-between;
 // }
 .SearchResultsPage {
-  margin: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h1 {
-    font-size: $font-size-3;
-    margin-bottom: 1rem;
-    color: $text_dark_color;
-  }
-  p {
-    font-size: $font-size-2;
-    margin-bottom: 1rem;
-    color: $text_dark_color;
-  }
-  h3 {
-    font-size: $font-size-1;
-    margin-bottom: 1rem;
-    color: $text_dark_color;
-    font-family: $font-family-base;
-    font-weight: 400;
-  }
-  h4 {
-    font-size: $font-size-1;
-    color: $text_dark_color;
-    font-family: $font-family-base;
-    font-weight: 400;
-  }
-  a {
-    color: $text_dark_color;
-    font-weight: 800;
-  }
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-size: $font-size-3;
+        margin-bottom: 1rem;
+        color: $text_dark_color;
+    }
+    p {
+        font-size: $font-size-2;
+        margin-bottom: 1rem;
+        color: $text_dark_color;
+    }
+    h3 {
+        font-size: $font-size-1;
+        margin-bottom: 1rem;
+        color: $text_dark_color;
+        font-family: $font-family-base;
+        font-weight: 400;
+    }
+    h4 {
+        font-size: $font-size-1;
+        color: $text_dark_color;
+        font-family: $font-family-base;
+        font-weight: 400;
+    }
+    a {
+        color: $text_dark_color;
+        font-weight: 800;
+    }
 }
 
 .resultCard {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  background: $text_light_color;
-  border-radius: 20px;
-  // box-shadow: $box-shadow-base;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    background: $text_light_color;
+    border-radius: 20px;
+    // box-shadow: $box-shadow-base;
 }
 
 .resultCardContent {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr;
-  grid-template-rows: 1fr;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "img text "
-    "img text ";
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "img text "
+        "img text ";
 }
 
 .resultCardImg {
-  grid-area: img;
-  height: 260px;
-  overflow: hidden;
+    grid-area: img;
+    height: 260px;
+    overflow: hidden;
 }
 
 .resultCardText {
-  grid-area: text;
-  text-align: center;
+    grid-area: text;
+    text-align: center;
 }
 
 // .resultCardCheckbox {
@@ -74,29 +74,29 @@
 // }
 
 .resultCardContent {
-  margin: 1rem 0;
+    margin: 1rem 0;
 }
 
 .resultMap {
-  height: 100%;
-  min-width: 500px;
-  flex: 1;
+    height: 100%;
+    min-width: 500px;
+    flex: 1;
 }
 
 .resultsContainer {
-  display: flex;
-  // justify-content: space-around;
-  margin: auto;
-  width: 100%;
+    display: flex;
+    // justify-content: space-around;
+    margin: auto;
+    width: 100%;
 }
 
 .filters {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
 }
 
 .resultSection {
-  display: flex;
-  margin: 1rem;
+    display: flex;
+    margin: 1rem;
 }

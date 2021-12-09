@@ -23,7 +23,10 @@ const ResultCard = (props) => {
                         ),
                         address: res.data.result.formatted_address,
                         status: res.data.result.opening_hours.open_now,
-                        weekdayText: res.data.result.opening_hours.weekday_text,
+                        weekdayText:
+                            res.data.result.opening_hours.weekday_text[0]
+                                .split(": ")
+                                .pop(),
                         rating: res.data.result.rating,
                         latitude: res.data.result.geometry.location.lat,
                         longitude: res.data.result.geometry.location.lng,
@@ -52,7 +55,7 @@ const ResultCard = (props) => {
                         });
                 })
                 .catch((error) => {
-                    console.log(error.response);
+                    console.log(error);
                 });
         } else {
             let index = newQueue.findIndex((x) => x.placeID === checkboxId);
@@ -101,7 +104,6 @@ const ResultCard = (props) => {
                 }}
             />
         </div>
-        
     );
 };
 
