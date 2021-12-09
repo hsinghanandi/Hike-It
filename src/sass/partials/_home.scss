@@ -1,10 +1,11 @@
 // //Hero Section
 
 .heroImage {
-  background-repeat: no-repeat;
-  background-size: cover;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../../assets/heroImg.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   height: 530px;
   color: $text_light_color;

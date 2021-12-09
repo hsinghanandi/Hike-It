@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ResultCard from "./ResultCard.jsx";
+import SearchMap from "./SearchMap.jsx";
 
 const SearchResultsPage = (props) => {
     const [checkboxQueue, setCheckboxQueue] = useState([]);
@@ -58,7 +59,9 @@ const SearchResultsPage = (props) => {
                     <div>No results</div>
                 )}
                 </div>
-                <div className="resultMap">MAP SECTION</div>               
+                <div className="resultMap">
+                    <SearchMap searchResults={props.searchResults} />
+                </div>               
             </div>
         </div>
     );
