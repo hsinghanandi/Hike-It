@@ -1,16 +1,21 @@
 .CompareTable {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin: auto;
-  height: 100vh;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: auto;
+    height: 100vh;
 }
 
 .CompareInfo {
-  height: 3rem;
-  text-align: center;
+    height: 3rem;
+    text-align: center;
 }
 
 .CompareLabel {
-  height: 3rem;
+    height: 3rem;
+}
+
+.label-1,
+.CompareInfo-1 {
+    height: 100px;
 }

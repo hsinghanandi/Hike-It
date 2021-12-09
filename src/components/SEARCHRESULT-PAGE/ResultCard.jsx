@@ -15,23 +15,40 @@ const ResultCard = (props) => {
                     `/place/details/json?key=${googleMapsApiKey}&place_id=${checkboxId}`
                 )
                 .then((res) => {
+                    let isOpen = (res.data.result.opening_hours = {}
+                        ? true
+                        : res.data.result.opening_hours.open_now);
+
+                    // let defaultImage = res.data.result.photoRef
+                    //     ? res.data.result.photoRef[0]
+                    //     : "Aap_uEBXkv44f3QYV_Fyncko8keODGAuysXL9KMMsEg44LEdyOylGH3NmK4jBHerSnY2mby0ZceEp3JH5I9QW6W5oxK4DAjUeoAxIABEUDNrn18uzceCC-VrXyvsQpQeuDi_KD8NSXqEvrZAfjtGWocLT05awgAnAFuWvUJFMRpmNfIAlyRg";
+
                     let newHike = {
-                        name: res.data.result.name,
+                        name: res.data.result.name
+                            ? res.data.result.name
+                            : "Hike Name",
                         placeID: res.data.result.place_id,
-                        photoRef: res.data.result.photos.map(
-                            (photo) => photo.photo_reference
-                        ),
-                        address: res.data.result.formatted_address,
-                        status: res.data.result.opening_hours.open_now,
-                        weekdayText: res.data.result.opening_hours.weekday_text,
-                        rating: res.data.result.rating,
+                        photoRef: ` https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${res.data.result.photos[0].photo_reference}&key=${googleMapsApiKey}`,
+                        address: res.data.result.vicinity,
+                        status: isOpen,
+                        weekdayText: res.data.result.opening_hours.weekday_text
+                            ? res.data.result.opening_hours.weekday_text[0]
+                                  .split(": ")
+                                  .pop()
+                            : `Open 24 Hours`,
+                        rating: res.data.result.rating
+                            ? res.data.result.rating
+                            : 4,
                         latitude: res.data.result.geometry.location.lat,
                         longitude: res.data.result.geometry.location.lng,
-                        types: res.data.result.types,
-                        phoneNumber: res.data.result.formatted_phone_number,
-                        vicinity: res.data.result.vicinity,
-                        website: res.data.result.website,
+                        types: res.data.result.types
+                            ? res.data.result.types
+                            : "park",
                         reviews: res.data.result.reviews,
+                        phone: res.data.result.formatted_phone_number
+                            ? res.data.result.formatted_phone_number
+                            : null,
+                        province: "British Columbia",
                     };
 
                     return newHike;
@@ -52,7 +69,7 @@ const ResultCard = (props) => {
                         });
                 })
                 .catch((error) => {
-                    console.log(error.response);
+                    console.log(error);
                 });
         } else {
             let index = newQueue.findIndex((x) => x.placeID === checkboxId);
@@ -101,7 +118,6 @@ const ResultCard = (props) => {
                 }}
             />
         </div>
-        
     );
 };
 

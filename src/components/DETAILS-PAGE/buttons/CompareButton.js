@@ -2,19 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CompareButton = (props) => {
+    const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
     const handleAddCompare = () => {
         let newQueue = [];
 
-        newQueue.push(props.place);
+        let newPlace = props.place;
+        newPlace.photoRef = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${props.place.photoRef[0]}&key=${googleMapsApiKey}`;
+
+        newQueue.push(newPlace);
 
         props.setCompareQueue(newQueue);
-
-        //If it gets added -
-        // let currentQueue = props.compareQueue;
-        // let newQueue = currentQueue;
-        // props.setCompareQueue(newQueue);
-        // newQueue.push(props.place);
-        // props.setCompareQueue(newQueue);
     };
 
     return (

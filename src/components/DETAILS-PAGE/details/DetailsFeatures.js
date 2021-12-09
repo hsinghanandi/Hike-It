@@ -12,20 +12,14 @@ const DetailsFeatures = (props) => {
                     </p>
                 </div>
                 <ul>
-                    <li>Address: {props.address}</li>
-                    <li>
-                        {props.status ? "Currently open" : "Currently closed"}
-                    </li>
-                    <li>{props.phoneNumber}</li>
-                    <li>Rating: {props.rating}</li>
-                    <li>
-                        {props.types.length > 0 &&
-                            props.types.map((type, index) => (
-                                <div key={index}>{type}</div>
-                            ))}
-                    </li>
-                    <li>{props.website}</li>
-                    <li>{props.openingDays}</li>
+                    <li>Currently: {props.place.status ? "open" : "closed"}</li>
+                    <li>Schedule: {props.place.weekdayText}</li>
+                    <li>Rating: {props.place.rating}</li>
+                    <li>Elevation: {props.place.elevation} m</li>
+                    <li>Address: {props.place.address}</li>
+                    {props.place.phoneNumber ? (
+                        <li>Phone:${props.place.phoneNumber}</li>
+                    ) : null}
                 </ul>
             </div>
         </div>

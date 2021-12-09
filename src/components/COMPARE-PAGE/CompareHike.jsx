@@ -4,10 +4,16 @@ const CompareHike = (props) => {
     const handleRemoveHike = () => {
         let newQueue = props.compareNow.slice();
         let index = newQueue.findIndex((x) => x === props.currentHike);
-        newQueue[index] = "removed";
-        newQueue.push(newQueue.splice(index, 1)[0]);
+        newQueue[index] = null;
+
+        newQueue.slice(0, 4);
         props.setCompareNow(newQueue);
-        props.setCompareQueue(newQueue);
+    };
+
+    const imageStyle = {
+        width: "100px",
+        height: "100px",
+        objectFit: "cover",
     };
 
     return (
@@ -15,60 +21,38 @@ const CompareHike = (props) => {
             {props.currentHike ? (
                 <div className="CompareHike">
                     <div className="CompareInfo-1 CompareInfo">
-                        {props.currentHike.name}
+                        <img
+                            src={props.currentHike.photoRef}
+                            style={imageStyle}
+                        />
                     </div>
                     <div className="CompareInfo-2 CompareInfo">
-                        {props.currentHike.address}
+                        {props.currentHike.name}
                     </div>
                     <div className="CompareInfo-3 CompareInfo">
-                        {props.currentHike.status}
+                        {props.currentHike.address}
                     </div>
                     <div className="CompareInfo-4 CompareInfo">
-                        {props.currentHike.weekdayText}
+                        {props.currentHike.elevation}
                     </div>
                     <div className="CompareInfo-5 CompareInfo">
                         {props.currentHike.rating}
                     </div>
-                    <div className="CompareInfo-6 CompareInfo">
-                        {props.currentHike.latitude}
-                    </div>
+                    <div className="CompareInfo-6 CompareInfo">Difficulty</div>
                     <div className="CompareInfo-7 CompareInfo">
-                        {props.currentHike.longitude}
+                        {props.currentHike.status ? "open" : "closed"}
                     </div>
                     <div className="CompareInfo-8 CompareInfo">
-                        {props.currentHike.types}
+                        {props.currentHike.weekdayText}
                     </div>
-                    <div className="CompareIn   fo-9 CompareInfo">
-                        {props.currentHike.phoneNumber}
-                    </div>
-                    <div className="CompareInfo-10 CompareInfo">
-                        {props.currentHike.vicinity}
-                    </div>
-                    <div className="CompareInfo-11 CompareInfo">
-                        {props.currentHike.website}
-                    </div>
-                    <div className="CompareInfo-12 CompareInfo"></div>
 
                     <div className="CompareHike-options">
-                        <input
-                            type="text"
-                            name="replace"
-                            placeholder="replaceHike"
-                        />
                         <button onClick={() => handleRemoveHike()}>
                             Remove
                         </button>
                     </div>
                 </div>
-            ) : (
-                <div className="CompareHike-options">
-                    <input
-                        type="text"
-                        name="replace"
-                        placeholder="replaceHike"
-                    />
-                </div>
-            )}
+            ) : null}
         </div>
     );
 };

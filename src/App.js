@@ -1,40 +1,40 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { Redirect } from 'react-router';
-import axios from 'axios';
-import ComparePage from './components/COMPARE-PAGE/ComparePage';
-import DetailsPage from './components/DETAILS-PAGE/DetailsPage';
-import BlogPage from './components/BLOG-PAGE/BlogPage';
-import DiscoverPage from './components/DISCOVER-PAGE/DiscoverPage';
-import SavedHikesPage from './components/SAVED-HIKES-PAGE/SavedHikes';
-import NavBarComponent from './components/NAVBAR-COMPONENT/NavBarComponent';
-import HomePage from './components/HOME-PAGE/HomePage';
-import AboutUsPage from './components/ABOUTUS-PAGE/AboutUsPage';
-import SignUpPage from './components/SIGNUP-PAGE/SignUpPage';
-import LoginPage from './components/SIGNUP-PAGE/LoginPage';
-import SearchResultsPage from './components/SEARCHRESULT-PAGE/SearchResultsPage';
-import Footer from './components/FOOTER/Footer';
-import { toast, ToastContainer } from 'react-toastify';
-import moment from 'moment';
-import 'react-toastify/dist/ReactToastify.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Redirect } from "react-router";
+import axios from "axios";
+import ComparePage from "./components/COMPARE-PAGE/ComparePage";
+import DetailsPage from "./components/DETAILS-PAGE/DetailsPage";
+import BlogPage from "./components/BLOG-PAGE/BlogPage";
+import DiscoverPage from "./components/DISCOVER-PAGE/DiscoverPage";
+import SavedHikesPage from "./components/SAVED-HIKES-PAGE/SavedHikes";
+import NavBarComponent from "./components/NAVBAR-COMPONENT/NavBarComponent";
+import HomePage from "./components/HOME-PAGE/HomePage";
+import AboutUsPage from "./components/ABOUTUS-PAGE/AboutUsPage";
+import SignUpPage from "./components/SIGNUP-PAGE/SignUpPage";
+import LoginPage from "./components/SIGNUP-PAGE/LoginPage";
+import SearchResultsPage from "./components/SEARCHRESULT-PAGE/SearchResultsPage";
+import Footer from "./components/FOOTER/Footer";
+import { toast, ToastContainer } from "react-toastify";
+import moment from "moment";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
     const [searchSubmitted, setSearchSubmitted] = useState(false);
     const [compareQueue, setCompareQueue] = useState([]);
-    const [isLoggedIn, setIsLoggedIn] = useState('');
-    const [userName, setuserName] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState("");
+    const [userName, setuserName] = useState("");
     const SERVER_LOCATION = process.env.REACT_APP_SERVER_LOCATION;
 
     useEffect(() => {
         if (localStorage.token) {
-            const jwtToken = localStorage.token.split('.');
+            const jwtToken = localStorage.token.split(".");
             const userDetail = JSON.parse(atob(jwtToken[1]));
-            console.log('userDetail', userDetail);
+            console.log("userDetail", userDetail);
             if (moment().isBefore(moment.unix(userDetail.exp))) {
                 setuserName(userDetail.username);
                 setIsLoggedIn(true);
             } else {
-                toast.info('Your session has been expired.');
+                toast.info("Your session has been expired.");
                 logout();
             }
         } else {
@@ -43,7 +43,7 @@ function App() {
     }, []);
 
     const logout = () => {
-        setuserName('');
+        setuserName("");
         setIsLoggedIn(false);
         localStorage.clear();
     };
@@ -85,8 +85,6 @@ function App() {
             )
             .then((result) => {
                 setSearchResults(result.data.results);
-                console.log('setSearchResults', result.data.results);
-                console.log('searchResults ', searchResults);
             })
             .catch((error) => {
                 console.log(error.message);
@@ -142,13 +140,13 @@ function App() {
         <>
             <ToastContainer />
             <Router>
-                <div className='App'>
+                <div className="App">
                     <NavBarComponent isLoggedIn={isLoggedIn} logout={logout} />
-                    <div className='content'>
+                    <div className="content">
                         <Switch>
-                            <Route exact path='/'>
+                            <Route exact path="/">
                                 {searchSubmitted ? (
-                                    <Redirect to='/SearchResultsPage' />
+                                    <Redirect to="/SearchResultsPage" />
                                 ) : (
                                     <HomePage
                                         isLoggedIn={isLoggedIn}
@@ -165,7 +163,7 @@ function App() {
                                 )}
                             </Route>
 
-                            <Route exact path='/DetailsPage'>
+                            <Route exact path="/DetailsPage">
                                 <DetailsPage
                                     SERVER_LOCATION={SERVER_LOCATION}
                                     placeID={placeID}
@@ -174,30 +172,31 @@ function App() {
                                 />
                             </Route>
 
-                            <Route exact path='/ComparePage'>
+                            <Route exact path="/ComparePage">
                                 <ComparePage
                                     compareQueue={compareQueue}
                                     setCompareQueue={setCompareQueue}
+                                    submitSearch={submitSearch}
                                 />
                             </Route>
-                            <Route exact path='/BlogPage'>
+                            <Route exact path="/BlogPage">
                                 <BlogPage />
                             </Route>
-                            <Route exact path='/DiscoverPage'>
+                            <Route exact path="/DiscoverPage">
                                 <DiscoverPage />
                             </Route>
-                            <Route exact path='/SavedHikesPage'>
+                            <Route exact path="/SavedHikesPage">
                                 <SavedHikesPage
                                     SERVER_LOCATION={SERVER_LOCATION}
                                 />
                             </Route>
-                            <Route exact path='/AboutUsPage'>
+                            <Route exact path="/AboutUsPage">
                                 <AboutUsPage />
                             </Route>
-                            <Route exact path='/SignUpPage'>
+                            <Route exact path="/SignUpPage">
                                 <SignUpPage SERVER_LOCATION={SERVER_LOCATION} />
                             </Route>
-                            <Route exact path='/SearchResultsPage'>
+                            <Route exact path="/SearchResultsPage">
                                 <SearchResultsPage
                                     setPlaceID={setPlaceID}
                                     googleMapsApiKey={googleMapsApiKey}
@@ -210,7 +209,7 @@ function App() {
                                     setCompareQueue={setCompareQueue}
                                 />
                             </Route>
-                            <Route exact path='/LoginPage'>
+                            <Route exact path="/LoginPage">
                                 <LoginPage
                                     SERVER_LOCATION={SERVER_LOCATION}
                                     isLoggedIn={isLoggedIn}

@@ -1,11 +1,11 @@
-import DetailsTitle from './details/DetailsTitle';
-import CompareButton from './buttons/CompareButton';
-import Slider from './sliders/Slider';
-import DetailsFeatures from './details/DetailsFeatures';
-import Map from './maps/Map';
-import Review from './reviews/Review';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import DetailsTitle from "./details/DetailsTitle";
+import CompareButton from "./buttons/CompareButton";
+import Slider from "./sliders/Slider";
+import DetailsFeatures from "./details/DetailsFeatures";
+import Map from "./maps/Map";
+import Review from "./reviews/Review";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const DetailsPage = (props) => {
     //get placeID of all places in the search results
@@ -55,42 +55,68 @@ const DetailsPage = (props) => {
                 `/place/details/json?key=${googleMapsApiKey}&place_id=${props.placeID}`
             )
             .then((res) => {
-                console.log(res.data.result);
-                // setPhotoURL(res.data.result.photos);
-                // res.data.result.photos.map(photo => setPhotoURL(photo.photo_reference));
-                setPlace({
-                    name: res.data.result.name,
+                let isOpen = (res.data.result.opening_hours = {}
+                    ? true
+                    : res.data.result.opening_hours.open_now);
+
+                let defaultImage = res.data.result.photos
+                    ? res.data.result.photos.map(
+                          (photo) => photo.photo_reference
+                      )
+                    : null;
+
+                let newPlace = {
+                    name: res.data.result.name
+                        ? res.data.result.name
+                        : "Hike Name",
                     placeID: res.data.result.place_id,
-                    // photoRef: res.data.result.photos[0].photo_reference,
-                    photoRef: res.data.result.photos.map(
-                        (photo) => photo.photo_reference
-                    ),
+                    photoRef: defaultImage,
                     address: res.data.result.formatted_address,
-                    status: res.data.result.opening_hours.open_now,
-                    weekdayText: res.data.result.opening_hours.weekday_text,
-                    rating: res.data.result.rating,
-                    // photos: res.data.result.photos[0].html_attributions,
+                    status: isOpen,
+                    weekdayText: res.data.result.opening_hours.weekday_text
+                        ? res.data.result.opening_hours.weekday_text[0]
+                              .split(": ")
+                              .pop()
+                        : `Open 24 Hours`,
+                    rating: res.data.result.rating ? res.data.result.rating : 4,
                     latitude: res.data.result.geometry.location.lat,
                     longitude: res.data.result.geometry.location.lng,
-                    types: res.data.result.types,
-                    phoneNumber: res.data.result.formatted_phone_number,
-                    vicinity: res.data.result.vicinity,
-                    website: res.data.result.website,
+                    types: res.data.result.types
+                        ? res.data.result.types
+                        : "park",
                     reviews: res.data.result.reviews,
-                });
-                return res.data.result;
+                    phone: res.data.result.formatted_phone_number
+                        ? res.data.result.formatted_phone_number
+                        : null,
+                    province: "British Columbia",
+                };
+
+                return newPlace;
+            })
+            .then((newPlace) => {
+                axios
+                    .get(
+                        `/elevation/json?key=${googleMapsApiKey}&locations=${newPlace.latitude},${newPlace.longitude}`
+                    )
+                    .then((results) => {
+                        let elevation = results.data.results[0].elevation;
+
+                        newPlace.elevation = Math.round(elevation);
+
+                        setPlace(newPlace);
+                    });
             })
             .catch((error) => {
-                console.log(error.response);
+                console.log(error);
             });
     }, []);
 
     const saveHike = () => {
-        console.log('SAVE HIKE BUTTON CLICKED');
+        console.log("SAVE HIKE BUTTON CLICKED");
         axios
             .post(`${props.SERVER_LOCATION}/hikeit/api/v1/save-hike`, place)
             .then((response) => {
-                console.log('DATA SENT to save the hike!', response);
+                console.log("DATA SENT to save the hike!", response);
             })
             .catch((error) => {
                 console.log(error.response);
@@ -98,8 +124,8 @@ const DetailsPage = (props) => {
     };
 
     return (
-        <div className='DetailsPage'>
-            <div className='content'>
+        <div className="DetailsPage">
+            <div className="content">
                 <DetailsTitle placeTitle={place.name} />
 
                 <CompareButton
@@ -115,17 +141,8 @@ const DetailsPage = (props) => {
                 />
             </div>
 
-            <div className='detailsSection'>
-                <DetailsFeatures
-                    address={place.address}
-                    status={place.status}
-                    rating={place.rating}
-                    types={types}
-                    vicinity={place.vicinity}
-                    phoneNumber={place.phoneNumber}
-                    openingDays={place.weekdayText}
-                    website={place.website}
-                />
+            <div className="detailsSection">
+                <DetailsFeatures place={place} />
             </div>
 
             <Map latitude={place.latitude} longitude={place.longitude} />

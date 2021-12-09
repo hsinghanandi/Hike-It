@@ -9,7 +9,7 @@
 
   height: 530px;
   color: $text_light_color;
-  padding-top: 5rem;
+  padding-top: 10rem;
 
   h1 {
     margin-bottom: 20px;
@@ -26,7 +26,7 @@ form input.searchBar {
   width: 40rem;
   background: $text_light_color;
   border: none;
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 20px;
   height: 1.2rem;
 }
@@ -84,6 +84,8 @@ form input.searchBar {
 
 .HomePopularHikes {
   padding: 5rem;
+  margin: 0 5rem;
+
   h2 {
     font-size: $font-size-3;
     color: $dark_color;
@@ -121,6 +123,8 @@ form input.searchBar {
 //Feature Section
 .HomeFeatures {
   padding: 5rem 5rem 0 5rem;
+  // margin: 0 10rem;
+
   h2 {
     font-size: $font-size-3;
     color: $dark_color;
@@ -129,8 +133,8 @@ form input.searchBar {
 }
 
 .HomeFeatureContainer {
-  // display: grid;
-  // grid-template-columns: repeat(1fr, 1fr);
+  display: grid;
+  grid-template-columns: repeat(1fr, 1fr);
   // padding: 1.3rem 0;
   text-align: left;
   .HomeFeatureCard:nth-child(2n + 1) {
@@ -146,6 +150,8 @@ form input.searchBar {
   .HomeFeatureInfo {
     // width: 33%;
     padding: 1rem;
+    justify-content: center;
+
     h2 {
       font-size: $font-size-3;
       color: $text_dark_color;
@@ -159,7 +165,7 @@ form input.searchBar {
   }
 
   .HomeFeatureImage {
-    max-width: 250px;
+    max-width: 30rem;
     height: auto;
     margin-right: 0.5rem;
   }
@@ -177,6 +183,8 @@ form input.searchBar {
   display: flex;
   flex-flow: column nowrap;
   margin-bottom: 2rem;
+  margin: 0 5rem;
+
   h2 {
     font-size: $font-size-3;
     color: $dark_color;
@@ -232,6 +240,9 @@ form input.searchBar {
   margin: 0 auto;
   color: $text_light_color;
   cursor: pointer;
+  margin-top: 4rem;
+  margin-bottom: 7rem;
+
   a {
     color: $text_light_color;
   }
@@ -240,7 +251,6 @@ form input.searchBar {
 //About Section
 .HomeAbout {
   background: $text_light_color;
-  padding: 2rem 0;
   display: flex;
   gap: 1rem;
   display: flex;
@@ -256,12 +266,18 @@ form input.searchBar {
 
   .HomeAboutInfo {
     width: 500px;
+    margin: 0 6rem;
   }
 
   p {
     font-size: $font-size-base;
     color: $text_dark_color;
     font-weight: 200;
+  }
+
+  .homeAboutImage {
+    height: 30rem;
+    width: 50rem;
   }
 }
 
@@ -276,4 +292,14 @@ form input.searchBar {
   }
 
   margin-bottom: 4rem;
+}
+
+.blogContent {
+    margin: auto;
+
+    h3 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
 }
