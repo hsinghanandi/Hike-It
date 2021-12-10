@@ -1,11 +1,10 @@
 import React from "react";
-import ImageGallery from 'react-image-gallery';
+import ImageGallery from "react-image-gallery";
 import { useState, useEffect } from "react";
 
 const Slider = (props) => {
     //create state for the image carousel
-    
-    
+
     // const [sliderImages, setSliderImages] = useState([]);
 
     // useEffect(() => {
@@ -19,30 +18,14 @@ const Slider = (props) => {
 
     return (
         <div className="imageGrid">
-
-            {props.photoRef ? (
-                props.photoRef.map((photo, index) => (
-                    <img
-                        src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo}&key=${props.googleMapsApiKey}`}
-                        alt={`${props.placeTitle} ${index + 1}`}
-                    />
-
-                   
-
-                    
-                ))
-            ) : (
-                <img
-                    src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=Aap_uEBXkv44f3QYV_Fyncko8keODGAuysXL9KMMsEg44LEdyOylGH3NmK4jBHerSnY2mby0ZceEp3JH5I9QW6W5oxK4DAjUeoAxIABEUDNrn18uzceCC-VrXyvsQpQeuDi_KD8NSXqEvrZAfjtGWocLT05awgAnAFuWvUJFMRpmNfIAlyRg&key=${props.googleMapsApiKey}`}
-                    alt={`${props.placeTitle}`}
-                />
-            )}
-
-
-
-      
-
-            
+            {props.photoRef
+                ? props.photoRef.map((photo, index) => (
+                      <img
+                          src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo}&key=${props.googleMapsApiKey}`}
+                          alt={`${props.placeTitle} ${index + 1}`}
+                      />
+                  ))
+                : null}
         </div>
     );
 };
