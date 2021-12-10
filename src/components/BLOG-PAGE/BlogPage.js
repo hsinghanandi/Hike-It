@@ -54,7 +54,9 @@ const BlogPage = () => {
                                 <h3 className='blogTitle'>{nps.title}</h3>
                                 <div className='blogContent'>
                                     <h3>
-                                        <a href={nps.url}>{nps.title}</a>
+                                        <a href={nps.url} target='_blank'>
+                                            {nps.title}
+                                        </a>
                                     </h3>
                                     <p>{nps.listingDescription}</p>
                                 </div>
@@ -78,8 +80,6 @@ const BlogPage = () => {
                         </div>
                     ) : <p>No blogs</p>}
             </div> */}
-
-
             </div>
         </>
     );
