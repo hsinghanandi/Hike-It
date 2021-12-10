@@ -2,15 +2,35 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 import darkBgLogo from "../../assets/darkBgLogo.png";
+import { useState } from "react";
 
 // Logo, Discover, Hike Comparison, Blog, About Us, Saved Hikes, Profile
 
-function NavBarComponent({ isLoggedIn, logout, history }) {
+
+const NavBarComponent = ({ isLoggedIn, logout, history }) => {
+
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = ()=>{
+
+    
+    
+
+
+
+  }
+
+
+
+
   const logoutUser = () => {
     toast.success("logout successfully!");
     logout();
     history.push("/");
   };
+
+
+
 
   return (
     <nav className="navBar">

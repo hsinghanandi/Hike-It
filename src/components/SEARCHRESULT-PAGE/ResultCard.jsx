@@ -83,6 +83,9 @@ const ResultCard = (props) => {
 
     return (
         <div className="resultCardContent">
+
+
+            <div className="resultCardDiv">
             <div className="resultCardImg">
                 {props.photoRef ? (
                     <img
@@ -109,14 +112,19 @@ const ResultCard = (props) => {
                 <h3>{props.vicinity}</h3>
                 <h4>Rating: {props.rating}</h4>
             </div>
-            <input
-                className="resultCardCheckbox"
-                type="checkbox"
-                value={props.placeID}
-                onChange={(event) => {
-                    handleChangeCheckBox(event);
-                }}
-            />
+
+            </div>
+
+            <div className = "checkboxDiv">
+                <input
+                    className="resultCardCheckbox"
+                    type="checkbox"
+                    value={props.placeID}
+                    onChange={(event) => {
+                        handleChangeCheckBox(event);
+                    }}
+                />
+             </div>
         </div>
     );
 };

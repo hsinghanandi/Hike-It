@@ -24,8 +24,6 @@
   }
 }
 
-
-
 .detailsContent {
   display: flex;
   // flex-direction: column;
@@ -45,7 +43,7 @@
   font-size: $font-size-2;
   font-weight: bold;
   margin: 1rem;
-  font-family: $font-family-base
+  font-family: $font-family-base;
 }
 
 .compareButton {
@@ -70,7 +68,7 @@
   grid-template-columns: repeat(var(--num-cols), 1fr);
   grid-auto-rows: var(--row-height);
   gap: var(--gap);
-  
+
   img {
     width: 100%;
     height: 100%;
@@ -81,7 +79,6 @@
     grid-column: span 2;
     grid-row: span 2;
   }
-
 }
 
 .newsCards {
@@ -105,8 +102,8 @@
 }
 
 .reviewCard {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
   // flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
-
