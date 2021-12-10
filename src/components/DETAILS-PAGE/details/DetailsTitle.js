@@ -21,7 +21,7 @@ const DetailsTitle = (props) => {
             Stanley Park            
         </h1> */}
         {/* <h2>{title}</h2> */}
-            <div className="detailsHeading">{props.placeTitle}</div>
+            <div className="detailsHeadingTitle">{props.placeTitle}</div>
         </>
      );
 }

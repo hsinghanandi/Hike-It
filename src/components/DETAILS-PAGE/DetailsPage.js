@@ -168,9 +168,11 @@ const DetailsPage = (props) => {
     return (
         <div className="DetailsPage">
             <div className="content">
-                <DetailsTitle placeTitle={place.name} />
+               
 
                 <div className="detailsPageButtons">
+
+                <DetailsTitle placeTitle={place.name} />
 
                 <CompareButton
                     place={place}
