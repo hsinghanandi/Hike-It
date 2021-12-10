@@ -197,7 +197,8 @@ function App() {
                                 <SignUpPage SERVER_LOCATION={SERVER_LOCATION} />
                             </Route>
                             <Route exact path='/SearchResultsPage'>
-                                <SearchResultsPage
+
+                                    <SearchResultsPage
                                     setPlaceID={setPlaceID}
                                     googleMapsApiKey={googleMapsApiKey}
                                     search={search}
@@ -207,7 +208,11 @@ function App() {
                                     setSearchResults={setSearchResults}
                                     compareQueue={compareQueue}
                                     setCompareQueue={setCompareQueue}
-                                />
+                                    />
+
+                                
+            
+                                
                             </Route>
                             <Route exact path='/LoginPage'>
                                 <LoginPage

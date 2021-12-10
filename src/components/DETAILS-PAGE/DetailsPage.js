@@ -126,6 +126,8 @@ const DetailsPage = (props) => {
             });
     };
 
+
+        
     return (
         <div className="DetailsPage">
             <div className="content">
@@ -148,7 +150,7 @@ const DetailsPage = (props) => {
                 <Slider
                     photoRef={place.photoRef}
                     googleMapsApiKey={googleMapsApiKey}
-                    placeTitle={place.name}
+                    placeTitle={place.name}  
                 />
             </div>
 
