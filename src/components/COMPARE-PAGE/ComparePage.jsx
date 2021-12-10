@@ -23,7 +23,7 @@ const ComparePage = (props) => {
 
     return (
         <div>
-            <h2> Hike Comparison </h2>
+            <h2 className="comparison-title"> Hike Comparison </h2>
             <CompareToggle
                 setGraphToggle={setGraphToggle}
                 graphToggle={graphToggle}
@@ -31,6 +31,7 @@ const ComparePage = (props) => {
             <div className="compareContent">
                 {graphToggle !== false ? (
                     <CompareTable
+                        
                         compareQueue={props.compareQueue}
                         setCompareQueue={props.setCompareQueue}
                         compareNow={compareNow}
@@ -42,6 +43,7 @@ const ComparePage = (props) => {
                 )}
             </div>
             <CompareToggle
+            
                 setGraphToggle={setGraphToggle}
                 graphToggle={graphToggle}
             />

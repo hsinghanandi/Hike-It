@@ -47,7 +47,7 @@ const CompareHike = (props) => {
                     </div>
 
                     <div className="CompareHike-options">
-                        <button onClick={() => handleRemoveHike()}>
+                        <button onClick={() => handleRemoveHike()} className="remove-comparison">
                             Remove
                         </button>
                     </div>

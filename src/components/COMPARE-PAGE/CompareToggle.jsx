@@ -6,18 +6,19 @@ const CompareToggle = (props) => {
     };
 
     return (
-        <div className='toggle-switch'>
-            <label className='switch'>
+        <div className='compare-toggle'>
                 <input
+                className='compare-toggle-checkbox'
                     type='checkbox'
                     onChange={(event) => {
                         handleChangeToggle(event);
                     }}
                     defaultChecked='false'
                 />
-                Table - Graph
-                <span className='slider round'></span>
-            </label>
+                <label className='compare-toggle-label'>
+                <span className="compare-toggle-span">Table</span>
+                </label>
+           
         </div>
     );
 };
