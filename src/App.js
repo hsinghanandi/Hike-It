@@ -178,6 +178,7 @@ function App() {
                                         // articles={articles}
                                         npsData={npsData}
                                         randomizeSearch={randomizeSearch}
+                                            setPlaceID={setPlaceID}
                                     />
                                 )}
                             </Route>
