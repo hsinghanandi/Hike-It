@@ -51,6 +51,12 @@
   font-family: $font-family-base;
 }
 
+.detailsHeadingTitle {
+  font-size: 3rem;
+  margin-left: 5rem;
+  flex: 1;
+}
+
 // img grid from https://codepen.io/dcode-software/pen/GRmBQYV
 .imageGrid {
   margin: 0 7rem;
@@ -123,8 +129,9 @@
 .detailsPageButtons {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
+  margin: 0 3rem;
 
   .saveHikeButton {
     margin: 0;

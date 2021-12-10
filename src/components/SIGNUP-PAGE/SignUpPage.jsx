@@ -29,7 +29,7 @@ const SignUpPage = (props) => {
                 });
         } else {
             document.getElementById('signup-results').innerHTML =
-                "Passwords doesn't match";
+                "Passwords don't match!";
         }
     };
 
