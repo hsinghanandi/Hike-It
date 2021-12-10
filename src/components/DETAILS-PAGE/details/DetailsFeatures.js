@@ -18,10 +18,10 @@ const DetailsFeatures = (props) => {
             <div className="detailsContent">
                 <div className="detailsDesc">
                     <p>
-                        HikeIt is a data-driven web platform that helps hiking
+                        {`HikeIt is a data-driven web platform that helps hiking
                         enthusiasts and outdoor adventurers plan their hikes by
                         providing them with the tools to discover, search and
-                        compare different hiking trails.
+                        compare different hiking trails.`}
                     </p>
                 </div>
                 <ul>

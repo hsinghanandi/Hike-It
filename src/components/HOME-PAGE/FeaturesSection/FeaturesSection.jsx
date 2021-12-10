@@ -19,7 +19,7 @@ const FeatureSection = (props) => {
                     HomeFeatureImage={featured2}
                     HomeFeatureTitle={"Compare Hikes"}
                     HomeFeatureDescription={
-                        "Compare upto 4 hikes and choose the one which is best for you."
+                        "Compare up to 4 hikes and choose the one which is best for you."
                     }
                 />
                 <FeatureCard

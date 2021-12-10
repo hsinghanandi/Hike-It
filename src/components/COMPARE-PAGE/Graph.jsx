@@ -69,7 +69,7 @@ const Graph = (props) => {
                             //hikeData type
                             datasets: [
                                 {
-                                    label: "Elevation m",
+                                    label: "Elevation (meters)",
                                     //column
                                     data: elevations,
                                     backgroundColor: [
