@@ -17,7 +17,7 @@ const Graph = (props) => {
     return (
         <div>
             {chartToggle == false ? (
-                <div className="chart-wrapper-rating">
+                <div className="chart-wrapper-rating chart-compare">
                     <Bar
                         data={{
                             //hikes
@@ -60,7 +60,7 @@ const Graph = (props) => {
                     />
                 </div>
             ) : (
-                <div className="chart-wrapper-elevation">
+                <div className="chart-wrapper-elevation chart-compare">
                     <Bar
                         data={{
                             //hikes
@@ -104,17 +104,19 @@ const Graph = (props) => {
                 </div>
             )}
 
-            <label className="switch">
+            <div className="graph-toggle">
                 <input
+                    className="graph-toggle-checkbox"
                     type="checkbox"
                     onChange={(event) => {
                         handleChartToggle(event);
                     }}
                     defaultChecked="false"
                 />
-                Elevation - Rating
-                <span className="slider round"></span>
-            </label>
+                <label className="graph-toggle-label">
+                    <span className="graph-toggle-span">Rating</span>
+                </label>
+            </div>
         </div>
     );
 };
