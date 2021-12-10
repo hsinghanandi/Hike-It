@@ -1204,6 +1204,10 @@ form input.searchBar {
   text-align: center;
 }
 
+.savedHikesCardsChild .blogContent a {
+  color: #FCFAFC;
+}
+
 .savedHikesCardsChild:hover .blogContent {
   height: 100%;
 }
@@ -1270,24 +1274,47 @@ form input.searchBar {
   padding: 2rem;
 }
 
-.detailsSection .detailsContent {
+.detailsContent {
   display: flex;
   gap: 1rem;
 }
 
-.detailsSection .detailsContent ul {
+.detailsContent ul {
   list-style: none;
 }
 
-.detailsSection .detailsTitle {
+.detailsTitle {
   text-align: center;
 }
 
-.detailsSection .detailsHeading {
+.detailsHeading {
   font-size: 24px;
   font-weight: bold;
   margin: 1rem;
   font-family: "DM Sans", sans-serif;
+}
+
+.imageGrid {
+  --gap: 16px;
+  --num-cols: 4;
+  --row-height: 300px;
+  box-sizing: border-box;
+  padding: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+}
+
+.imageGrid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageGrid img:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .newsCards {
