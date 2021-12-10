@@ -14,17 +14,21 @@ function NavBarComponent({ isLoggedIn, logout, history }) {
   };
 
   const navbarId = document.getElementById("navbarId");
-  const sticky = navbarId.offsetTop;
+  if (navbarId) { 
+    const sticky = navbarId.offsetTop;
+    console.log(sticky);
+    console.log(window.pageYOffset);
 
-  const scrollFunction = () => {
-    if (window.pageYOffset > sticky) {
-      navbarId.classList.add("sticky");
-    } else {
-      navbarId.classList.remove("sticky");
+    const scrollFunction = () => {
+      if (window.pageYOffset > sticky) {
+        navbarId.classList.add("sticky");
+      } else {
+        navbarId.classList.remove("sticky");
+      }
     }
-  }
 
-  window.onscroll = function () { scrollFunction() };
+    window.onscroll = function () { scrollFunction() };
+  }
 
   return (
     <nav className="navBar" id="navbarId">
