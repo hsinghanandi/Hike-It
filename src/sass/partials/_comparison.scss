@@ -1,9 +1,14 @@
 .CompareTable {
     display: flex;
+}
+
+.compare-all-hikes-wrapper {
+    display: flex;
     gap: 4.5rem;
     justify-content: center;
     margin: auto;
     height: 100vh;
+    flex-flow: row nowrap;
 }
 
 .CompareInfo {
@@ -267,5 +272,41 @@
                 color: black;
             }
         }
+    }
+}
+
+.CompareLabels {
+    margin-left: 5rem;
+}
+
+/////////////////////// Media Queries
+
+@media screen and (max-width: 550px) {
+    .compare-all-hikes-wrapper {
+        width: 400px;
+        overflow-x: scroll;
+    }
+
+    .CompareLabels {
+        position: sticky;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .CompareInfo,
+    .CompareLabel {
+        height: 60px;
+    }
+
+    .CompareInfo-1 {
+        margin-bottom: 120px;
+    }
+
+    .CompareHike {
+        width: 200px;
+    }
+
+    .CompareHike-wrapper:nth-child(2) .CompareHike {
+        margin-left: 6rem;
     }
 }
