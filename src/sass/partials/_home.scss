@@ -179,7 +179,7 @@ form input.searchBar {
 
 //Blog Section
 .BlogSection {
-  padding: 0 5rem 0 5rem;
+  padding: 0 5rem 2rem 5rem;
   display: flex;
   flex-flow: column nowrap;
   margin-bottom: 2rem;
@@ -190,6 +190,15 @@ form input.searchBar {
     color: $dark_color;
     font-weight: 200;
   }
+}
+
+.ButtonBlog {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 0.7rem 2.2rem;
 }
 
 .BlogCardContainer {
@@ -213,7 +222,7 @@ form input.searchBar {
 
   .blogContent {
     flex: 1;
-    padding: 1rem;
+    padding: 1rem 4rem;
     h2 {
       font-size: $font-size-3;
       color: $text_dark_color;
@@ -265,8 +274,22 @@ form input.searchBar {
   }
 
   .HomeAboutInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 2rem;
     width: 500px;
     margin: 0 6rem;
+
+    a {
+      text-decoration: none;
+      color: $text_dark_color;
+    }
+
+    .homeArrow {
+      height: 12px;
+    }
   }
 
   p {

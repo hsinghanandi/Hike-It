@@ -65,7 +65,7 @@ const SearchResultsPage = (props) => {
                     >
                         Compare Hikes
                     </Link>
-                    <div className="resultMap"></div>
+                    {/* <div className="resultMap"></div> */}
                 </div>
                 <div className="resultMap">
                     <SearchMap searchResults={props.searchResults} />

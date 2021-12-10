@@ -1,6 +1,6 @@
 import React from "react";
 import homeAbout from "../../../assets/homeAbout.png";
-import { ReactComponent as Arrow } from "../../../assets/arrow.svg";
+import arrow from "../../../assets/arrow.svg";
 import { Link } from "react-router-dom";
 
 const AboutSection = (props) => {
@@ -14,10 +14,10 @@ const AboutSection = (props) => {
                     providing them with the tools to discover, search and
                     compare different hiking trails.
                 </p>
+                <Link to={"./AboutUsPage"}>
+                    More About Us <img src={arrow} alt="arrow" className="homeArrow" />
+                </Link>
             </div>
-            <Link to={"./AboutUsPage"}>
-                More About Us <Arrow />
-            </Link>
             <img className="homeAboutImage" src={homeAbout} alt="About HikeIt" />
         </div>
     );
