@@ -28,6 +28,7 @@
     .detailsDesc {
         padding: 2rem;
     }
+  }
 }
 
 .detailsContent {
@@ -117,28 +118,29 @@
   grid-template-columns: repeat(2, 1fr);
 
 
-.userIcon {
-  padding-right: 0.3rem;
-}
-
-.detailsPageButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-
-  .saveHikeButton {
-    margin: 0;
-    padding: 0.7rem 2.2rem;
-    font-size: 1rem;
-    margin: 1rem;
+  .userIcon {
+    padding-right: 0.3rem;
   }
-}
 
-.compareButton {
-  border: none;
-  border-radius: 30px;
-  padding: 0.7rem 2.2rem;
-  color: $text_light_color;
-  font-size: 1rem;
+  .detailsPageButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    .saveHikeButton {
+      margin: 0;
+      padding: 0.7rem 2.2rem;
+      font-size: 1rem;
+      margin: 1rem;
+    }
+  }
+
+  .compareButton {
+    border: none;
+    border-radius: 30px;
+    padding: 0.7rem 2.2rem;
+    color: $text_light_color;
+    font-size: 1rem;
+  }
 }
