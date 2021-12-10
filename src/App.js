@@ -188,6 +188,7 @@ function App() {
                             <Route exact path='/SavedHikesPage'>
                                 <SavedHikesPage
                                     SERVER_LOCATION={SERVER_LOCATION}
+                                    setPlaceID={setPlaceID}
                                 />
                             </Route>
                             <Route exact path='/AboutUsPage'>
