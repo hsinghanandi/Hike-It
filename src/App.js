@@ -91,6 +91,24 @@ function App() {
             });
     };
 
+    // Randomize call
+    // const [randomize, setRandomize] = useState([]);
+    const randomizeSearch = event => {
+        setSearchSubmitted(true);
+        event.preventDefault();
+
+        axios
+            .get(
+                `/place/nearbysearch/json?location=49.282730,-123.120735&key=${googleMapsApiKey}&radius=30000&keyword=trail`
+            )
+            .then((result) => {
+                setSearchResults(result.data.results);
+            })
+            .catch((error) => {
+                console.log(error.message);
+            });
+    }
+
     ///////////////// get placeID ////////////
     // axios.get(`/place/nearbysearch/json?location=49.282730,-123.120735&keyword=${search}&key=${googleMapsApiKey}&radius=30000`)
     // .then ((result, index)=>{
@@ -159,6 +177,7 @@ function App() {
                                         setSearchResults={setSearchResults}
                                         // articles={articles}
                                         npsData={npsData}
+                                        randomizeSearch={randomizeSearch}
                                     />
                                 )}
                             </Route>

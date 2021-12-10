@@ -53,9 +53,10 @@
 
 // img grid from https://codepen.io/dcode-software/pen/GRmBQYV
 .imageGrid {
+  margin: 0 7rem;
   --gap: 16px;
   --num-cols: 4;
-  --row-height: 300px;
+  --row-height: 140px;
 
   box-sizing: border-box;
   padding: var(--gap);
@@ -69,17 +70,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
   }
 
   img:first-child {
     grid-column: span 2;
-    grid-row: span 2;
+    grid-row: span 3;
   }
 }
 
-.newsCards {
-  margin: 3rem;
-}
+// .newsCards {
+//   margin: 3rem;
+// }
 
 .detailMap {
   border-radius: 20px;
@@ -139,3 +141,5 @@
   color: $text_light_color;
   font-size: 1rem;
 }
+
+// Slider

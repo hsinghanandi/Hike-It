@@ -143,6 +143,26 @@ const DetailsPage = (props) => {
             });
     };
 
+    // Slider
+    // const [current, setCurrent] = useState(0);
+    // let nextSlide ;
+    // let prevSlide ;
+
+    // if (place.photoRef) {
+    //     const length = place.photoRef.length;
+
+    //     nextSlide = () => {
+    //         setCurrent(current === length - 1 ? 0 : current + 1);
+    //     };
+
+    //     prevSlide = () => {
+    //         setCurrent(current === 0 ? length - 1 : current - 1);
+    //     };
+
+    //     if (!Array.isArray(props.photoRef) || props.photoRef.length <= 0) {
+    //         return null;
+    //     }
+    // }
 
         
     return (
