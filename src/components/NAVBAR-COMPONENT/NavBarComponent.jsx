@@ -7,22 +7,7 @@ import { useState } from "react";
 // Logo, Discover, Hike Comparison, Blog, About Us, Saved Hikes, Profile
 
 
-const NavBarComponent = ({ isLoggedIn, logout, history }) => {
-
-  const [scrolled, setScrolled] = useState(false);
-
-  const handleScroll = ()=>{
-
-    
-    
-
-
-
-  }
-
-
-
-
+function NavBarComponent({ isLoggedIn, logout, history }) {
   const logoutUser = () => {
     toast.success("logout successfully!");
     logout();
@@ -33,7 +18,7 @@ const NavBarComponent = ({ isLoggedIn, logout, history }) => {
 
 
   return (
-    <nav className="navBar">
+    <nav className="navBar" id="navbarId">
       <ul>
         <li>
           <Link to="/">

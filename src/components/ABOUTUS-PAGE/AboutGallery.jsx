@@ -14,7 +14,7 @@ const AboutGallery = (props) => {
         <div className="AboutGallery" >
             <div className="AboutUsGalleryDesigners">
                 <AboutGalleryCard
-                    linkedin=""
+                    linkedin="http://linkedin.com/in/amirbehbahani"
                     imageSrc={amirPic}
                     name="Behbahani, Amir"
                     role="UI/UX Designer "
@@ -26,15 +26,14 @@ const AboutGallery = (props) => {
                     role="UI/UX Designer "
                 />
                 <AboutGalleryCard 
-                    linkedin=""
+                    linkedin="www.linkedin.com/in/NavjitKaur2199"
                     imageSrc={navjitPic}
                     name="Kaur, Navjit" 
                     role="UI/UX Designer " 
                 />
             </div>
             <div
-                className="AboutUsGalleryDevelopers {
-"
+                className="AboutUsGalleryDevelopers"
             >
                 <AboutGalleryCard
                     linkedin=""
