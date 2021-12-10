@@ -1,32 +1,42 @@
+import UserIcon from "./UserIcon";
+import ReactStars from "react-stars";
 
-import UserIcon from './UserIcon';
+const Review = (props) => {
+    return (
+        <div className="reviews">
+            <h2 className="detailsHeading">Reviews</h2>
+            <div className="reviewCard">
+                {props.reviews !== undefined
+                    ? props.reviews.map((review, index) => {
+                          return (
+                              <div key={index} className="review">
+                                  <p className="reviewHead">
+                                      <span className="userIcon">
+                                          <UserIcon />
+                                      </span>
 
-const Review = props => {
-
-
-    return <div className="reviews">
-        <h2 className="detailsHeading">Reviews</h2>
-        <div className="reviewCard">
-        {props.reviews !== undefined ? props.reviews.map((review, index) => {
-            return <div key={index} className="review">
-                <p className="reviewHead">
-
-                    <span className="userIcon">
-                        <UserIcon />
-                    </span>
-                    
-                    {review.author_name}
-                    
-                </p>
-                <br/>
-                <p className="reviewRating">Rating: {review.rating}</p>
-                <br />
-                <p className="reviewText">{review.text}</p> 
+                                      {review.author_name}
+                                  </p>
+                                  <br />
+                                  <p className="reviewRating">
+                                      Rating:
+                                      <ReactStars
+                                          value={review.rating}
+                                          half={true}
+                                          edit={false}
+                                          count={5}
+                                          color2="#FF5A1F"
+                                      />
+                                  </p>
+                                  <br />
+                                  <p className="reviewText">{review.text}</p>
+                              </div>
+                          );
+                      })
+                    : "There are no reviews"}
             </div>
-        }) : "There are no reviews"}
         </div>
-
-    </div>
+    );
 
     // const Review = props => {
 
@@ -42,7 +52,6 @@ const Review = props => {
 
     //             </div>
     //         )
-}
-
+};
 
 export default Review;
