@@ -1,4 +1,17 @@
+import ReactStars from "react-stars";
+import React from "react";
+
 const DetailsFeatures = (props) => {
+    let ratingValue = props.place.rating;
+
+    const rating = {
+        value: props.place.rating,
+        half: true,
+        edit: false,
+        count: 5,
+        color2: "#FF5A1F",
+    };
+
     return (
         <div className="detailsFeatures">
             <div className="detailsHeading">Features</div>
@@ -14,9 +27,13 @@ const DetailsFeatures = (props) => {
                 <ul>
                     <li>Currently: {props.place.status ? "open" : "closed"}</li>
                     <li>Schedule: {props.place.weekdayText}</li>
-                    <li>Rating: {props.place.rating}</li>
+                    <li>
+                        Rating:
+                        <ReactStars {...rating} />
+                    </li>
                     <li>Elevation: {props.place.elevation} m</li>
                     <li>Address: {props.place.address}</li>
+                    <li>Difficulty: {props.place.difficulty}</li>
                     {props.place.phoneNumber ? (
                         <li>Phone:${props.place.phoneNumber}</li>
                     ) : null}

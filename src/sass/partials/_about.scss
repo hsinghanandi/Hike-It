@@ -1,102 +1,104 @@
 .AboutGallery {
-  margin: 1rem 2rem;
+    margin: 1rem 2rem;
 }
 
 .AboutUsGalleryDesigners,
 .AboutUsGalleryDevelopers {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  text-align: center;
-  margin: 3rem 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    text-align: center;
+    margin: 3rem 0;
 
-  .teamName {
-    color: $orange_color;
-    font-family: $font-family-base;
-    font-size: 1.2rem;
-  }
+    .teamName {
+        color: $orange_color;
+        font-family: $font-family-base;
+        font-size: 1.2rem;
+    }
 
-  .teamRole {
-    margin: 0.5rem 0;
-    font-style: italic;
-    color: $text_dark_color;
-  }
+    .teamRole {
+        margin: 0.5rem 0;
+        font-style: italic;
+        color: $text_dark_color;
+    }
 
-  .teamImg {
-    border-radius: 50%;
-    max-height: 160px;
-    max-width: 160px;
-  }
+    .teamImg {
+        border-radius: 50%;
+        max-height: 160px;
+        max-width: 160px;
+    }
 }
 
 .AboutUsContact {
-  display: flex;
-  height: 100vh;
+    display: flex;
+    height: 100vh;
 }
 
 .AboutUsContactForm {
-  margin: 10% 1rem;
+    margin: 10% 1rem;
 }
 
 .Intro {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0;
-  padding-top: 2rem;
-  h1 {
-    color: $dark_color;
-  }
-  .IntroPara {
-    color: $text_dark_color;
-    margin: 3rem;
-  }
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    padding-top: 2rem;
+    h1 {
+        color: $dark_color;
+    }
+    .IntroPara {
+        color: $text_dark_color;
+        margin: 3rem;
+    }
 }
 
 .AboutContactForm {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 3rem auto;
-  padding: 0;
-  h1 {
-    color: $dark_color;
-  }
-  h2 {
-    color: $dark_color;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  .IntroPara {
-    color: $text_dark_color;
-    margin: 3rem;
-  }
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 3rem auto;
+    padding: 0;
+    h1 {
+        color: $dark_color;
+    }
+    h2 {
+        color: $dark_color;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .IntroPara {
+        color: $text_dark_color;
+        margin: 3rem;
+    }
 }
 
 .ContactSection {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  align-items: center;
-  gap: 5rem;
-
-  img {
-    max-height: 150px;
-    max-width: 150px;
-  }
-
-  .contactForm {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5rem;
 
-    // textarea::placeholder {
-    //   padding-top: 0.5rem;
-    // }
+    img {
+        max-height: 150px;
+        max-width: 150px;
+    }
 
+    .contactForm {
+        display: flex;
+        flex-direction: column;
 
-  }
+        // textarea::placeholder {
+        //   padding-top: 0.5rem;
+        // }
+    }
+}
+
+.ContactButton {
+    margin-bottom: 3rem;
 }

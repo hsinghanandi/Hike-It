@@ -23,6 +23,22 @@ const ResultCard = (props) => {
                     //     ? res.data.result.photoRef[0]
                     //     : "Aap_uEBXkv44f3QYV_Fyncko8keODGAuysXL9KMMsEg44LEdyOylGH3NmK4jBHerSnY2mby0ZceEp3JH5I9QW6W5oxK4DAjUeoAxIABEUDNrn18uzceCC-VrXyvsQpQeuDi_KD8NSXqEvrZAfjtGWocLT05awgAnAFuWvUJFMRpmNfIAlyRg";
 
+                    let difficulty;
+                    let difficultyNumber = Math.floor(Math.random() * 3 + 1);
+                    switch (difficultyNumber) {
+                        case 1:
+                            difficulty = "Beginner";
+                            break;
+                        case 2:
+                            difficulty = "Intermediate";
+                            break;
+                        case 3:
+                            difficulty = "Hard";
+                            break;
+                        default:
+                            break;
+                    }
+
                     let newHike = {
                         name: res.data.result.name
                             ? res.data.result.name
@@ -49,6 +65,7 @@ const ResultCard = (props) => {
                             ? res.data.result.formatted_phone_number
                             : null,
                         province: "British Columbia",
+                        difficulty: difficulty,
                     };
 
                     return newHike;
@@ -61,7 +78,7 @@ const ResultCard = (props) => {
                         .then((results) => {
                             let elevation = results.data.results[0].elevation;
 
-                            newHike.elevation = elevation;
+                            newHike.elevation = Math.round(elevation);
 
                             newQueue.push(newHike);
                             console.log(newHike);
@@ -83,39 +100,36 @@ const ResultCard = (props) => {
 
     return (
         <div className="resultCardContent">
-
-
             <div className="resultCardDiv">
-            <div className="resultCardImg">
-                {props.photoRef ? (
-                    <img
-                        src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${props.photoRef}&key=${googleMapsApiKey}`}
-                        alt={`${props.placeTitle}`}
-                    />
-                ) : (
-                    <p>images</p>
-                )}
+                <div className="resultCardImg">
+                    {props.photoRef ? (
+                        <img
+                            src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${props.photoRef}&key=${googleMapsApiKey}`}
+                            alt={`${props.placeTitle}`}
+                        />
+                    ) : (
+                        <p>images</p>
+                    )}
+                </div>
+
+                <div className="resultCardText">
+                    <h2>
+                        <Link
+                            onClick={() => {
+                                props.setPlaceID(props.placeID);
+                            }}
+                            to={"./DetailsPage"}
+                        >
+                            {props.name}
+                        </Link>
+                    </h2>
+
+                    <h3>{props.vicinity}</h3>
+                    <h4>Rating: {props.rating}</h4>
+                </div>
             </div>
 
-            <div className="resultCardText">
-                <h2>
-                    <Link
-                        onClick={() => {
-                            props.setPlaceID(props.placeID);
-                        }}
-                        to={"./DetailsPage"}
-                    >
-                        {props.name}
-                    </Link>
-                </h2>
-
-                <h3>{props.vicinity}</h3>
-                <h4>Rating: {props.rating}</h4>
-            </div>
-
-            </div>
-
-            <div className = "checkboxDiv">
+            <div className="checkboxDiv">
                 <input
                     className="resultCardCheckbox"
                     type="checkbox"
@@ -124,7 +138,7 @@ const ResultCard = (props) => {
                         handleChangeCheckBox(event);
                     }}
                 />
-             </div>
+            </div>
         </div>
     );
 };

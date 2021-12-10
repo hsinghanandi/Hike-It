@@ -281,9 +281,47 @@
   margin-left: 5rem;
 }
 
+.CompareInfo-5 {
+    padding-left: 35%;
+}
+
 /////////////////////// Media Queries
 
 @media screen and (max-width: 550px) {
+
+    .compare-all-hikes-wrapper {
+        width: 400px;
+        overflow-x: scroll;
+    }
+
+    .CompareLabels {
+        position: sticky;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .CompareInfo,
+    .CompareLabel {
+        height: 60px;
+    }
+
+    .CompareInfo-1 {
+        margin-bottom: 120px;
+    }
+
+    .label-1 {
+        height: 149px;
+        margin-bottom: 0;
+    }
+
+    .CompareHike {
+        width: 200px;
+    }
+
+    .CompareHike-wrapper:nth-child(2) .CompareHike {
+        margin-left: 6rem;
+    }
+
   .compare-all-hikes-wrapper {
     width: 400px;
     overflow-x: scroll;
@@ -311,4 +349,5 @@
   .CompareHike-wrapper:nth-child(2) .CompareHike {
     margin-left: 6rem;
   }
+
 }
