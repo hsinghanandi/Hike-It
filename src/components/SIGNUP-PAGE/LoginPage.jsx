@@ -11,6 +11,15 @@ const LoginPage = ({
     setuserName,
 }) => {
     const history = useHistory();
+    const TOAST = {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    };
 
     const handleLoginForm = (event) => {
         event.preventDefault();
@@ -35,14 +44,14 @@ const LoginPage = ({
                     localStorage.setItem('token', result.data.userToken);
                     // setLoggedInUser(userID);
                     setIsLoggedIn(true);
-                    toast.success('Your are successfully logged in');
+                    toast.success('You are successfully logged in!', TOAST);
                     history.push('/');
                     // alert('Welcome User!');
                 }
             })
             .catch((error) => {
                 let message = error?.response?.data?.message || error.message;
-                toast.error(message);
+                toast.error(message, TOAST);
             });
     };
 

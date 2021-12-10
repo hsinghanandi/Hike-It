@@ -7,8 +7,18 @@ import { useState } from 'react';
 // Logo, Discover, Hike Comparison, Blog, About Us, Saved Hikes, Profile
 
 function NavBarComponent({ isLoggedIn, logout, history }) {
+    const TOAST = {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    };
+
     const logoutUser = () => {
-        toast.success('logout successfully!');
+        toast.success('Logged out successfully!', TOAST);
         logout();
         history.push('/');
     };
