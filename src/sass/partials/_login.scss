@@ -1,27 +1,36 @@
-.LoginPage, .signUpPage  {
-  height: 100vh;
-  // padding-top: 10rem;
-  display: flex;
-
-  .formContainer, .LoginForms, .loginFormChild, .ChangePasswordForm, .changePasswordFormChild {
+.LoginPage,
+.signUpPage {
+    height: 100vh;
+    // padding-top: 10rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .LoginForms {
-      display: flex;
-      flex-direction: column;
-      margin-top: 4rem;
-  }
+    .formContainer,
+    .LoginForms,
+    .loginFormChild,
+    .ChangePasswordForm,
+    .changePasswordFormChild {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .ChangePasswordForm {
-    margin-top: 1rem;
-  }
+    .LoginForms {
+        display: flex;
+        flex-direction: column;
+        margin-top: 4rem;
+    }
 
-  .logout {
-    margin-top: 1rem;
-  } 
+    .ChangePasswordForm {
+        margin-top: 1rem;
+    }
+
+    .logout {
+        margin-top: 1rem;
+    }
+
+    #LoginText {
+        font-family: $font-family-heading;
+        color: $orange_color;
+    }
 }
-

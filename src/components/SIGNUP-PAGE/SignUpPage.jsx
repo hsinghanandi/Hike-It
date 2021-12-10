@@ -35,9 +35,8 @@ const SignUpPage = (props) => {
 
     return (
         <div className='signUpPage'>
-            <img src={loginPic} alt="login pic of outdoors from shutterstock" />
+            <img src={loginPic} alt='login pic of outdoors from shutterstock' />
             <div className='formContainer'>
-                
                 <h2>Sign Up</h2>
                 <form
                     id='signup-form'
@@ -73,8 +72,14 @@ const SignUpPage = (props) => {
                         type='password'
                         required
                     />
-
                     <button>Sign Up</button>
+                    <br />
+                    <h3>
+                        Already a member?
+                        <a id='LoginText' href='/LoginPage'>
+                            &nbsp; &nbsp;Login
+                        </a>
+                    </h3>
                     <div id='signup-results'></div>
                 </form>
             </div>
