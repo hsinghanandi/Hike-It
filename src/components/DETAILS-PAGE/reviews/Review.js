@@ -1,5 +1,4 @@
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserIcon from './UserIcon';
 
 const Review = props => {

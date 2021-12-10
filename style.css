@@ -500,6 +500,7 @@ form input.searchBar {
   display: flex;
   margin: 2rem 0;
   text-align: left;
+  justify-content: space-between;
 }
 
 .HomeFeatureCard .HomeFeatureInfo {
@@ -511,12 +512,15 @@ form input.searchBar {
   font-size: 40px;
   color: #1A3E35;
   font-weight: 200;
+  text-align: left;
+  margin: 1rem 0 1rem 0;
 }
 
 .HomeFeatureCard .HomeFeatureInfo p {
   font-size: 16px;
   color: #1A3E35;
   font-weight: 200;
+  text-align: left;
 }
 
 .HomeFeatureCard .HomeFeatureImage {
@@ -683,10 +687,16 @@ form input.searchBar {
 
 .CompareTable {
   display: flex;
+  margin: 2% 5%;
+}
+
+.compare-all-hikes-wrapper {
+  display: flex;
   gap: 4.5rem;
   justify-content: center;
   margin: auto;
   height: 100vh;
+  flex-flow: row nowrap;
 }
 
 .CompareInfo {
@@ -815,15 +825,15 @@ form input.searchBar {
 }
 
 .remove-comparison {
-  text-decoration: underline;
-  background: none;
-  color: black;
+  background-color: #FF5A1F;
+  color: white;
   font-size: 16px;
   text-align: center;
 }
 
 .remove-comparison:hover {
   font-size: 17px;
+  color: white;
 }
 
 .compareContent {
@@ -880,6 +890,7 @@ form input.searchBar {
   border: 1px solid #00291f;
   margin-left: 40%;
   margin-bottom: 4rem;
+  margin-top: 3rem;
 }
 
 .graph-toggle:before {
@@ -939,6 +950,35 @@ form input.searchBar {
   position: relative;
   padding-right: 5rem;
   color: black;
+}
+
+.CompareLabels {
+  margin-left: 5rem;
+}
+
+@media screen and (max-width: 550px) {
+  .compare-all-hikes-wrapper {
+    width: 400px;
+    overflow-x: scroll;
+  }
+  .CompareLabels {
+    position: sticky;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .CompareInfo,
+  .CompareLabel {
+    height: 60px;
+  }
+  .CompareInfo-1 {
+    margin-bottom: 120px;
+  }
+  .CompareHike {
+    width: 200px;
+  }
+  .CompareHike-wrapper:nth-child(2) .CompareHike {
+    margin-left: 6rem;
+  }
 }
 
 .blogPage {
@@ -1164,6 +1204,10 @@ form input.searchBar {
   text-align: center;
 }
 
+.savedHikesCardsChild .blogContent a {
+  color: #FCFAFC;
+}
+
 .savedHikesCardsChild:hover .blogContent {
   height: 100%;
 }
@@ -1226,7 +1270,7 @@ form input.searchBar {
   padding: 1rem;
 }
 
-.detailsSection .detailsDesc {
+.detailsSection .detailsFeatures .detailsDesc {
   padding: 2rem;
 }
 
