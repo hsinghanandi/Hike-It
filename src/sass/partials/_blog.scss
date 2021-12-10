@@ -15,7 +15,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
   grid-gap: 2rem;
-  margin-bottom: 3rem;
+  margin: 0 0 0 3rem;
+  justify-self: center;
 }
 
 .blogCardChild:first-child {
@@ -71,6 +72,8 @@
   padding: 0 0 1rem 0;
   border-radius: 20px;
   box-shadow: $box_shadow;
+  justify-self: center;
+
 
 
   h3 {
