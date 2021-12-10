@@ -14,13 +14,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #FCFAFC;
   height: 80px;
   display: flex;
-  margin-bottom: 5rem;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
   z-index: 1000;
   width: 100%;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  transition: all 1s ease;
 }
 
 .navBar ul {
@@ -52,6 +52,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .navBar a:hover {
   color: #FF5A1F;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: all 1s ease;
 }
 
 /* 5. Media  ============================= */
@@ -138,7 +145,7 @@ button {
   align-items: center;
   text-align: center;
   padding: 0;
-  padding-top: 8rem;
+  padding-top: 2rem;
 }
 
 .Intro h1 {
@@ -658,7 +665,6 @@ form input.searchBar {
 
 .blogPage {
   padding: 3rem;
-  padding-top: 10rem;
   min-height: 150vh;
 }
 
