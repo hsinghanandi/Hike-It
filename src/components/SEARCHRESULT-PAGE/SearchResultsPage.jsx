@@ -24,22 +24,18 @@ const SearchResultsPage = (props) => {
     };
 
     return (
-        <div>
-            <h1>Search Results</h1>
-            <div className="filters">
-                {/* <p>SortBy</p>
-                <p>FilterBy</p> */}
-                <Link
-                    onClick={() => handleSetComparison()}
-                    to={"./ComparePage"}
-                    className="compareButton"
-                >
-                    Compare Hikes
-                </Link>
-            </div>
+        <div className="searchResultsPage">
+
+            <h1 className="searchResultsHeading">Search Results</h1>
+
+            <h2 className="checkBoxesNotice">Check the boxes for Hike Comparison</h2>
 
             <div className="resultSection">
+                
                 <div className="searchResults">
+
+                   
+
                     {props.searchResults !== undefined ? (
                         props.searchResults.map((searchResult, index) => (
                             <ResultCard
@@ -58,18 +54,21 @@ const SearchResultsPage = (props) => {
                     ) : (
                         <div>No results</div>
                     )}
-                    <Link
-                        onClick={() => handleSetComparison()}
-                        to={"./ComparePage"}
-                        className="compareButton"
-                    >
-                        Compare Hikes
-                    </Link>
-                    {/* <div className="resultMap"></div> */}
+                    
                 </div>
                 <div className="resultMap">
                     <SearchMap searchResults={props.searchResults} />
-                </div>               
+                </div> 
+                <div className="filters">
+       
+                <Link
+                    onClick={() => handleSetComparison()}
+                    to={"./ComparePage"}
+                    className="compareButton"
+                >
+                    Compare Hikes
+                </Link>
+            </div>              
             </div>
         </div>
     );

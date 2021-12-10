@@ -1,6 +1,6 @@
 .CompareTable {
     display: flex;
-    gap: 1rem;
+    gap: 4.5rem;
     justify-content: center;
     margin: auto;
     height: 100vh;
@@ -15,7 +15,256 @@
     height: 3rem;
 }
 
-.label-1,
+.CompareHike-options {
+    text-align: center;
+}
+
+.CompareTable .searchBar-comparison {
+    position: relative;
+
+    width: 245px;
+}
+
+.CompareTable .searchBar-comparison-input {
+    padding-right: 45px;
+    width: 244.8px;
+    height: 61px;
+    background: #fcfafc;
+    border: 0.5px solid #00291f;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-size: 16px;
+    padding-left: 60px;
+}
+
+.CompareTable .searchBar-comparison svg {
+    position: absolute;
+    right: 75%;
+    padding: 10px 12px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.comparison-title {
+    font-family: Allan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 18px;
+
+    margin-top: 72px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #00291f;
+}
+
+//Toggle
+///////////////////
+.compare-toggle {
+    background: none;
+    overflow: hidden;
+    width: 260px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+    position: relative;
+    padding-right: 80px;
+    border: 1px solid #00291f;
+    margin-left: 40%;
+    margin-top: 72px;
+
+    &:before {
+        content: "Table";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        pointer-events: none;
+        color: black;
+    }
+
+    &-checkbox {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 2;
+
+        &:checked + .compare-toggle-label:before {
+            transform: translateX(160px);
+            transition: transform 300ms linear;
+        }
+
+        & + .compare-toggle-label {
+            position: relative;
+            padding: 15px 0;
+            display: block;
+            user-select: none;
+            pointer-events: none;
+
+            //Input that moves
+            &:before {
+                content: "";
+                background: #ff5a1f;
+                height: 100%;
+                width: 70%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 30px;
+                transform: translateX(0);
+                transition: transform 300ms;
+            }
+
+            .compare-toggle-span {
+                position: relative;
+                padding-right: 5rem;
+                color: black;
+            }
+        }
+    }
+}
+///////////////////////////////
+
+.remove-comparison {
+    text-decoration: underline;
+    background: none;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+
+    &:hover {
+        font-size: 17px;
+    }
+}
+
+.compareContent {
+    margin-top: 72px;
+}
+
 .CompareInfo-1 {
-    height: 100px;
+    height: 100%;
+    margin-bottom: 32px;
+}
+
+.label-1 {
+    height: 149px;
+    margin-bottom: 32px;
+}
+
+.CompareLabel {
+    font-weight: bold;
+}
+
+.CompareInfo-3 {
+    width: 100%;
+}
+
+.chart-compare {
+    width: 72%;
+    height: 70%;
+    margin: auto;
+}
+
+/////////////////////////////
+.comparison-title {
+    font-family: Allan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 18px;
+
+    margin-top: 72px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #00291f;
+}
+
+//Toggle
+///////////////////
+.graph-toggle {
+    background: none;
+    overflow: hidden;
+    width: 260px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+    position: relative;
+    padding-right: 80px;
+    border: 1px solid #00291f;
+    margin-left: 40%;
+    margin-bottom: 4rem;
+
+    &:before {
+        content: "Elevation";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        pointer-events: none;
+        color: black;
+    }
+
+    &-checkbox {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 2;
+
+        &:checked + .graph-toggle-label:before {
+            transform: translateX(160px);
+            transition: transform 300ms linear;
+        }
+
+        & + .graph-toggle-label {
+            position: relative;
+            padding: 15px 0;
+            display: block;
+            user-select: none;
+            pointer-events: none;
+
+            //Input that moves
+            &:before {
+                content: "";
+                background: #ff5a1f;
+                height: 100%;
+                width: 70%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 30px;
+                transform: translateX(0);
+                transition: transform 300ms;
+            }
+
+            .graph-toggle-span {
+                position: relative;
+                padding-right: 5rem;
+                color: black;
+            }
+        }
+    }
 }
