@@ -11,9 +11,10 @@ const CompareHike = (props) => {
     };
 
     const imageStyle = {
-        width: "100px",
-        height: "100px",
+        width: "149px",
+        height: "149px",
         objectFit: "cover",
+        borderRadius: "100%",
     };
 
     return (
@@ -40,14 +41,17 @@ const CompareHike = (props) => {
                     </div>
                     <div className="CompareInfo-6 CompareInfo">Difficulty</div>
                     <div className="CompareInfo-7 CompareInfo">
-                        {props.currentHike.status ? "open" : "closed"}
+                        {props.currentHike.status ? "Open" : "Closed"}
                     </div>
                     <div className="CompareInfo-8 CompareInfo">
                         {props.currentHike.weekdayText}
                     </div>
 
                     <div className="CompareHike-options">
-                        <button onClick={() => handleRemoveHike()} className="remove-comparison">
+                        <button
+                            onClick={() => handleRemoveHike()}
+                            className="remove-comparison"
+                        >
                             Remove
                         </button>
                     </div>

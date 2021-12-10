@@ -31,7 +31,6 @@ const ComparePage = (props) => {
             <div className="compareContent">
                 {graphToggle !== false ? (
                     <CompareTable
-                        
                         compareQueue={props.compareQueue}
                         setCompareQueue={props.setCompareQueue}
                         compareNow={compareNow}
@@ -42,11 +41,6 @@ const ComparePage = (props) => {
                     <Graph compareNow={compareNow} />
                 )}
             </div>
-            <CompareToggle
-            
-                setGraphToggle={setGraphToggle}
-                graphToggle={graphToggle}
-            />
         </div>
     );
 };
