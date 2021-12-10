@@ -111,8 +111,11 @@ const DetailsPage = (props) => {
             });
     }, []);
 
+    const [saveHikeButtonText, setSaveHikeButtonText]= useState("Save Hike")
+
     const saveHike = () => {
         console.log("SAVE HIKE BUTTON CLICKED");
+        setSaveHikeButtonText("Added to Saved Hikes");
         axios
             .post(`${props.SERVER_LOCATION}/hikeit/api/v1/save-hike`, place)
             .then((response) => {
@@ -128,12 +131,20 @@ const DetailsPage = (props) => {
             <div className="content">
                 <DetailsTitle placeTitle={place.name} />
 
+                <div className="detailsPageButtons">
+
                 <CompareButton
                     place={place}
                     compareQueue={props.compareQueue}
                     setCompareQueue={props.setCompareQueue}
                 />
-                <button onClick={() => saveHike()}>Save Hike</button>
+
+                <button className="saveHikeButton" onClick={() => saveHike()}>{saveHikeButtonText}</button>
+
+
+                </div>
+
+                
                 <Slider
                     photoRef={place.photoRef}
                     googleMapsApiKey={googleMapsApiKey}

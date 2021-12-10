@@ -16,15 +16,15 @@ const CompareButton = (props) => {
     };
 
     return (
-        <div className="compareHikeBtn">
+        <button>
             <Link
                 onClick={() => handleAddCompare()}
                 to={"./ComparePage"}
                 className="compareButton"
             >
-                Add to Hike Compare!
+                Add to Hike Comparison
             </Link>
-        </div>
+        </button>
     );
 };
 

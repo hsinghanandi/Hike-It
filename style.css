@@ -75,11 +75,14 @@ h1, h2, h3, h4, h5, h6 {
 button {
   background-color: #FF5A1F;
   color: white;
-  padding: 0.5rem 2rem;
+  padding: 0.7rem 2.2rem;
   border-radius: 20px;
   text-decoration: none;
-  margin-top: 1rem;
   border: none;
+}
+
+button:hover {
+  background-color: #00291F;
 }
 
 /* 6. Elements  =============================== */
@@ -213,6 +216,7 @@ button {
 
 .searchResultsHeading {
   text-align: center;
+  margin-top: 4rem;
 }
 
 .checkBoxesNotice {
@@ -326,6 +330,14 @@ button {
   grid-column: span 2;
   text-align: center;
   margin: 4rem;
+}
+
+.filters .compareButton {
+  background-color: #FF5A1F;
+}
+
+.filters .compareButton:hover {
+  background-color: #1A3E35;
 }
 
 .resultSection {
@@ -859,10 +871,15 @@ form input.searchBar {
   justify-content: center;
 }
 
+.DetailsPage {
+  margin: 1rem 4rem;
+}
+
 .detailsSection {
   background: #FCFAFC;
-  margin: 3rem;
+  margin: 2% auto;
   border-radius: 20px;
+  width: 80%;
 }
 
 .detailsSection .detailsFeatures {
@@ -903,15 +920,6 @@ form input.searchBar {
   font-family: "DM Sans", sans-serif;
 }
 
-.compareButton {
-  border: none;
-  background: #FF5A1F;
-  border-radius: 30px;
-  padding: 0.7rem 2.2rem;
-  color: #FCFAFC;
-  margin-top: 1rem;
-}
-
 .imageGrid {
   --gap: 16px;
   --num-cols: 4;
@@ -944,18 +952,53 @@ form input.searchBar {
   margin: 3rem;
 }
 
+.reviews {
+  margin: 5rem 4rem;
+}
+
 .review {
   color: #1A3E35;
   background: #FCFAFC;
   border-radius: 20px;
-  margin: 3rem;
+  margin: 1rem 3rem;
   padding: 1rem;
   max-width: 500px;
+  height: auto;
+}
+
+.review .reviewHead {
+  font-style: italic;
 }
 
 .reviewCard {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.userIcon {
+  padding-right: 0.3rem;
+}
+
+.detailsPageButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.detailsPageButtons .saveHikeButton {
+  margin: 0;
+  padding: 0.7rem 2.2rem;
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.compareButton {
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 2.2rem;
+  color: #FCFAFC;
+  font-size: 1rem;
 }
 
 .App {
