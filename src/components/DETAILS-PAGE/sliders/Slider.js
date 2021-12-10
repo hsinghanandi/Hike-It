@@ -1,21 +1,11 @@
 import React from "react";
-// import axios from "axios";
-
-// import SliderImage from "./SliderImage";
-// import SliderButton from "./SliderButton";
-
-// class SliderComponents extends React.Component {
-//     render() {
-//         return (
-//             <div className="sliderComponents">
-//                 <SliderImage />
-//                 <SliderButton />
-//             </div>
-//         )
-//     }
-// }
+import ImageGallery from 'react-image-gallery';
+import { useState, useEffect } from "react";
 
 const Slider = (props) => {
+    //create state for the image carousel
+    
+    
     // const [sliderImages, setSliderImages] = useState([]);
 
     // useEffect(() => {
@@ -29,12 +19,17 @@ const Slider = (props) => {
 
     return (
         <div className="imageGrid">
+
             {props.photoRef ? (
                 props.photoRef.map((photo, index) => (
                     <img
                         src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo}&key=${props.googleMapsApiKey}`}
                         alt={`${props.placeTitle} ${index + 1}`}
                     />
+
+                   
+
+                    
                 ))
             ) : (
                 <img
@@ -42,6 +37,12 @@ const Slider = (props) => {
                     alt={`${props.placeTitle}`}
                 />
             )}
+
+
+
+      
+
+            
         </div>
     );
 };

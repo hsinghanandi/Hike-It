@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 // import SavedHikeCard from './saved hikes cards/SavedHikeCard';
 
 const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -44,7 +45,16 @@ export default function SavedHikesPage(props) {
                             />
                             <h3 className='blogTitle'>{item.name}</h3>
                             <div className='blogContent'>
-                                <h3>{item.name}</h3>
+                                <h3>
+                                    <Link
+                                        onClick={() => {
+                                            props.setPlaceID(item.placeID);
+                                        }}
+                                        to={"./DetailsPage"}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </h3>
                                 <p>Rating: {item.rating}</p>
                             </div>
                         </div>

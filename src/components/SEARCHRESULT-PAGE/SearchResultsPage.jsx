@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import ResultCard from "./ResultCard.jsx";
 import SearchMap from "./SearchMap.jsx";
 
+
+
 const SearchResultsPage = (props) => {
     const [checkboxQueue, setCheckboxQueue] = useState([]);
 
@@ -33,8 +35,6 @@ const SearchResultsPage = (props) => {
             <div className="resultSection">
                 
                 <div className="searchResults">
-
-                   
 
                     {props.searchResults !== undefined ? (
                         props.searchResults.map((searchResult, index) => (

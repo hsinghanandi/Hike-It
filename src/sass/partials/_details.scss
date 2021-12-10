@@ -1,109 +1,141 @@
+.DetailsPage {
+  margin: 1rem 4rem;
+}
+
 .detailsSection {
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    background: $text_light_color;
-    margin: 3rem;
-    border-radius: 20px;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  background: $text_light_color;
+  margin: 2% auto;
+  border-radius: 20px;
+  width: 80%;
 
-    .detailsFeatures {
-        padding: 3rem;
+  .detailsFeatures {
+    padding: 3rem;
 
-        ul {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            margin: 1rem;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 1rem;
 
-            li {
-                padding: 1rem;
-            }
-        }
+      li {
+        padding: 1rem;
+      }
     }
 
     .detailsDesc {
-        padding: 2rem;
+      padding: 2rem;
     }
+  }
 }
 
 .detailsContent {
-    display: flex;
-    // flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  // flex-direction: column;
+  gap: 1rem;
 
-    ul {
-        list-style: none;
-    }
+  ul {
+    list-style: none;
+  }
 }
 
 .detailsTitle {
-    text-align: center;
+  text-align: center;
 }
 
 .detailsHeading {
-    // text-align: center;
-    font-size: $font-size-2;
-    font-weight: bold;
-    margin: 1rem;
-    font-family: $font-family-base;
-}
-
-.compareButton {
-    border: none;
-    background: $orange_color;
-    border-radius: 30px;
-    padding: 0.7rem 2.2rem;
-    color: $text_light_color;
-    margin-top: 1rem;
+  // text-align: center;
+  font-size: $font-size-2;
+  font-weight: bold;
+  margin: 1rem;
+  font-family: $font-family-base;
 }
 
 // img grid from https://codepen.io/dcode-software/pen/GRmBQYV
 .imageGrid {
-    --gap: 16px;
-    --num-cols: 4;
-    --row-height: 300px;
+  --gap: 16px;
+  --num-cols: 4;
+  --row-height: 300px;
 
-    box-sizing: border-box;
-    padding: var(--gap);
+  box-sizing: border-box;
+  padding: var(--gap);
 
-    display: grid;
-    grid-template-columns: repeat(var(--num-cols), 1fr);
-    grid-auto-rows: var(--row-height);
-    gap: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    img:first-child {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
+  img:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
 }
 
 .newsCards {
-    margin: 3rem;
+  margin: 3rem;
 }
 
 .detailMap {
-    border-radius: 20px;
-    margin: 3rem;
+  border-radius: 20px;
+  margin: 3rem;
 }
 
 // review section
+
+.reviews {
+  margin: 5rem 4rem;
+}
+
 .review {
-    color: $text_dark_color;
-    background: $text_light_color;
-    border-radius: 20px;
-    margin: 3rem;
-    padding: 1rem;
-    max-width: 500px;
-    // flex: 50%;
+  color: $text_dark_color;
+  background: $text_light_color;
+  border-radius: 20px;
+  margin: 1rem 3rem;
+  padding: 1rem;
+  max-width: 500px;
+  height: auto;
+
+  .reviewHead {
+    font-style: italic;
+  }
 }
 
 .reviewCard {
-    // display: flex;
-    // flex-direction: column;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.userIcon {
+  padding-right: 0.3rem;
+}
+
+.detailsPageButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  .saveHikeButton {
+    margin: 0;
+    padding: 0.7rem 2.2rem;
+    font-size: 1rem;
+    margin: 1rem;
+  }
+}
+
+.compareButton {
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 2.2rem;
+  color: $text_light_color;
+  font-size: 1rem;
 }

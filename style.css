@@ -75,11 +75,19 @@ h1, h2, h3, h4, h5, h6 {
 button {
   background-color: #FF5A1F;
   color: white;
-  padding: 0.5rem 2rem;
+  padding: 0.7rem 2.2rem;
   border-radius: 20px;
   text-decoration: none;
-  margin-top: 1rem;
   border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00291F;
+}
+
+button #logout {
+  margin-top: 0;
 }
 
 /* 6. Elements  =============================== */
@@ -213,6 +221,7 @@ button {
 
 .searchResultsHeading {
   text-align: center;
+  margin-top: 4rem;
 }
 
 .checkBoxesNotice {
@@ -326,6 +335,14 @@ button {
   grid-column: span 2;
   text-align: center;
   margin: 4rem;
+}
+
+.filters .compareButton {
+  background-color: #FF5A1F;
+}
+
+.filters .compareButton:hover {
+  background-color: #1A3E35;
 }
 
 .resultSection {
@@ -483,6 +500,7 @@ form input.searchBar {
   display: flex;
   margin: 2rem 0;
   text-align: left;
+  justify-content: space-between;
 }
 
 .HomeFeatureCard .HomeFeatureInfo {
@@ -494,12 +512,15 @@ form input.searchBar {
   font-size: 40px;
   color: #1A3E35;
   font-weight: 200;
+  text-align: left;
+  margin: 1rem 0 1rem 0;
 }
 
 .HomeFeatureCard .HomeFeatureInfo p {
   font-size: 16px;
   color: #1A3E35;
   font-weight: 200;
+  text-align: left;
 }
 
 .HomeFeatureCard .HomeFeatureImage {
@@ -515,7 +536,7 @@ form input.searchBar {
 }
 
 .BlogSection {
-  padding: 0 5rem 0 5rem;
+  padding: 0 5rem 2rem 5rem;
   display: flex;
   flex-flow: column nowrap;
   margin-bottom: 2rem;
@@ -526,6 +547,15 @@ form input.searchBar {
   font-size: 40px;
   color: #00291F;
   font-weight: 200;
+}
+
+.ButtonBlog {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 0.7rem 2.2rem;
 }
 
 .BlogCardContainer {
@@ -551,7 +581,7 @@ form input.searchBar {
 
 .blogCard .blogContent {
   flex: 1;
-  padding: 1rem;
+  padding: 1rem 4rem;
 }
 
 .blogCard .blogContent h2 {
@@ -605,8 +635,22 @@ form input.searchBar {
 }
 
 .HomeAbout .HomeAboutInfo {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 2rem;
   width: 500px;
   margin: 0 6rem;
+}
+
+.HomeAbout .HomeAboutInfo a {
+  text-decoration: none;
+  color: #1A3E35;
+}
+
+.HomeAbout .HomeAboutInfo .homeArrow {
+  height: 12px;
 }
 
 .HomeAbout p {
@@ -643,10 +687,16 @@ form input.searchBar {
 
 .CompareTable {
   display: flex;
-  gap: 1rem;
+  margin: 2% 5%;
+}
+
+.compare-all-hikes-wrapper {
+  display: flex;
+  gap: 4.5rem;
   justify-content: center;
   margin: auto;
   height: 100vh;
+  flex-flow: row nowrap;
 }
 
 .CompareInfo {
@@ -658,9 +708,277 @@ form input.searchBar {
   height: 3rem;
 }
 
-.label-1,
+.CompareHike-options {
+  text-align: center;
+}
+
+.CompareTable .searchBar-comparison {
+  position: relative;
+  width: 245px;
+}
+
+.CompareTable .searchBar-comparison-input {
+  padding-right: 45px;
+  width: 244.8px;
+  height: 61px;
+  background: #fcfafc;
+  border: 0.5px solid #00291f;
+  box-sizing: border-box;
+  border-radius: 30px;
+  font-size: 16px;
+  padding-left: 60px;
+}
+
+.CompareTable .searchBar-comparison svg {
+  position: absolute;
+  right: 75%;
+  padding: 10px 12px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.comparison-title {
+  font-family: Allan;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 18px;
+  margin-top: 72px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #00291f;
+}
+
+.compare-toggle {
+  background: none;
+  overflow: hidden;
+  width: 260px;
+  border-radius: 100px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: white;
+  position: relative;
+  padding-right: 80px;
+  border: 1px solid #00291f;
+  margin-left: 40%;
+  margin-top: 72px;
+}
+
+.compare-toggle:before {
+  content: "Table";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+  color: black;
+}
+
+.compare-toggle-checkbox {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+}
+
+.compare-toggle-checkbox:checked + .compare-toggle-label:before {
+  transform: translateX(160px);
+  transition: transform 300ms linear;
+}
+
+.compare-toggle-checkbox + .compare-toggle-label {
+  position: relative;
+  padding: 15px 0;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+.compare-toggle-checkbox + .compare-toggle-label:before {
+  content: "";
+  background: #ff5a1f;
+  height: 100%;
+  width: 70%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+  transform: translateX(0);
+  transition: transform 300ms;
+}
+
+.compare-toggle-checkbox + .compare-toggle-label .compare-toggle-span {
+  position: relative;
+  padding-right: 5rem;
+  color: black;
+}
+
+.remove-comparison {
+  background-color: #FF5A1F;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+.remove-comparison:hover {
+  font-size: 17px;
+  color: white;
+}
+
+.compareContent {
+  margin-top: 72px;
+}
+
 .CompareInfo-1 {
-  height: 100px;
+  height: 100%;
+  margin-bottom: 32px;
+}
+
+.label-1 {
+  height: 149px;
+  margin-bottom: 32px;
+}
+
+.CompareLabel {
+  font-weight: bold;
+}
+
+.CompareInfo-3 {
+  width: 100%;
+}
+
+.chart-compare {
+  width: 72%;
+  height: 70%;
+  margin: auto;
+}
+
+.comparison-title {
+  font-family: Allan;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 18px;
+  margin-top: 72px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #00291f;
+}
+
+.graph-toggle {
+  background: none;
+  overflow: hidden;
+  width: 260px;
+  border-radius: 100px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: white;
+  position: relative;
+  padding-right: 80px;
+  border: 1px solid #00291f;
+  margin-left: 40%;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+}
+
+.graph-toggle:before {
+  content: "Elevation";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+  color: black;
+}
+
+.graph-toggle-checkbox {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+}
+
+.graph-toggle-checkbox:checked + .graph-toggle-label:before {
+  transform: translateX(160px);
+  transition: transform 300ms linear;
+}
+
+.graph-toggle-checkbox + .graph-toggle-label {
+  position: relative;
+  padding: 15px 0;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+.graph-toggle-checkbox + .graph-toggle-label:before {
+  content: "";
+  background: #ff5a1f;
+  height: 100%;
+  width: 70%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+  transform: translateX(0);
+  transition: transform 300ms;
+}
+
+.graph-toggle-checkbox + .graph-toggle-label .graph-toggle-span {
+  position: relative;
+  padding-right: 5rem;
+  color: black;
+}
+
+.CompareLabels {
+  margin-left: 5rem;
+}
+
+@media screen and (max-width: 550px) {
+  .compare-all-hikes-wrapper {
+    width: 400px;
+    overflow-x: scroll;
+  }
+  .CompareLabels {
+    position: sticky;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .CompareInfo,
+  .CompareLabel {
+    height: 60px;
+  }
+  .CompareInfo-1 {
+    margin-bottom: 120px;
+  }
+  .CompareHike {
+    width: 200px;
+  }
+  .CompareHike-wrapper:nth-child(2) .CompareHike {
+    margin-left: 6rem;
+  }
 }
 
 .blogPage {
@@ -679,7 +997,8 @@ form input.searchBar {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
   grid-gap: 2rem;
-  margin-bottom: 3rem;
+  margin: 0 0 0 3rem;
+  justify-self: center;
 }
 
 .blogCardChild:first-child {
@@ -733,6 +1052,7 @@ form input.searchBar {
   padding: 0 0 1rem 0;
   border-radius: 20px;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+  justify-self: center;
 }
 
 .blogCardChild:not(:first-child) h3 {
@@ -811,19 +1131,85 @@ form input.searchBar {
   margin: 2rem 1rem;
 }
 
+.savedHikesPage {
+  margin: 2rem;
+}
+
 .savedHikesCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
-  padding-top: 10rem;
+  padding-top: 2rem;
   padding-bottom: 10rem;
 }
 
-#savedHikeImage {
-  width: 300px;
+.savedHikesCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.savedHikesCardsChild {
+  position: relative;
+  margin: 0 0 2rem 0;
+  background: #FCFAFC;
+  padding: 0 0 1rem 0;
+  border-radius: 20px;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.savedHikesCardsChild h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: "DM Sans", sans-serif;
+  padding: 1rem 0 0 0;
+}
+
+.savedHikesCardsChild img {
+  display: block;
+  width: 100%;
   height: 300px;
   object-fit: cover;
-  border-radius: 2rem;
+  border-radius: 20px 20px 0 0;
+}
+
+.savedHikesCardsChild .blogContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(0, 41, 31, 0.5) 0%, #00291F 100%);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+  border-radius: 20px;
+}
+
+.savedHikesCardsChild .blogContent h3 {
+  color: #FCFAFC;
+  font-size: 1.2rem;
+  font-family: "DM Sans", sans-serif;
+  padding: 1rem;
+}
+
+.savedHikesCardsChild .blogContent p {
+  color: #FCFAFC;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.savedHikesCardsChild .blogContent a {
+  color: #FCFAFC;
+}
+
+.savedHikesCardsChild:hover .blogContent {
+  height: 100%;
 }
 
 .newsCards {
@@ -859,10 +1245,15 @@ form input.searchBar {
   justify-content: center;
 }
 
+.DetailsPage {
+  margin: 1rem 4rem;
+}
+
 .detailsSection {
   background: #FCFAFC;
-  margin: 3rem;
+  margin: 2% auto;
   border-radius: 20px;
+  width: 80%;
 }
 
 .detailsSection .detailsFeatures {
@@ -879,7 +1270,7 @@ form input.searchBar {
   padding: 1rem;
 }
 
-.detailsSection .detailsDesc {
+.detailsSection .detailsFeatures .detailsDesc {
   padding: 2rem;
 }
 
@@ -901,15 +1292,6 @@ form input.searchBar {
   font-weight: bold;
   margin: 1rem;
   font-family: "DM Sans", sans-serif;
-}
-
-.compareButton {
-  border: none;
-  background: #FF5A1F;
-  border-radius: 30px;
-  padding: 0.7rem 2.2rem;
-  color: #FCFAFC;
-  margin-top: 1rem;
 }
 
 .imageGrid {
@@ -944,18 +1326,53 @@ form input.searchBar {
   margin: 3rem;
 }
 
+.reviews {
+  margin: 5rem 4rem;
+}
+
 .review {
   color: #1A3E35;
   background: #FCFAFC;
   border-radius: 20px;
-  margin: 3rem;
+  margin: 1rem 3rem;
   padding: 1rem;
   max-width: 500px;
+  height: auto;
+}
+
+.review .reviewHead {
+  font-style: italic;
 }
 
 .reviewCard {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.userIcon {
+  padding-right: 0.3rem;
+}
+
+.detailsPageButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.detailsPageButtons .saveHikeButton {
+  margin: 0;
+  padding: 0.7rem 2.2rem;
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.compareButton {
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 2.2rem;
+  color: #FCFAFC;
+  font-size: 1rem;
 }
 
 .App {
@@ -1082,28 +1499,47 @@ textarea {
   color: #FF5A1F;
 }
 
-.LoginPage, .signUpPage {
+.LoginPage,
+.signUpPage {
   height: 100vh;
   display: flex;
 }
 
-.LoginPage .formContainer, .LoginPage .LoginForms, .LoginPage .loginFormChild, .LoginPage .ChangePasswordForm, .LoginPage .changePasswordFormChild, .signUpPage .formContainer, .signUpPage .LoginForms, .signUpPage .loginFormChild, .signUpPage .ChangePasswordForm, .signUpPage .changePasswordFormChild {
+.LoginPage .formContainer,
+.LoginPage .LoginForms,
+.LoginPage .loginFormChild,
+.LoginPage .ChangePasswordForm,
+.LoginPage .changePasswordFormChild,
+.signUpPage .formContainer,
+.signUpPage .LoginForms,
+.signUpPage .loginFormChild,
+.signUpPage .ChangePasswordForm,
+.signUpPage .changePasswordFormChild {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.LoginPage .LoginForms, .signUpPage .LoginForms {
+.LoginPage .LoginForms,
+.signUpPage .LoginForms {
   display: flex;
   flex-direction: column;
   margin-top: 4rem;
 }
 
-.LoginPage .ChangePasswordForm, .signUpPage .ChangePasswordForm {
+.LoginPage .ChangePasswordForm,
+.signUpPage .ChangePasswordForm {
   margin-top: 1rem;
 }
 
-.LoginPage .logout, .signUpPage .logout {
+.LoginPage .logout,
+.signUpPage .logout {
   margin-top: 1rem;
+}
+
+.LoginPage #LoginText,
+.signUpPage #LoginText {
+  font-family: "Allan", cursive;
+  color: #FF5A1F;
 }
