@@ -77,10 +77,7 @@ function NavBarComponent({ isLoggedIn, logout, history }) {
                             Logout
                         </button>
                     ) : (
-
-                      <button className="loginButton"> 
-                        <Link to='/SignUpPage'>Log In</Link>
-                      </button>
+                        <Link to='/SignUpPage'>Sign Up</Link>
                     )}
                 </li>
             </ul>

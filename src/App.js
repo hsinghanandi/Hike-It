@@ -75,6 +75,7 @@ function App() {
     // Submit Search
     const submitSearch = (event) => {
         setSearchSubmitted(true);
+        setSearch('');
 
         event.preventDefault();
 
@@ -93,7 +94,7 @@ function App() {
 
     // Randomize call
     // const [randomize, setRandomize] = useState([]);
-    const randomizeSearch = event => {
+    const randomizeSearch = (event) => {
         setSearchSubmitted(true);
         event.preventDefault();
 
@@ -107,7 +108,7 @@ function App() {
             .catch((error) => {
                 console.log(error.message);
             });
-    }
+    };
 
     ///////////////// get placeID ////////////
     // axios.get(`/place/nearbysearch/json?location=49.282730,-123.120735&keyword=${search}&key=${googleMapsApiKey}&radius=30000`)
@@ -178,7 +179,7 @@ function App() {
                                         // articles={articles}
                                         npsData={npsData}
                                         randomizeSearch={randomizeSearch}
-                                            setPlaceID={setPlaceID}
+                                        setPlaceID={setPlaceID}
                                     />
                                 )}
                             </Route>
@@ -218,8 +219,7 @@ function App() {
                                 <SignUpPage SERVER_LOCATION={SERVER_LOCATION} />
                             </Route>
                             <Route exact path='/SearchResultsPage'>
-
-                                    <SearchResultsPage
+                                <SearchResultsPage
                                     setPlaceID={setPlaceID}
                                     googleMapsApiKey={googleMapsApiKey}
                                     search={search}
@@ -229,11 +229,7 @@ function App() {
                                     setSearchResults={setSearchResults}
                                     compareQueue={compareQueue}
                                     setCompareQueue={setCompareQueue}
-                                    />
-
-                                
-            
-                                
+                                />
                             </Route>
                             <Route exact path='/LoginPage'>
                                 <LoginPage
