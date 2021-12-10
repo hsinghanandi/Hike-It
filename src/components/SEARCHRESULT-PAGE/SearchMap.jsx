@@ -11,7 +11,7 @@ const mapContainerStyle = {
     width: '100%',
     height: '700px',
     // borderRadius: '20px',
-    margin: '0 auto',
+    margin: '0 0',
 };
 const center = {
     lat: 49.24,

@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 // import BlogCard from "./BlogCard";
 
 const BlogSection = (props) => {
+
+    const button = {
+        background: '#00291F',
+    }
+
     return (
         <>
             <div className="BlogSection">
@@ -62,6 +67,14 @@ const BlogSection = (props) => {
                     ) : (
                         <p>No blogs</p>
                     )}
+                </div>
+
+                <div className="ButtonBlog">
+                    <Link to={"./BlogPage"}>
+                        <button style={button}>
+                            More Posts
+                        </button> 
+                    </Link>
                 </div>
             </div>
         </>

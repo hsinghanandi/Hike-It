@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const CompareToggle = (props) => {
     const handleChangeToggle = (event) => {
@@ -6,17 +6,17 @@ const CompareToggle = (props) => {
     };
 
     return (
-        <div className='toggle-switch'>
-            <label className='switch'>
-                <input
-                    type='checkbox'
-                    onChange={(event) => {
-                        handleChangeToggle(event);
-                    }}
-                    defaultChecked='false'
-                />
-                Table - Graph
-                <span className='slider round'></span>
+        <div className="compare-toggle">
+            <input
+                className="compare-toggle-checkbox"
+                type="checkbox"
+                onChange={(event) => {
+                    handleChangeToggle(event);
+                }}
+                defaultChecked="false"
+            />
+            <label className="compare-toggle-label">
+                <span className="compare-toggle-span">Graph</span>
             </label>
         </div>
     );

@@ -36,7 +36,7 @@ const AboutGallery = (props) => {
                 className="AboutUsGalleryDevelopers"
             >
                 <AboutGalleryCard
-                    linkedin=""
+                    linkedin="https://www.linkedin.com/in/javier-leon-07a082228/"
                     imageSrc={javierPic}
                     name="Leon Ortega, Javier"
                     role="Full-Stack Developer"

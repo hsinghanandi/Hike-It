@@ -16,8 +16,13 @@ button {
   text-decoration: none;
   //   margin-top: 1rem;
   border: none;
+  cursor: pointer;
 
   &:hover {
     background-color: $dark_color;
   }
+
+  #logout {
+    margin-top: 0;
+}
 }

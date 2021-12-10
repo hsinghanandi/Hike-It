@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import SavedHikeCard from './saved hikes cards/SavedHikeCard';
+// import SavedHikeCard from './saved hikes cards/SavedHikeCard';
+
+const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export default function SavedHikesPage(props) {
     const [savedHikes, setSavedHikes] = useState([]);
@@ -25,14 +27,28 @@ export default function SavedHikesPage(props) {
                 <h1>Your Saved Hikes</h1>
             </div>
 
-            <div className='savedHikesCards'>
+            <div className='savedHikesCards blogCards'>
                 {savedHikes &&
                     savedHikes.map((item, index) => (
-                        <SavedHikeCard
-                            imageRef={item.photoRef[0]}
-                            title={item.name}
-                            rating={item.rating}
-                        />
+                        <div className="savedHikesCardsChild" key={index}>
+                            {/* <SavedHikeCard
+                                imageRef={item.photoRef[0]}
+                                title={item.name}
+                                rating={item.rating}
+                            /> */}
+
+                            <img
+                                id='savedHikeImage'
+                                        src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${item.photoRef[0]}&key=${googleMapsApiKey}`}
+                                        alt={item.name}
+                            />
+                            <h3 className='blogTitle'>{item.name}</h3>
+                            <div className='blogContent'>
+                                <h3>{item.name}</h3>
+                                <p>Rating: {item.rating}</p>
+                            </div>
+                        </div>
+
                     ))}
             </div>
         </div>

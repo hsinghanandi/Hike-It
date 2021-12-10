@@ -23,7 +23,7 @@ const ComparePage = (props) => {
 
     return (
         <div>
-            <h2> Hike Comparison </h2>
+            <h2 className="comparison-title"> Hike Comparison </h2>
             <CompareToggle
                 setGraphToggle={setGraphToggle}
                 graphToggle={graphToggle}
@@ -41,10 +41,6 @@ const ComparePage = (props) => {
                     <Graph compareNow={compareNow} />
                 )}
             </div>
-            <CompareToggle
-                setGraphToggle={setGraphToggle}
-                graphToggle={graphToggle}
-            />
         </div>
     );
 };

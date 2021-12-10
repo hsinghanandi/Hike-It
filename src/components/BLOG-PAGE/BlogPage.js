@@ -42,20 +42,6 @@ const BlogPage = () => {
                 {/* < MainBlogCard /> */}
                 <h1>Blog</h1>
 
-                {/* <div className="blogCards">
-
-                    {articles.articles !== undefined ? articles.articles.map((article, index) =>
-                        <div className="blogCard" key={index}>
-
-                            <img src={article.urlToImage} alt={article.title} width="400" />
-                            <div className="blogContent">
-                                <h3> <a href={article.url}>{article.title}</a></h3>
-                                <p>{article.description}</p>
-                            </div>
-                        </div>
-                    ) : <p>No blogs</p>}
-            </div> */}
-
                 <div className='blogCards'>
                     {npsData.data !== undefined ? (
                         npsData.data.slice(0, 6).map((nps, index) => (
@@ -78,6 +64,22 @@ const BlogPage = () => {
                         <p>No blogs</p>
                     )}
                 </div>
+
+                {/* <div className="blogCards">
+
+                    {articles.articles !== undefined ? articles.articles.map((article, index) =>
+                        <div className="blogCard" key={index}>
+
+                            <img src={article.urlToImage} alt={article.title} width="400" />
+                            <div className="blogContent">
+                                <h3> <a href={article.url}>{article.title}</a></h3>
+                                <p>{article.description}</p>
+                            </div>
+                        </div>
+                    ) : <p>No blogs</p>}
+            </div> */}
+
+
             </div>
         </>
     );
