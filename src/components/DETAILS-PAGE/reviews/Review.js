@@ -1,13 +1,28 @@
+
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import UserIcon from './UserIcon';
+
 const Review = props => {
+
+
     return <div className="reviews">
         <h2 className="detailsHeading">Reviews</h2>
         <div className="reviewCard">
         {props.reviews !== undefined ? props.reviews.map((review, index) => {
             return <div key={index} className="review">
-                <p className="reviewHead">{review.author_name}</p>
-                <p>Rating: {review.rating}</p>
-                <p>{review.text}</p>
-                
+                <p className="reviewHead">
+
+                    <span className="userIcon">
+                        <UserIcon />
+                    </span>
+                    
+                    {review.author_name}
+                    
+                </p>
+                <br/>
+                <p className="reviewRating">Rating: {review.rating}</p>
+                <br />
+                <p className="reviewText">{review.text}</p> 
             </div>
         }) : "There are no reviews"}
         </div>
