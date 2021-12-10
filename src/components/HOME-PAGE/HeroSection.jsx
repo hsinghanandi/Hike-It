@@ -21,6 +21,9 @@ const HeroSection = (props) => {
                         onChange={(event) => props.handleChangeSearch(event)}
                     />
                 </form>
+
+                <p>No Idea? Looking for a good place to explore?</p>
+                <button onClick={(event) => props.randomizeSearch(event)}>Randomize</button>
             </div>
         </div>
     );

@@ -18,6 +18,7 @@ export default function HomePage(props) {
                 submitSearch={props.submitSearch}
                 searchResults={props.searchResults}
                 setSearchResults={props.setSearchResults}
+                randomizeSearch={props.randomizeSearch}
             />
             <FeatureSection />
             <PopularHikes />

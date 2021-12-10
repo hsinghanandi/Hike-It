@@ -15,7 +15,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
   grid-gap: 2rem;
-  margin: 0 0 0 3rem;
+  // margin: 0 0 0 3rem;
   justify-self: center;
 }
 
@@ -115,7 +115,7 @@
       color: $text_light_color;
       font-size: 16px;
       position: absolute;
-      top: 50%;
+      top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
