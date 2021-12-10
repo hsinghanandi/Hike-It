@@ -17,12 +17,7 @@ const DetailsFeatures = (props) => {
             <div className="detailsHeading">Features</div>
             <div className="detailsContent">
                 <div className="detailsDesc">
-                    <p>
-                        {`HikeIt is a data-driven web platform that helps hiking
-                        enthusiasts and outdoor adventurers plan their hikes by
-                        providing them with the tools to discover, search and
-                        compare different hiking trails.`}
-                    </p>
+                    <p>{`${props.place.name} is located in ${props.place.address}. It has an elevation of ${props.place.elevation}m and it has a rating of ${props.place.rating} from our users.`}</p>
                 </div>
                 <ul>
                     <li>Currently: {props.place.status ? "open" : "closed"}</li>
