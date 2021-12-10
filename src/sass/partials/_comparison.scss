@@ -279,6 +279,10 @@
     margin-left: 5rem;
 }
 
+.CompareInfo-5 {
+    padding-left: 35%;
+}
+
 /////////////////////// Media Queries
 
 @media screen and (max-width: 550px) {
@@ -300,6 +304,11 @@
 
     .CompareInfo-1 {
         margin-bottom: 120px;
+    }
+
+    .label-1 {
+        height: 149px;
+        margin-bottom: 0;
     }
 
     .CompareHike {

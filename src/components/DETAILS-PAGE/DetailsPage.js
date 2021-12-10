@@ -65,6 +65,22 @@ const DetailsPage = (props) => {
                       )
                     : null;
 
+                let difficulty;
+                let difficultyNumber = Math.floor(Math.random() * 3 + 1);
+                switch (difficultyNumber) {
+                    case 1:
+                        difficulty = "Beginner";
+                        break;
+                    case 2:
+                        difficulty = "Intermediate";
+                        break;
+                    case 3:
+                        difficulty = "Hard";
+                        break;
+                    default:
+                        break;
+                }
+
                 let newPlace = {
                     name: res.data.result.name
                         ? res.data.result.name
@@ -89,6 +105,7 @@ const DetailsPage = (props) => {
                         ? res.data.result.formatted_phone_number
                         : null,
                     province: "British Columbia",
+                    difficulty: difficulty,
                 };
 
                 return newPlace;
@@ -133,6 +150,7 @@ const DetailsPage = (props) => {
                     compareQueue={props.compareQueue}
                     setCompareQueue={props.setCompareQueue}
                 />
+
                 <button onClick={() => saveHike()}>Save Hike</button>
                 <Slider
                     photoRef={place.photoRef}

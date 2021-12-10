@@ -1,4 +1,5 @@
 import React from "react";
+import ReactStars from "react-stars";
 
 const CompareHike = (props) => {
     const handleRemoveHike = () => {
@@ -15,6 +16,15 @@ const CompareHike = (props) => {
         height: "149px",
         objectFit: "cover",
         borderRadius: "100%",
+    };
+
+    const rating = {
+        value: props.currentHike.rating,
+        half: true,
+        edit: false,
+        count: 5,
+        color2: "#FF5A1F",
+        size: 20,
     };
 
     return (
@@ -34,12 +44,14 @@ const CompareHike = (props) => {
                         {props.currentHike.address}
                     </div>
                     <div className="CompareInfo-4 CompareInfo">
-                        {props.currentHike.elevation}
+                        {props.currentHike.elevation} m
                     </div>
                     <div className="CompareInfo-5 CompareInfo">
-                        {props.currentHike.rating}
+                        <ReactStars {...rating} />
                     </div>
-                    <div className="CompareInfo-6 CompareInfo">Difficulty</div>
+                    <div className="CompareInfo-6 CompareInfo">
+                        {props.currentHike.difficulty}
+                    </div>
                     <div className="CompareInfo-7 CompareInfo">
                         {props.currentHike.status ? "Open" : "Closed"}
                     </div>

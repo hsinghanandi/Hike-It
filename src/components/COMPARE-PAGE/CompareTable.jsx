@@ -33,6 +33,22 @@ const CompareTable = (props) => {
                     }
                 };
 
+                let difficulty;
+                let difficultyNumber = Math.floor(Math.random() * 3 + 1);
+                switch (difficultyNumber) {
+                    case 1:
+                        difficulty = "Beginner";
+                        break;
+                    case 2:
+                        difficulty = "Intermediate";
+                        break;
+                    case 3:
+                        difficulty = "Hard";
+                        break;
+                    default:
+                        break;
+                }
+
                 let newHike = {
                     name: res.data.results[0].name
                         ? res.data.results[0].name
@@ -59,6 +75,7 @@ const CompareTable = (props) => {
                         ? res.data.results[0].formatted_phone_number
                         : null,
                     province: "British Columbia",
+                    difficulty: difficulty,
                 };
 
                 return newHike;
@@ -71,7 +88,7 @@ const CompareTable = (props) => {
                     .then((results) => {
                         let elevation = results.data.results[0].elevation;
 
-                        newHike.elevation = elevation;
+                        newHike.elevation = Math.round(elevation);
 
                         let newQueue = props.compareNow.slice();
                         newQueue.pop();

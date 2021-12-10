@@ -37,7 +37,10 @@ const Slider = (props) => {
                     />
                 ))
             ) : (
-                <></>
+                <img
+                    src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=Aap_uEBXkv44f3QYV_Fyncko8keODGAuysXL9KMMsEg44LEdyOylGH3NmK4jBHerSnY2mby0ZceEp3JH5I9QW6W5oxK4DAjUeoAxIABEUDNrn18uzceCC-VrXyvsQpQeuDi_KD8NSXqEvrZAfjtGWocLT05awgAnAFuWvUJFMRpmNfIAlyRg&key=${props.googleMapsApiKey}`}
+                    alt={`${props.placeTitle}`}
+                />
             )}
         </div>
     );
