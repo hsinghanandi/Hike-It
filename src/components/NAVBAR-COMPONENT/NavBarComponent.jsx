@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import darkBgLogo from '../../assets/darkBgLogo.png';
+import { useState } from 'react';
 
 // Logo, Discover, Hike Comparison, Blog, About Us, Saved Hikes, Profile
 
