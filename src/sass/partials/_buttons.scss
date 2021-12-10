@@ -1,24 +1,28 @@
 .compareHikeBtn {
-    text-align: right;
+  text-align: right;
 }
 
 .singlePageButtons {
-    display: flex;
-    flex-wrap: row nowrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: row nowrap;
+  justify-content: center;
 }
 
 button {
-    background-color: $orange_color;
-    color: white;
-    padding: 0.5rem 2rem;
-    border-radius: 20px;
-    text-decoration: none;
-    margin-top: 1rem;
-    border: none;
-    cursor: pointer;
-}
+  background-color: $orange_color;
+  color: white;
+  padding: 0.7rem 2.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  //   margin-top: 1rem;
+  border: none;
+  cursor: pointer;
 
-#logout {
+  &:hover {
+    background-color: $dark_color;
+  }
+
+  #logout {
     margin-top: 0;
+  }
 }
