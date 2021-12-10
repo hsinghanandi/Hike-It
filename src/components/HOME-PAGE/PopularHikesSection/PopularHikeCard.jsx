@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PopularHikeCard = (props) => {
     return (
@@ -9,7 +10,16 @@ const PopularHikeCard = (props) => {
                 alt="Trail Near You"
             />
             <div className="HomePopularHikeName">
-                <h2>{props.HomePopularTitle}</h2>
+                <h2>
+                <Link
+                        onClick={() => {
+                            props.setPlaceID(props.placeID);
+                        }}
+                        to={"./DetailsPage"}
+                    >
+                        {props.HomePopularTitle}
+                </Link>
+                 </h2>
                 <h3>{props.HomePopularLocation}</h3>
             </div>
         </div>

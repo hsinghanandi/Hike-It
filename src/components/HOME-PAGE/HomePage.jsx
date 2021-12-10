@@ -21,7 +21,7 @@ export default function HomePage(props) {
                 randomizeSearch={props.randomizeSearch}
             />
             <FeatureSection />
-            <PopularHikes />
+            <PopularHikes setPlaceID={props.setPlaceID} />
             <BlogSection npsData={props.npsData} />
             <AboutSection />
         </div>

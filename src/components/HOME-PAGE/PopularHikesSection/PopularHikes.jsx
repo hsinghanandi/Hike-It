@@ -4,6 +4,7 @@ import PopularHikeCard from "./PopularHikeCard";
 const PopularHikes = (props) => {
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
+
     return (
         <div className="HomePopularHikes">
             <h2>Popular Trails</h2>
@@ -15,6 +16,8 @@ const PopularHikes = (props) => {
                     }
                     HomePopularTitle={"Heron Trail"}
                     HomePopularLocation={"Vancouver BC"}
+                    setPlaceID={props.setPlaceID}
+                    placeID={"ChIJt53_q9xyhlQR8HVaqrNhf5E"}
                 />
                 {/* Camosun Bog place_id = ChIJu0VQ0RtzhlQRM5T90vS_CF4 */}
                 <PopularHikeCard
@@ -23,6 +26,8 @@ const PopularHikes = (props) => {
                     }
                     HomePopularTitle={"Camosun Bog"}
                     HomePopularLocation={"Vancouver BC"}
+                    setPlaceID={props.setPlaceID}
+                    placeID={"ChIJu0VQ0RtzhlQRM5T90vS_CF4"}
                 />
                 {/* Iona Jetty place_id = ChIJH4ASXq4MhlQR2CLPbpxCdXs */}
                 <PopularHikeCard
@@ -31,6 +36,8 @@ const PopularHikes = (props) => {
                     }
                     HomePopularTitle={"Iona Jetty"}
                     HomePopularLocation={"Richmond BC"}
+                    setPlaceID={props.setPlaceID}
+                    placeID={"ChIJH4ASXq4MhlQR2CLPbpxCdXs"}
                 />
             </div>
         </div>
