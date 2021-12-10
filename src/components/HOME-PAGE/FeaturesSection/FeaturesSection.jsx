@@ -12,21 +12,21 @@ const FeatureSection = (props) => {
                     HomeFeatureImage={featured1}
                     HomeFeatureTitle={"Find Hikes"}
                     HomeFeatureDescription={
-                        "Plan your next hike with the right tools"
+                        "Search hikes around you and find out detailed information about them."
                     }
                 />
                 <FeatureCard
                     HomeFeatureImage={featured2}
                     HomeFeatureTitle={"Compare Hikes"}
                     HomeFeatureDescription={
-                        "Compare between up to 4 hikes and choose how you want to see the information"
+                        "Compare upto 4 hikes and choose the one which is best for you."
                     }
                 />
                 <FeatureCard
                     HomeFeatureImage={featured3}
                     HomeFeatureTitle={"Stay Updated"}
                     HomeFeatureDescription={
-                        "Get the latest news related to hiking and your favorite trails"
+                        "Get latest news and alerts related to the hike to stay updated."
                     }
                 />
             </div>
