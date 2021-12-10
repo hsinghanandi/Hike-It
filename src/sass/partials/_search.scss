@@ -11,6 +11,7 @@
 
 .searchResultsHeading {
   text-align: center;
+  margin-top: 4rem;
 }
 
 .checkBoxesNotice {
@@ -121,6 +122,14 @@
   grid-column: span 2;
   text-align: center;
   margin: 4rem;
+
+  .compareButton {
+    background-color: $orange_color;
+
+    &:hover {
+      background-color: $text_dark_color;
+    }
+  }
 }
 
 .resultSection {
