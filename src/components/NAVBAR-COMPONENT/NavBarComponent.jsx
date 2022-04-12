@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import darkBgLogo from '../../assets/darkBgLogo.png';
-import { useState } from 'react';
 
 // Logo, Discover, Hike Comparison, Blog, About Us, Saved Hikes, Profile
 
@@ -55,9 +54,6 @@ function NavBarComponent({ isLoggedIn, logout, history }) {
                         </a>
                     </Link>
                 </li>
-                {/* <li>
-                    <Link to='/DiscoverPage'>Discover</Link>
-                </li> */}
 
                 <li>
                     <Link to='/ComparePage'>Hike Comparison</Link>

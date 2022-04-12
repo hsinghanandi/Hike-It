@@ -16,7 +16,7 @@ const Graph = (props) => {
 
     return (
         <div>
-            {chartToggle == false ? (
+            {chartToggle === false ? (
                 <div className="chart-wrapper-rating chart-compare">
                     <Bar
                         data={{

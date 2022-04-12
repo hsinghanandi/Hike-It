@@ -29,12 +29,12 @@ const BlogPage = () => {
             )
             .then((result) => {
                 setNpsData(result.data);
-                console.log('setNpsData', result.data);
+                // console.log('setNpsData', result.data);
             })
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [npsApiKey]);
 
     return (
         <>
@@ -54,7 +54,7 @@ const BlogPage = () => {
                                 <h3 className='blogTitle'>{nps.title}</h3>
                                 <div className='blogContent'>
                                     <h3>
-                                        <a href={nps.url} target='_blank'>
+                                        <a href={nps.url} target='_blank' rel='noreferrer'>
                                             {nps.title}
                                         </a>
                                     </h3>

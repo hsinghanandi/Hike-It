@@ -46,7 +46,7 @@ const Map = (props) => {
     if (!isLoaded) return 'Loading Maps';
 
     return (
-        <div classNmae='detailMap'>
+        <div className='detailMap'>
             <GoogleMap
                 mapContainerStyle={mapContainerStyle}
                 zoom={10}

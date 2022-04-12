@@ -21,14 +21,6 @@ const options = {
     styles: mapStyles,
 };
 
-const onLoad = infoWindow => {
-    console.log('infoWindow: ', infoWindow)
-}
-
-// const handleClickMarker = (event, index) => {
-//     console.log('clicked this marker', index);
-// };
-
 const Map = (props) => {
 
     // marker click event

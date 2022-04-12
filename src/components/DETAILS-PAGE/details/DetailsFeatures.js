@@ -2,8 +2,6 @@ import ReactStars from "react-stars";
 import React from "react";
 
 const DetailsFeatures = (props) => {
-    let ratingValue = props.place.rating;
-
     const rating = {
         value: props.place.rating,
         half: true,

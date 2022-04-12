@@ -8,10 +8,10 @@ import SearchMap from "./SearchMap.jsx";
 
 const SearchResultsPage = (props) => {
     const [checkboxQueue, setCheckboxQueue] = useState([]);
-
+    const {searchSubmitted, setSearchSubmitted} = props
     useEffect(() => {
-        props.setSearchSubmitted(false);
-    }, []);
+        setSearchSubmitted(false);
+    }, [searchSubmitted]);
 
     const handlePhoto = (source) => {
         if (source !== undefined) {

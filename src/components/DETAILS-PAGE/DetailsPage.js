@@ -17,37 +17,38 @@ const DetailsPage = (props) => {
     const [place, setPlace] = useState([]);
 
     /////////setting the types as array for the place////////
-    const [types, setTypes] = useState([]);
+    // const [types, setTypes] = useState([]);
     useEffect(() => {
         axios
             .get(
                 `/place/details/json?key=${googleMapsApiKey}&place_id=${props.placeID}`
             )
-            .then((result) => setTypes(result.data.result.types))
+            .then((response) => console.log(response))
+            // .then((result) => setTypes(result.data.result.types))
             .catch((error) => console.log(error));
-    }, [googleMapsApiKey]);
+    }, [googleMapsApiKey, props.placeID]);
     /////// end setting types as array for the place/////
 
     ////////// setting the reviews as an array ///////
-    const [reviews, setReviews] = useState([]);
+    // const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        let isMounted = true;
+        // let isMounted = true;
 
         axios
             .get(
                 `/place/details/json?key=${googleMapsApiKey}&place_id=${props.placeID}`
             )
             .then((result) => {
-                if (isMounted) {
-                    setReviews(result.data.result.reviews);
-                }
+                // if (isMounted) {
+                //     setReviews(result.data.result.reviews);
+                // }
             })
             .catch((error) => console.log(error));
 
-        return () => {
-            isMounted = false;
-        };
-    }, [googleMapsApiKey]);
+        // return () => {
+        //     isMounted = false;
+        // };
+    }, [googleMapsApiKey, props.placeID]);
 
     useEffect(() => {
         axios
@@ -61,8 +62,8 @@ const DetailsPage = (props) => {
 
                 let defaultImage = res.data.result.photos
                     ? res.data.result.photos.map(
-                          (photo) => photo.photo_reference
-                      )
+                        (photo) => photo.photo_reference
+                    )
                     : null;
 
                 let difficulty;
@@ -91,8 +92,8 @@ const DetailsPage = (props) => {
                     status: isOpen,
                     weekdayText: res.data.result.opening_hours.weekday_text
                         ? res.data.result.opening_hours.weekday_text[0]
-                              .split(": ")
-                              .pop()
+                            .split(": ")
+                            .pop()
                         : `Open 24 Hours`,
                     rating: res.data.result.rating ? res.data.result.rating : 4,
                     latitude: res.data.result.geometry.location.lat,
@@ -126,9 +127,9 @@ const DetailsPage = (props) => {
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [googleMapsApiKey, props.placeID]);
 
-    const [saveHikeButtonText, setSaveHikeButtonText]= useState("Save Hike")
+    const [saveHikeButtonText, setSaveHikeButtonText] = useState("Save Hike")
 
     const saveHike = () => {
         console.log("SAVE HIKE BUTTON CLICKED");
@@ -164,34 +165,35 @@ const DetailsPage = (props) => {
     //     }
     // }
 
-        
+
     return (
         <div className="DetailsPage">
             <div className="content">
-               
+
 
                 <div className="detailsPageButtons">
 
-                <DetailsTitle placeTitle={place.name} />
+                    <DetailsTitle placeTitle={place.name} />
 
-                <CompareButton
-                    place={place}
-                    compareQueue={props.compareQueue}
-                    setCompareQueue={props.setCompareQueue}
-                />
+                    <CompareButton
+                        place={place}
+                        compareQueue={props.compareQueue}
+                        setCompareQueue={props.setCompareQueue}
+                    />
 
 
-                <button className="saveHikeButton" onClick={() => saveHike()}>{saveHikeButtonText}</button>
+                    <button className="saveHikeButton" onClick={() => saveHike()}>{saveHikeButtonText}</button>
 
 
                 </div>
 
-                
+
 
                 <Slider
                     photoRef={place.photoRef}
                     googleMapsApiKey={googleMapsApiKey}
-                    placeTitle={place.name}  
+                    placeTitle={place.name}
+                    key={place.name}
                 />
             </div>
 
