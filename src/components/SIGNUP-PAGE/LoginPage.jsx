@@ -55,46 +55,6 @@ const LoginPage = ({
             });
     };
 
-    // const handleChangePasswordForm = (event) => {
-    //     event.preventDefault();
-
-    //     const password = document.getElementById('change-password').value;
-
-    //     axios
-    //         .post(`${SERVER_LOCATION}/hikeit/api/v1/users/changePassword`, {
-    //             newPassword: password,
-    //             token: localStorage.getItem('token'),
-    //         })
-    //         .then((result) => {
-    //             document.getElementById('changePassword-results').innerHTML =
-    //                 result.data.message;
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // };
-
-    // const handleLogout = (event) => {
-    //     console.log('Logout button clicked!');
-    //     if (isLoggedIn) {
-    //         const user = localStorage.getItem('token');
-    //         console.log(user);
-
-    //         if (user) {
-    //             localStorage.removeItem('token');
-
-    //             document.getElementById('logout-results').innerHTML =
-    //                 ' Logout Successful!';
-
-    //             setIsLoggedIn(false);
-    //             history.push('/');
-    //             alert('Logout Successful');
-    //         }
-    //     } else {
-    //         alert('Please Login first!');
-    //     }
-    // };
-
     return (
         <div className='LoginPage'>
             <img src={loginPic} alt='login pic of outdoors from shutterstock' />
@@ -125,30 +85,6 @@ const LoginPage = ({
                         <div id='login-results'></div>
                     </form>
                 </div>
-
-                {/* <div className='ChangePasswordForm'>
-                    <h2>Change Password</h2>
-                    <form
-                        className='changePasswordFormChild'
-                        onSubmit={(event) => handleChangePasswordForm(event)}
-                    >
-                        <input
-                            className='AboutContactE-mail'
-                            placeholder='Enter a Password'
-                            name='password'
-                            id='change-password'
-                            type='password'
-                            required
-                        />
-                        <button>Change Password</button>
-                        <div id='changePassword-results'></div>
-                    </form>
-                </div>
-                <div className="formContainer logout">
-                    <h2>Logout</h2>
-                    <button onClick={(event) => handleLogout(event)}>Logout</button>
-                    <div id='logout-results'></div>
-                </div> */}
             </div>
         </div>
     );

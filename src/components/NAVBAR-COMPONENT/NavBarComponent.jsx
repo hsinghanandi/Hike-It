@@ -3,8 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import darkBgLogo from '../../assets/darkBgLogo.png';
 
-// Logo, Discover, Hike Comparison, Blog, About Us, Saved Hikes, Profile
-
 function NavBarComponent({ isLoggedIn, logout, history }) {
     const TOAST = {
         position: 'top-right',
@@ -25,8 +23,6 @@ function NavBarComponent({ isLoggedIn, logout, history }) {
     const navbarId = document.getElementById('navbarId');
     if (navbarId) {
         const sticky = navbarId.offsetTop;
-        console.log(sticky);
-        console.log(window.pageYOffset);
 
         const scrollFunction = () => {
             if (window.pageYOffset > sticky) {

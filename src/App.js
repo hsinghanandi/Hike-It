@@ -29,7 +29,6 @@ function App() {
         if (localStorage.token) {
             const jwtToken = localStorage.token.split('.');
             const userDetail = JSON.parse(atob(jwtToken[1]));
-            console.log('userDetail', userDetail);
             if (moment().isBefore(moment.unix(userDetail.exp))) {
                 setuserName(userDetail.username);
                 setIsLoggedIn(true);
@@ -62,7 +61,6 @@ function App() {
 
     const results = [];
     results.push(searchResults);
-    // console.log(results);
 
     // Search value
     const handleChangeSearch = (event) => {
@@ -107,35 +105,6 @@ function App() {
             });
     };
 
-    ///////////////// get placeID ////////////
-    // axios.get(`/place/nearbysearch/json?location=49.282730,-123.120735&keyword=${search}&key=${googleMapsApiKey}&radius=30000`)
-    // .then ((result, index)=>{
-    //     setPlaceID(result.data.results[0].place_id)
-
-    //     console.log("search ID: ", result.data.results[0].place_id );
-
-    //     console.log("search results ID: ", placeID );
-
-    // })
-    // .catch(error=>console.log(error));
-
-    // Blog section
-    // const [articles, setArticles] = useState([]);
-
-    // useEffect(() => {
-    //     axios
-    //         .get(
-    //             `https://newsapi.org/v2/everything?apiKey=${newsApiKey}&q=+hiking+trails+canada`
-    //         )
-    //         .then((result) => {
-    //             setArticles(result.data);
-    //             console.log('setBlogPosts', result.data);
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }, []);
-
     // NPS API
     const [npsData, setNpsData] = useState([]);
     useEffect(() => {
@@ -145,7 +114,6 @@ function App() {
             )
             .then((result) => {
                 setNpsData(result.data);
-                // console.log('setNpsData', result.data);
             })
             .catch((error) => {
                 console.log(error);

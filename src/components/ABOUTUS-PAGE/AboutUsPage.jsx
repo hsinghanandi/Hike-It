@@ -15,14 +15,3 @@ const AboutUsPage = (props) => {
 };
 
 export default AboutUsPage;
-
-//Intro
-// - title , description
-
-//Gallery
-// -card
-// --img, title, role,
-
-//Contact
-// form
-//image

@@ -18,7 +18,6 @@ const ComparePage = (props) => {
         }
 
         setCompareNow(tableArr);
-        console.log(tableArr);
     }, [props.compareQueue]);
 
     return (

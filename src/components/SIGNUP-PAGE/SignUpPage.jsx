@@ -5,7 +5,6 @@ import loginPic from '../../assets/loginPic.png';
 const SignUpPage = (props) => {
     const handleSignUpForm = (event) => {
         event.preventDefault();
-        console.log('request made to server @ 8080');
 
         const username = document.getElementById('username').value;
         const email = document.getElementById('email').value;

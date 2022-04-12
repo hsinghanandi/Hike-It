@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ReactStars from "react-stars";
-// import SavedHikeCard from './saved hikes cards/SavedHikeCard';
 
 const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 

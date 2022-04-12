@@ -19,10 +19,6 @@ const ResultCard = (props) => {
                         ? true
                         : res.data.result.opening_hours.open_now);
 
-                    // let defaultImage = res.data.result.photoRef
-                    //     ? res.data.result.photoRef[0]
-                    //     : "Aap_uEBXkv44f3QYV_Fyncko8keODGAuysXL9KMMsEg44LEdyOylGH3NmK4jBHerSnY2mby0ZceEp3JH5I9QW6W5oxK4DAjUeoAxIABEUDNrn18uzceCC-VrXyvsQpQeuDi_KD8NSXqEvrZAfjtGWocLT05awgAnAFuWvUJFMRpmNfIAlyRg";
-
                     let difficulty;
                     let difficultyNumber = Math.floor(Math.random() * 3 + 1);
                     switch (difficultyNumber) {
@@ -81,7 +77,6 @@ const ResultCard = (props) => {
                             newHike.elevation = Math.round(elevation);
 
                             newQueue.push(newHike);
-                            console.log(newHike);
                             props.setCheckboxQueue(newQueue);
                         });
                 })
@@ -93,7 +88,6 @@ const ResultCard = (props) => {
             if (index !== -1) {
                 newQueue.splice(index, 1);
                 props.setCheckboxQueue(newQueue);
-                console.log("deleted", newQueue);
             }
         }
     };
