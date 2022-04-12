@@ -59,7 +59,7 @@ export default function SavedHikesPage(props) {
                                 <p>
                                     Rating:
                                     <ReactStars
-                                        value={item.rating}
+                                        value={parseFloat(item.rating)}
                                         half={true}
                                         edit={false}
                                         count={5}

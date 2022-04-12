@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "proxy": "https://maps.googleapis.com/maps/api",
-    "engines": {
-        "node": "14.x" 
+    "engines":{
+        "node": "16.13.1"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -24,17 +24,19 @@
         "http-proxy-middleware": "^2.0.1",
         "jsonwebtoken": "^8.5.1",
         "moment": "^2.29.1",
-        "node-sass": "^6.0.1",
         "nodemon": "^2.0.15",
+        "react": "^18.0.0",
         "react-chartjs-2": "^2.10.0",
+        "react-dom": "^18.0.0",
         "react-router-dom": "^5.3.0",
         "react-scripts": "4.0.3",
         "react-stars": "^2.2.5",
         "react-toastify": "^8.1.0",
+        "sass": "^1.50.0",
         "web-vitals": "^1.1.2"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",

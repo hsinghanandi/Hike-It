@@ -50,11 +50,8 @@ function App() {
 
     // google api key
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    // const newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
     const npsApiKey = process.env.REACT_APP_NPS_API_KEY;
-    // console.log('newsApiKey', newsApiKey);
-    // console.log('googleMapsApiKey', googleMapsApiKey);
-    // console.log('npsApiKey', npsApiKey);
+
 
     // Searchbar
     const [search, setSearch] = useState();
@@ -153,7 +150,7 @@ function App() {
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [npsApiKey]);
 
     return (
         <>
@@ -224,6 +221,7 @@ function App() {
                                     googleMapsApiKey={googleMapsApiKey}
                                     search={search}
                                     setSearch={setSearch}
+                                    searchSubmitted={searchSubmitted}
                                     setSearchSubmitted={setSearchSubmitted}
                                     searchResults={searchResults}
                                     setSearchResults={setSearchResults}

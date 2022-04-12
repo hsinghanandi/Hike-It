@@ -12,7 +12,7 @@ const ComparePage = (props) => {
         let tableArr = props.compareQueue.slice(0, 4);
 
         for (let index = 0; index < 4; index++) {
-            if (tableArr[index] == undefined) {
+            if (tableArr[index] === undefined) {
                 tableArr.push(null);
             }
         }

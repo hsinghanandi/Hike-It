@@ -35,6 +35,7 @@ const CompareHike = (props) => {
                         <img
                             src={props.currentHike.photoRef}
                             style={imageStyle}
+                            alt={props.currentHike}
                         />
                     </div>
                     <div className="CompareInfo-2 CompareInfo">
